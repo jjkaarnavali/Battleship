@@ -26,9 +26,7 @@ namespace ConsoleApp
             
             var menu = new Menu(MenuLevel.Level0);
             menu.AddMenuItem(new MenuItem("Go to submenu 1", "s", menuA.RunMenu));
-            
             menu.AddMenuItem(new MenuItem("New game human vs human. Pointless.", "1", DefaulMenuAction));
-            
             menu.AddMenuItem(new MenuItem("New game puny human vs mighty AI", "2", DefaulMenuAction));
             menu.AddMenuItem(new MenuItem("New game mighty AI vs superior AI", "3", DefaulMenuAction));
             

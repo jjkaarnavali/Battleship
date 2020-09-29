@@ -14,7 +14,9 @@ namespace MenuSystem
     public class Menu
     {
         private Dictionary<string, MenuItem> MenuItems { get; set; } = new Dictionary<string, MenuItem>();
+        
         private readonly MenuLevel _menuLevel;
+        
         private readonly string[] reservedActions = new[] {"x", "m", "r"};
         
         public Menu(MenuLevel level)

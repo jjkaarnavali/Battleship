@@ -7,9 +7,7 @@ namespace MenuSystem
 
     {
         public virtual string Label { get; set; }
-        
         public virtual string UserChoice { get; set; }
-        
         public virtual Func<string> MethodToExecute { get; set; }
 
         public MenuItem(string label, string userChoice, Func<string> methodToExecute)
