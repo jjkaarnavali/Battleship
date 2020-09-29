@@ -1,0 +1,9 @@
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\MenuSystem\bin\Debug\netstandard2.1\MenuSystem.deps.json
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\MenuSystem\bin\Debug\netstandard2.1\MenuSystem.dll
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\MenuSystem\bin\Debug\netstandard2.1\MenuSystem.pdb
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\MenuSystem\obj\Debug\netstandard2.1\MenuSystem.csprojAssemblyReference.cache
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\MenuSystem\obj\Debug\netstandard2.1\MenuSystem.AssemblyInfoInputs.cache
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\MenuSystem\obj\Debug\netstandard2.1\MenuSystem.AssemblyInfo.cs
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\MenuSystem\obj\Debug\netstandard2.1\MenuSystem.csproj.CoreCompileInputs.cache
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\MenuSystem\obj\Debug\netstandard2.1\MenuSystem.dll
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\MenuSystem\obj\Debug\netstandard2.1\MenuSystem.pdb
