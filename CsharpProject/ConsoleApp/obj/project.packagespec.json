@@ -15,6 +15,12 @@
     "frameworks": {
       "netcoreapp3.1": {
         "projectReferences": {
+          "C:\\Users\\Jan\\RiderProjects\\icd0008-2020f\\CsharpProject\\GameBrain\\GameBrain.csproj": {
+            "projectPath": "C:\\Users\\Jan\\RiderProjects\\icd0008-2020f\\CsharpProject\\GameBrain\\GameBrain.csproj"
+          },
+          "C:\\Users\\Jan\\RiderProjects\\icd0008-2020f\\CsharpProject\\GameConsoleUI\\GameConsoleUI.csproj": {
+            "projectPath": "C:\\Users\\Jan\\RiderProjects\\icd0008-2020f\\CsharpProject\\GameConsoleUI\\GameConsoleUI.csproj"
+          },
           "C:\\Users\\Jan\\RiderProjects\\icd0008-2020f\\CsharpProject\\MenuSystem\\MenuSystem.csproj": {
             "projectPath": "C:\\Users\\Jan\\RiderProjects\\icd0008-2020f\\CsharpProject\\MenuSystem\\MenuSystem.csproj"
           }
