@@ -1,0 +1,12 @@
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\GameConsoleUI\bin\Debug\netstandard2.1\GameConsoleUI.deps.json
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\GameConsoleUI\bin\Debug\netstandard2.1\GameConsoleUI.dll
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\GameConsoleUI\bin\Debug\netstandard2.1\GameConsoleUI.pdb
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\GameConsoleUI\bin\Debug\netstandard2.1\GameBrain.dll
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\GameConsoleUI\bin\Debug\netstandard2.1\GameBrain.pdb
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\GameConsoleUI\obj\Debug\netstandard2.1\GameConsoleUI.csprojAssemblyReference.cache
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\GameConsoleUI\obj\Debug\netstandard2.1\GameConsoleUI.AssemblyInfoInputs.cache
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\GameConsoleUI\obj\Debug\netstandard2.1\GameConsoleUI.AssemblyInfo.cs
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\GameConsoleUI\obj\Debug\netstandard2.1\GameConsoleUI.csproj.CoreCompileInputs.cache
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\GameConsoleUI\obj\Debug\netstandard2.1\GameConsoleUI.csproj.CopyComplete
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\GameConsoleUI\obj\Debug\netstandard2.1\GameConsoleUI.dll
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\GameConsoleUI\obj\Debug\netstandard2.1\GameConsoleUI.pdb

@@ -18,6 +18,31 @@
         <e p="Program.cs" t="Include" />
       </e>
       <e p="CsharpProject.sln" t="IncludeFlat" />
+      <e p="GameBrain" t="IncludeRecursive">
+        <e p="Battleships.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CellState.cs" t="Include" />
+        <e p="GameBrain.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.1" t="Include">
+              <e p="GameBrain.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="GameConsoleUI" t="IncludeRecursive">
+        <e p="BattleshipsConsoleUI.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="GameConsoleUI.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.1" t="Include">
+              <e p="GameConsoleUI.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
       <e p="MenuSystem" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Menu.cs" t="Include" />

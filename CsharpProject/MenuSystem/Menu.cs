@@ -55,12 +55,12 @@ namespace MenuSystem
                         Console.WriteLine("X) eXit");
                         break;
                     case MenuLevel.Level1: 
-                        Console.WriteLine("M) return to Main");
+                        Console.WriteLine("M) Return to Main");
                         Console.WriteLine("X) eXit");
                         break;
                     case MenuLevel.Level2Plus: 
                         Console.WriteLine("R) Return to previous");
-                        Console.WriteLine("M) return to Main");
+                        Console.WriteLine("M) Return to Main");
                         Console.WriteLine("X) eXit");
                         break;
                     default:

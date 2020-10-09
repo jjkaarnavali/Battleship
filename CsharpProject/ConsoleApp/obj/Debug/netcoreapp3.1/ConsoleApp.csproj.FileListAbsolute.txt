@@ -14,3 +14,7 @@ C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\ConsoleApp\obj\Debug\netc
 C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.dll
 C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.pdb
 C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.genruntimeconfig.cache
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\ConsoleApp\bin\Debug\netcoreapp3.1\GameBrain.dll
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\ConsoleApp\bin\Debug\netcoreapp3.1\GameConsoleUI.dll
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\ConsoleApp\bin\Debug\netcoreapp3.1\GameBrain.pdb
+C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\ConsoleApp\bin\Debug\netcoreapp3.1\GameConsoleUI.pdb
