@@ -5,8 +5,16 @@ namespace GameConsoleUI
 {
     public static class BattleshipsConsoleUI
     {
-        public static void DrawBoard(CellState[,] board)
+        public static void DrawBoard(CellState[,] board, int p)
         {
+            if (p == 1)
+            {
+                Console.WriteLine("Player 1's board");
+            }
+            if (p == 2)
+            {
+                Console.WriteLine("Player 2's board");
+            }
             var width = board.GetUpperBound(0) + 1;
             var height = board.GetUpperBound(1) + 1;
             for (int colIndex = 0; colIndex < width; colIndex++)

@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MenuSystem
+
+ namespace MenuSystem
 {
     public enum MenuLevel
     {
         Level0,
         Level1,
-        Level2Plus 
+        Level2Plus,
     }
 
     public class Menu
@@ -69,6 +70,7 @@ namespace MenuSystem
                 Console.Write(">");
                 
                 userChoice = Console.ReadLine()?.ToLower().Trim() ?? "";
+
                 
                 
                
@@ -85,6 +87,8 @@ namespace MenuSystem
                     }
                     
                 }
+
+               
 
                 if (_menuLevel == MenuLevel.Level0 && userChoice == "r")
                 {

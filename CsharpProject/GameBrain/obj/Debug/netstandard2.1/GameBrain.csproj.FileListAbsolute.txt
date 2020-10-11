@@ -1,9 +1,0 @@
-C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\GameBrain\bin\Debug\netstandard2.1\GameBrain.deps.json
-C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\GameBrain\bin\Debug\netstandard2.1\GameBrain.dll
-C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\GameBrain\bin\Debug\netstandard2.1\GameBrain.pdb
-C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\GameBrain\obj\Debug\netstandard2.1\GameBrain.csprojAssemblyReference.cache
-C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\GameBrain\obj\Debug\netstandard2.1\GameBrain.AssemblyInfoInputs.cache
-C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\GameBrain\obj\Debug\netstandard2.1\GameBrain.AssemblyInfo.cs
-C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\GameBrain\obj\Debug\netstandard2.1\GameBrain.csproj.CoreCompileInputs.cache
-C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\GameBrain\obj\Debug\netstandard2.1\GameBrain.dll
-C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\GameBrain\obj\Debug\netstandard2.1\GameBrain.pdb

@@ -23,9 +23,97 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dead7b3-3e6b-45d9-9e9a-34249314c623" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/obj/Debug/netcoreapp3.1/ConsoleApp.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/obj/Debug/netcoreapp3.1/ConsoleApp.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameBrain/obj/Debug/netstandard2.1/GameBrain.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GameBrain/obj/Debug/netstandard2.1/GameBrain.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameConsoleUI/obj/Debug/netstandard2.1/GameConsoleUI.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GameConsoleUI/obj/Debug/netstandard2.1/GameConsoleUI.csprojAssemblyReference.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameBrain/GameState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/bin/Debug/netcoreapp3.1/ConsoleApp.deps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/bin/Debug/netcoreapp3.1/ConsoleApp.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/bin/Debug/netcoreapp3.1/ConsoleApp.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/bin/Debug/netcoreapp3.1/ConsoleApp.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/bin/Debug/netcoreapp3.1/ConsoleApp.runtimeconfig.dev.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/bin/Debug/netcoreapp3.1/ConsoleApp.runtimeconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/bin/Debug/netcoreapp3.1/GameBrain.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/bin/Debug/netcoreapp3.1/GameBrain.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/bin/Debug/netcoreapp3.1/GameConsoleUI.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/bin/Debug/netcoreapp3.1/GameConsoleUI.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/bin/Debug/netcoreapp3.1/MenuSystem.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/bin/Debug/netcoreapp3.1/MenuSystem.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/obj/ConsoleApp.csproj.nuget.dgspec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/obj/ConsoleApp.csproj.nuget.g.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/obj/ConsoleApp.csproj.nuget.g.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/obj/Debug/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/obj/Debug/netcoreapp3.1/ConsoleApp.AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/obj/Debug/netcoreapp3.1/ConsoleApp.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/obj/Debug/netcoreapp3.1/ConsoleApp.assets.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/obj/Debug/netcoreapp3.1/ConsoleApp.csproj.CopyComplete" beforeDir="false" afterPath="$PROJECT_DIR$/Directory.Build.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/obj/Debug/netcoreapp3.1/ConsoleApp.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/obj/Debug/netcoreapp3.1/ConsoleApp.csproj.FileListAbsolute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/obj/Debug/netcoreapp3.1/ConsoleApp.csprojAssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/obj/Debug/netcoreapp3.1/ConsoleApp.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/obj/Debug/netcoreapp3.1/ConsoleApp.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/obj/Debug/netcoreapp3.1/ConsoleApp.genruntimeconfig.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/obj/Debug/netcoreapp3.1/ConsoleApp.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/obj/project.assets.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/obj/project.nuget.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/obj/project.packagespec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/obj/rider.project.restore.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/Battleships.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameBrain/Battleships.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/CellState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameBrain/CellState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/GameBrain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GameBrain/GameBrain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/bin/Debug/netstandard2.1/GameBrain.deps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/bin/Debug/netstandard2.1/GameBrain.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/bin/Debug/netstandard2.1/GameBrain.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/obj/Debug/netstandard2.1/.NETStandard,Version=v2.1.AssemblyAttributes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/obj/Debug/netstandard2.1/GameBrain.AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/obj/Debug/netstandard2.1/GameBrain.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/obj/Debug/netstandard2.1/GameBrain.assets.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/obj/Debug/netstandard2.1/GameBrain.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/obj/Debug/netstandard2.1/GameBrain.csproj.FileListAbsolute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/obj/Debug/netstandard2.1/GameBrain.csprojAssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/obj/Debug/netstandard2.1/GameBrain.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/obj/Debug/netstandard2.1/GameBrain.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/obj/GameBrain.csproj.nuget.dgspec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/obj/GameBrain.csproj.nuget.g.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/obj/GameBrain.csproj.nuget.g.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/obj/project.assets.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/obj/project.nuget.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/obj/project.packagespec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/obj/rider.project.restore.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/BattleshipsConsoleUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameConsoleUI/BattleshipsConsoleUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/bin/Debug/netstandard2.1/GameBrain.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/bin/Debug/netstandard2.1/GameBrain.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/bin/Debug/netstandard2.1/GameConsoleUI.deps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/bin/Debug/netstandard2.1/GameConsoleUI.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/bin/Debug/netstandard2.1/GameConsoleUI.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/obj/Debug/netstandard2.1/.NETStandard,Version=v2.1.AssemblyAttributes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/obj/Debug/netstandard2.1/GameConsoleUI.AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/obj/Debug/netstandard2.1/GameConsoleUI.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/obj/Debug/netstandard2.1/GameConsoleUI.assets.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/obj/Debug/netstandard2.1/GameConsoleUI.csproj.CopyComplete" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/obj/Debug/netstandard2.1/GameConsoleUI.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/obj/Debug/netstandard2.1/GameConsoleUI.csproj.FileListAbsolute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/obj/Debug/netstandard2.1/GameConsoleUI.csprojAssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/obj/Debug/netstandard2.1/GameConsoleUI.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/obj/Debug/netstandard2.1/GameConsoleUI.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/obj/GameConsoleUI.csproj.nuget.dgspec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/obj/GameConsoleUI.csproj.nuget.g.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/obj/GameConsoleUI.csproj.nuget.g.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/obj/project.assets.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/obj/project.nuget.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/obj/project.packagespec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameConsoleUI/obj/rider.project.restore.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/Menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/Menu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/bin/Debug/netstandard2.1/MenuSystem.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/bin/Debug/netstandard2.1/MenuSystem.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/bin/Debug/netstandard2.1/MenuSystem.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/bin/Debug/netstandard2.1/MenuSystem.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/MenuSystem.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/MenuSystem.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,20 +123,31 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/GameBrain/CellState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MenuSystem/Menu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GameBrain/Battleships.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MenuSystem/MenuItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ConsoleApp/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GameConsoleUI/BattleshipsConsoleUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GameBrain/GameState.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/MenuSystem/Class1.cs" />
-        <option value="$PROJECT_DIR$/MenuSystem/MenuItem.cs" />
         <option value="$PROJECT_DIR$/GameBrain/Class1.cs" />
         <option value="$PROJECT_DIR$/GameConsoleUI/Class1.cs" />
         <option value="$PROJECT_DIR$/GameConsoleUI/ConsuleUI.cs" />
         <option value="$PROJECT_DIR$/GameConsoleUI/BattleshipsConsuleUI.cs" />
-        <option value="$PROJECT_DIR$/MenuSystem/Menu.cs" />
         <option value="$PROJECT_DIR$/GameBrain/CellState.cs" />
         <option value="$PROJECT_DIR$/GameConsoleUI/BattleshipsConsoleUI.cs" />
-        <option value="$PROJECT_DIR$/GameBrain/Battleships.cs" />
+        <option value="$PROJECT_DIR$/MenuSystem/MenuItem.cs" />
+        <option value="$PROJECT_DIR$/MenuSystem/Menu.cs" />
+        <option value="$PROJECT_DIR$/Directory.Build.props" />
+        <option value="$PROJECT_DIR$/GameBrain/GameState.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp/Program.cs" />
+        <option value="$PROJECT_DIR$/GameBrain/Battleships.cs" />
       </list>
     </option>
   </component>
@@ -61,6 +160,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="GitIgnore" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
@@ -95,6 +195,10 @@
       <workItem from="1601397470740" duration="29000" />
       <workItem from="1601906868536" duration="739000" />
       <workItem from="1602244424951" duration="12667000" />
+      <workItem from="1602334360575" duration="3883000" />
+      <workItem from="1602411917295" duration="11941000" />
+      <workItem from="1602424723596" duration="1960000" />
+      <workItem from="1602426993746" duration="2912000" />
     </task>
     <servers />
   </component>
@@ -119,25 +223,29 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1131" height="177" key="GridCell.Tab.0.bottom" timestamp="1602256755642">
+    <state width="1453" height="332" key="GridCell.Tab.0.bottom" timestamp="1602428856016">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1131" height="177" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602256755642" />
-    <state width="1131" height="177" key="GridCell.Tab.0.center" timestamp="1602256755642">
+    <state width="1453" height="332" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602428856016" />
+    <state width="1453" height="332" key="GridCell.Tab.0.center" timestamp="1602428856016">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1131" height="177" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602256755642" />
-    <state width="1131" height="177" key="GridCell.Tab.0.left" timestamp="1602256755642">
+    <state width="1453" height="332" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602428856016" />
+    <state width="1453" height="332" key="GridCell.Tab.0.left" timestamp="1602428856015">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1131" height="177" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602256755642" />
-    <state width="1131" height="177" key="GridCell.Tab.0.right" timestamp="1602256755642">
+    <state width="1453" height="332" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602428856015" />
+    <state width="1453" height="332" key="GridCell.Tab.0.right" timestamp="1602428856016">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1131" height="177" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602256755642" />
+    <state width="1453" height="332" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602428856016" />
     <state x="753" y="246" key="Rider.ProjectTemplateDialog.Size" timestamp="1602246061321">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="753" y="246" key="Rider.ProjectTemplateDialog.Size/0.0.1920.1040@0.0.1920.1040" timestamp="1602246061321" />
+    <state x="686" y="287" width="672" height="678" key="search.everywhere.popup" timestamp="1602424957164">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="686" y="287" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602424957164" />
   </component>
 </project>
