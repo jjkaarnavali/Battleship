@@ -25,14 +25,7 @@
     <list default="true" id="8dead7b3-3e6b-45d9-9e9a-34249314c623" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameBrain/Battleships.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameBrain/Battleships.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameConsoleUI/BattleshipsConsoleUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameConsoleUI/BattleshipsConsoleUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/Menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/Menu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/bin/Debug/netstandard2.1/MenuSystem.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/bin/Debug/netstandard2.1/MenuSystem.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/bin/Debug/netstandard2.1/MenuSystem.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/bin/Debug/netstandard2.1/MenuSystem.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +116,8 @@
       <workItem from="1602424723596" duration="1960000" />
       <workItem from="1602426993746" duration="3061000" />
       <workItem from="1602432908657" duration="8805000" />
-      <workItem from="1602670692744" duration="4389000" />
+      <workItem from="1602670692744" duration="4609000" />
+      <workItem from="1602675639686" duration="5443000" />
     </task>
     <servers />
   </component>
@@ -148,22 +142,22 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1453" height="357" key="GridCell.Tab.0.bottom" timestamp="1602675034979">
+    <state width="1453" height="286" key="GridCell.Tab.0.bottom" timestamp="1602680975617">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="357" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602675034979" />
-    <state width="1453" height="357" key="GridCell.Tab.0.center" timestamp="1602675034979">
+    <state width="1453" height="286" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602680975617" />
+    <state width="1453" height="286" key="GridCell.Tab.0.center" timestamp="1602680975617">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="357" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602675034979" />
-    <state width="1453" height="357" key="GridCell.Tab.0.left" timestamp="1602675034979">
+    <state width="1453" height="286" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602680975617" />
+    <state width="1453" height="286" key="GridCell.Tab.0.left" timestamp="1602680975617">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="357" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602675034979" />
-    <state width="1453" height="357" key="GridCell.Tab.0.right" timestamp="1602675034979">
+    <state width="1453" height="286" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602680975617" />
+    <state width="1453" height="286" key="GridCell.Tab.0.right" timestamp="1602680975617">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="357" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602675034979" />
+    <state width="1453" height="286" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602680975617" />
     <state width="1453" height="252" key="GridCell.Tab.1.bottom" timestamp="1602443952183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

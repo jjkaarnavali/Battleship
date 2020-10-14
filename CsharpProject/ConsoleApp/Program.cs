@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Xml.Schema;
 using GameBrain;
 using GameConsoleUI;
 using MenuSystem;
@@ -76,9 +77,7 @@ namespace ConsoleApp
                 if (userChoice == "p")
                 {
                     GameAction(game);
-                    Console.Clear();
                     BattleshipsConsoleUI.SwitchPlayer(game);
-                    Console.ReadKey();
                 }
                 if (userChoice == "e" || userChoice == "x")
                 {
@@ -92,36 +91,64 @@ namespace ConsoleApp
 
         public static (int x, int y) GetShotCoordinates(Battleships game)
         {
-            Console.WriteLine("Upper left corner is (1,1)!");
-            Console.Write($"Give X (1-{game.GetP1Board().GetLength(0)})" +
-                          $" and Y (1-{game.GetP1Board().GetLength(1)})" +
-                          $" coordinates of the shot like this (X,Y): ");
+            
+           
             var coords = Console.ReadLine();
-            while (string.IsNullOrWhiteSpace(coords))
+            while (string.IsNullOrWhiteSpace(coords) || !coords.Contains(","))
             {
-                coords = "";
-                Console.WriteLine("You have to enter coordinates for your shot! Try again: ");
-                coords = Console.ReadLine();
 
+                if (string.IsNullOrWhiteSpace(coords))
+                {
+
+                    Console.WriteLine("You have to enter coordinates for your shot! Try again: ");
+                    coords = Console.ReadLine();
+
+
+                }
+                else if (!coords.Contains(","))
+                {
+                    Console.WriteLine("Coordinates have to be separated by a coma! Try again: ");
+                    coords = Console.ReadLine();
+
+                }
             }
-            while (!coords.Contains(","))
-            {
-                coords = "";
-                Console.WriteLine("Coordinates have to be separated by a coma! Try again: ");
-                coords = Console.ReadLine();
 
+            var tmp = coords!.Split(",");
+            var intX = 0;
+            var intY = 0;
+            bool xIsNr = int.TryParse(tmp[0].Trim(), out intX);
+            bool yIsNr = int.TryParse(tmp[1].Trim(), out intY);
+            if (!xIsNr || !yIsNr)
+            {
+                Console.WriteLine("Coordinates have to numbers! Try again: ");
+                return GetShotCoordinates(game);
             }
 
-            var userValue = coords!.Split(",");
-            while (int.Parse(userValue[0].Trim()) > game.GetP1Board().GetLength(0) ||
-                   int.Parse(userValue[1].Trim()) > game.GetP1Board().GetLength(1))
+            
+            
+            if (int.Parse(tmp[0].Trim()) > game.GetP1Board().GetLength(0) ||
+                   int.Parse(tmp[1].Trim()) > game.GetP1Board().GetLength(1))
             {
-                coords = "";
                 Console.WriteLine($"Given coordinates are out of range! Max coords are" +
                                   $" {game.GetP1Board().GetLength(0)},{game.GetP1Board().GetLength(0)}" +
                                   $" Try again: ");
-                coords = Console.ReadLine();
+                return GetShotCoordinates(game);
             }
+            /*else if ( coords.Contains(",") && !string.IsNullOrWhiteSpace(coords))
+                {
+                    if (int.Parse(tmp[0].Trim()) > game.GetP1Board().GetLength(0) ||
+                        int.Parse(tmp[1].Trim()) > game.GetP1Board().GetLength(1))
+                    {
+                        Console.WriteLine($"Given coordinates are out of range! Max coords are" +
+                                          $" {game.GetP1Board().GetLength(0)},{game.GetP1Board().GetLength(0)}" +
+                                          $" Try again: ");
+                        coords = Console.ReadLine();
+                        tmp = coords!.Split(",");*/
+            
+            var userValue = coords!.Split(",");
+            
+
+            
             
 
             var x = int.Parse(userValue[0].Trim()) - 1;
@@ -131,7 +158,7 @@ namespace ConsoleApp
             
             return (x, y);
         }
-
+        
         static string LoadGameAction(Battleships game)
         {
             var files = System.IO.Directory.EnumerateFiles(".", "*.json").ToList();
@@ -173,6 +200,10 @@ namespace ConsoleApp
 
         static void GameAction(Battleships game)
         {
+            Console.WriteLine("Upper left corner is (1,1)!");
+            Console.Write($"Give X (1-{game.GetP1Board().GetLength(0)})" +
+                          $" and Y (1-{game.GetP1Board().GetLength(1)})" +
+                          $" coordinates of the shot like this (X,Y): ");
             var (x, y) = GetShotCoordinates(game);
             game.TakeAShot(x, y, game.NextMoveByP1);
             BattleshipsConsoleUI.DrawBoard(game.GetP1Board(), 1); 
