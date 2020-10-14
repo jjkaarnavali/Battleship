@@ -55,6 +55,11 @@ namespace GameConsoleUI
             }
         }
 
+        public static void SwitchPlayer(Battleships game)
+        {
+            Console.WriteLine($"Player {(game.NextMoveByP1 ? "1" : "2")} press any key:");
+        }
+
         public static string CellString(CellState cellState)
         {
             switch (cellState)

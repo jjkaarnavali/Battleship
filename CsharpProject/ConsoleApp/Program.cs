@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel.Design;
 using System.Linq;
 using GameBrain;
 using GameConsoleUI;
@@ -41,55 +40,93 @@ namespace ConsoleApp
             Console.WriteLine("Not implemented yet!");
             return "";
         }
-        
+
         static string Battleships()
         {
             var game = new Battleships();
-            BattleshipsConsoleUI.DrawBoard(game.GetP1Board(), 1); 
-            BattleshipsConsoleUI.DrawBoard(game.GetP2Board(), 2);
+            var over = false;
             
-            var menu = new Menu(MenuLevel.Level0);
-            menu.AddMenuItem(new MenuItem($"Player {(game.NextMoveByP1? "1" : "2")} make a move",
-                userChoice: "p",
-                () =>
+            do
+            {
+
+                BattleshipsConsoleUI.DrawBoard(game.GetP1Board(), 1);
+                BattleshipsConsoleUI.DrawBoard(game.GetP2Board(), 2);
+
+                var menu = new Menu(MenuLevel.Level0);
+                menu.AddMenuItem(new MenuItem("Save game",
+                    userChoice: "s", () => { return SaveGameAction(game); })
+                );
+                menu.AddMenuItem(new MenuItem("Load game",
+                    userChoice: "l", () => { return LoadGameAction(game); })
+                );
+
+                menu.AddMenuItem(new MenuItem("Exit game",
+                    userChoice: "e",
+                    DefaulMenuAction));
+                
+                menu.AddMenuItem(new MenuItem($"Player {(game.NextMoveByP1 ? "1" : "2")} make a move",
+                    userChoice: "p",
+                    DefaulMenuAction));
+
+                
+               
+
+                var userChoice = menu.RunMenu();
+
+                if (userChoice == "p")
                 {
-                    var (x, y) = GetShotCoordinates(game);
-                    game.TakeAShot(x, y, game.NextMoveByP1);
-                    BattleshipsConsoleUI.DrawBoard(game.GetP1Board(), 1); 
-                    BattleshipsConsoleUI.DrawBoard(game.GetP2Board(), 2);
-                    return "";
-                })
-            );
-            /*var (x, y) = GetShotCoordinates(game);
-                    game.TakeAShot(x, y, game.NextMoveByP1);
-                    BattleshipsConsoleUI.DrawBoard(game.GetP1Board(), 1); 
-                    BattleshipsConsoleUI.DrawBoard(game.GetP2Board(), 2);
-                    return "";
-                    */
-
-            menu.AddMenuItem(new MenuItem("Save game",
-                userChoice: "s", () => { return SaveGameAction(game); })
-            );
-            menu.AddMenuItem(new MenuItem("Load game",
-                userChoice: "l", () => { return LoadGameAction(game); })
-            );
+                    GameAction(game);
+                    Console.Clear();
+                    BattleshipsConsoleUI.SwitchPlayer(game);
+                    Console.ReadKey();
+                }
+                if (userChoice == "e" || userChoice == "x")
+                {
+                    over = true;
+                }
+                
+            } while (over == false);
             
-            menu.AddMenuItem(new MenuItem("Exit game",
-                userChoice: "e",
-                DefaulMenuAction));
-
-            var userChoice = menu.RunMenu();
-            
-            
-            return userChoice;
+            return "x";
         }
-        static (int x, int y) GetShotCoordinates(Battleships game)
+
+        public static (int x, int y) GetShotCoordinates(Battleships game)
         {
             Console.WriteLine("Upper left corner is (1,1)!");
-            Console.Write("Give X (1-10) and Y (1-10) coordinates of the shot like this (X,Y): ");
-            var userValue = Console.ReadLine().Split(",");
+            Console.Write($"Give X (1-{game.GetP1Board().GetLength(0)})" +
+                          $" and Y (1-{game.GetP1Board().GetLength(1)})" +
+                          $" coordinates of the shot like this (X,Y): ");
+            var coords = Console.ReadLine();
+            while (string.IsNullOrWhiteSpace(coords))
+            {
+                coords = "";
+                Console.WriteLine("You have to enter coordinates for your shot! Try again: ");
+                coords = Console.ReadLine();
+
+            }
+            while (!coords.Contains(","))
+            {
+                coords = "";
+                Console.WriteLine("Coordinates have to be separated by a coma! Try again: ");
+                coords = Console.ReadLine();
+
+            }
+
+            var userValue = coords!.Split(",");
+            while (int.Parse(userValue[0].Trim()) > game.GetP1Board().GetLength(0) ||
+                   int.Parse(userValue[1].Trim()) > game.GetP1Board().GetLength(1))
+            {
+                coords = "";
+                Console.WriteLine($"Given coordinates are out of range! Max coords are" +
+                                  $" {game.GetP1Board().GetLength(0)},{game.GetP1Board().GetLength(0)}" +
+                                  $" Try again: ");
+                coords = Console.ReadLine();
+            }
+            
+
             var x = int.Parse(userValue[0].Trim()) - 1;
             var y = int.Parse(userValue[1].Trim()) - 1;
+            
                     
             
             return (x, y);
@@ -123,11 +160,24 @@ namespace ConsoleApp
             {
                 fileName = defaultName;
             }
+            else
+            {
+                fileName = fileName + ".json";
+            }
 
             var serializedGame = game.GetSerializedGameState();
-            //Console.WriteLine(serializedGame);
+            
             System.IO.File.WriteAllText(fileName, serializedGame);
             return "";
+        }
+
+        static void GameAction(Battleships game)
+        {
+            var (x, y) = GetShotCoordinates(game);
+            game.TakeAShot(x, y, game.NextMoveByP1);
+            BattleshipsConsoleUI.DrawBoard(game.GetP1Board(), 1); 
+            BattleshipsConsoleUI.DrawBoard(game.GetP2Board(), 2);
+            
         }
 
     }

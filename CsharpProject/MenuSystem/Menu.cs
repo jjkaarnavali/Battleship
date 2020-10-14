@@ -72,11 +72,14 @@ using System.Linq;
                 userChoice = Console.ReadLine()?.ToLower().Trim() ?? "";
 
                 
-                
                
                 // Is it a reserved keyword
                 if (!reservedActions.Contains(userChoice))
                 {
+                    if (userChoice == "p")
+                    {
+                        return userChoice;
+                    }
                     // No it wasn't, try to find keyword in MenuItems
                     if (MenuItems.TryGetValue(userChoice, out var userMenuItem))
                     {
