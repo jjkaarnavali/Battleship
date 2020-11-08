@@ -4,6 +4,10 @@ using System.Xml.Schema;
 using GameBrain;
 using GameConsoleUI;
 using MenuSystem;
+using DAL;
+using Domain;
+using Microsoft.EntityFrameworkCore;
+
 
 
 namespace ConsoleApp
@@ -12,6 +16,58 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
+            
+            var dbOptions = new DbContextOptionsBuilder<ApplicationDbContext>().UseSqlServer(
+                @"
+                    Server=barrel.itcollege.ee,1533;
+                    User Id=student;
+                    Password=Student.Bad.password.0;
+                    Database=jakaar_battleship_db;
+                    MultipleActiveResultSets=true;
+                    "
+            ).Options;
+            
+            using var dbCtx = new ApplicationDbContext(dbOptions);
+            Console.WriteLine("Deleting DB");
+            dbCtx.Database.EnsureDeleted();
+            Console.WriteLine("Migrating DB");
+            dbCtx.Database.Migrate();
+            Console.WriteLine("Adding data to DB");
+            
+            
+            var playerA = new Player()
+            {
+                Name = "A"
+            };
+            
+            var playerB = new Player()
+            {
+                Name = "B"
+            };
+            var game = new Game()
+            {
+                Description = "A vs B"
+            };
+
+            game.PlayerA = playerA;
+            game.PlayerB = playerB;
+            //playerA.Game = game;
+            //playerB.Game = game;
+
+            
+            var gameOption = new GameOption()
+            {
+                Name = "Standard 10x10"
+            };
+            game.GameOption = gameOption;
+            
+            dbCtx.Games.Add(game);
+            dbCtx.SaveChanges();
+
+            playerA.GameId = game.GameId;
+            playerB.GameId = game.GameId;
+            dbCtx.SaveChanges();
+            
             Console.WriteLine("===========> BATTLESHIPS <===========");
             var menuD = new Menu(MenuLevel.Level2Plus);
             menuD.AddMenuItem(new MenuItem("Sub 5", "1", DefaulMenuAction));
@@ -44,28 +100,31 @@ namespace ConsoleApp
 
         static string Battleships()
         {
-            var game = new Battleships();
+            
+
+            
+            var battleshipGame = new Battleships();
             var over = false;
             
             do
             {
 
-                BattleshipsConsoleUI.DrawBoard(game.GetP1Board(), 1);
-                BattleshipsConsoleUI.DrawBoard(game.GetP2Board(), 2);
+                BattleshipsConsoleUI.DrawBoard(battleshipGame.GetP1Board(), 1);
+                BattleshipsConsoleUI.DrawBoard(battleshipGame.GetP2Board(), 2);
 
                 var menu = new Menu(MenuLevel.Level0);
                 menu.AddMenuItem(new MenuItem("Save game",
-                    userChoice: "s", () => { return SaveGameAction(game); })
+                    userChoice: "s", () => { return SaveGameAction(battleshipGame); })
                 );
                 menu.AddMenuItem(new MenuItem("Load game",
-                    userChoice: "l", () => { return LoadGameAction(game); })
+                    userChoice: "l", () => { return LoadGameAction(battleshipGame); })
                 );
 
                 menu.AddMenuItem(new MenuItem("Exit game",
                     userChoice: "e",
                     DefaulMenuAction));
                 
-                menu.AddMenuItem(new MenuItem($"Player {(game.NextMoveByP1 ? "1" : "2")} make a move",
+                menu.AddMenuItem(new MenuItem($"Player {(battleshipGame.NextMoveByP1 ? "1" : "2")} make a move",
                     userChoice: "p",
                     DefaulMenuAction));
 
@@ -76,8 +135,8 @@ namespace ConsoleApp
 
                 if (userChoice == "p")
                 {
-                    GameAction(game);
-                    BattleshipsConsoleUI.SwitchPlayer(game);
+                    GameAction(battleshipGame);
+                    BattleshipsConsoleUI.SwitchPlayer(battleshipGame);
                 }
                 if (userChoice == "e" || userChoice == "x")
                 {
@@ -134,16 +193,7 @@ namespace ConsoleApp
                                   $" Try again: ");
                 return GetShotCoordinates(game);
             }
-            /*else if ( coords.Contains(",") && !string.IsNullOrWhiteSpace(coords))
-                {
-                    if (int.Parse(tmp[0].Trim()) > game.GetP1Board().GetLength(0) ||
-                        int.Parse(tmp[1].Trim()) > game.GetP1Board().GetLength(1))
-                    {
-                        Console.WriteLine($"Given coordinates are out of range! Max coords are" +
-                                          $" {game.GetP1Board().GetLength(0)},{game.GetP1Board().GetLength(0)}" +
-                                          $" Try again: ");
-                        coords = Console.ReadLine();
-                        tmp = coords!.Split(",");*/
+            
             
             var userValue = coords!.Split(",");
             

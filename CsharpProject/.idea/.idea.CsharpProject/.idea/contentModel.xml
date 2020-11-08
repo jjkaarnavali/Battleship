@@ -18,6 +18,50 @@
         <e p="Program.cs" t="Include" />
       </e>
       <e p="CsharpProject.sln" t="IncludeFlat" />
+      <e p="DAL" t="IncludeRecursive">
+        <e p="ApplicationDbContext.cs" t="Include" />
+        <e p="ApplicationDbCOntextFactory.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DAL.csproj" t="IncludeRecursive" />
+        <e p="Migrations" t="Include">
+          <e p="20201108135056_InitialMigration.cs" t="Include" />
+          <e p="20201108135056_InitialMigration.Designer.cs" t="Include" />
+          <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.1" t="Include">
+              <e p="DAL.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Directory.Build.props" t="Include" />
+      <e p="Domain" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="BoardSquareState.cs" t="Include" />
+        <e p="BoardState.cs" t="Include" />
+        <e p="Boat.cs" t="Include" />
+        <e p="Domain.csproj" t="IncludeRecursive" />
+        <e p="Enums" t="Include">
+          <e p="EBoatsCanTouch.cs" t="Include" />
+          <e p="ENextMoveAfterHit.cs" t="Include" />
+          <e p="EPlayerType.cs" t="Include" />
+        </e>
+        <e p="Game.cs" t="Include" />
+        <e p="GameBoat.cs" t="Include" />
+        <e p="GameOption.cs" t="Include" />
+        <e p="GameOptionBoat.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.1" t="Include">
+              <e p="Domain.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Player.cs" t="Include" />
+        <e p="PlayerBoardState.cs" t="Include" />
+      </e>
       <e p="GameBrain" t="IncludeRecursive">
         <e p="Battleships.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
@@ -58,6 +102,7 @@
         </e>
       </e>
       <e p="packages" t="ExcludeRecursive" />
+      <e p="SolutionItems" t="Include" />
     </e>
   </component>
 </project>

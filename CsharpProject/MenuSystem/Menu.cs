@@ -80,6 +80,11 @@ using System.Linq;
                     {
                         return userChoice;
                     }
+                    if (userChoice == "e")
+                    {
+                        userChoice = "";
+                        break;
+                    }
                     // No it wasn't, try to find keyword in MenuItems
                     if (MenuItems.TryGetValue(userChoice, out var userMenuItem))
                     {

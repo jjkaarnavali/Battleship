@@ -23,9 +23,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dead7b3-3e6b-45d9-9e9a-34249314c623" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/DAL/ApplicationDbCOntextFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/BoardState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Boat.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Enums/EBoatsCanTouch.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Enums/ENextMoveAfterHit.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Enums/EPlayerType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Game.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/GameBoat.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/GameOption.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/GameOptionBoat.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Player.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/PlayerBoardState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/ConsoleApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/ConsoleApp.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameConsoleUI/BattleshipsConsoleUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameConsoleUI/BattleshipsConsoleUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CsharpProject.sln" beforeDir="false" afterPath="$PROJECT_DIR$/CsharpProject.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/Menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/Menu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/bin/Debug/netstandard2.1/MenuSystem.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/bin/Debug/netstandard2.1/MenuSystem.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/bin/Debug/netstandard2.1/MenuSystem.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/bin/Debug/netstandard2.1/MenuSystem.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,14 +57,22 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/GameBrain/CellState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain/PlayerBoardState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MenuSystem/Menu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GameBrain/Battleships.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MenuSystem/MenuItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ConsoleApp/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GameConsoleUI/BattleshipsConsoleUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/A8/Number.Parsing.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GameBrain/CellState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GameBrain/Battleships.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GameConsoleUI/BattleshipsConsoleUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain/BoardState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain/Boat.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain/Game.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain/GameBoat.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain/GameOption.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain/GameOptionBoat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GameBrain/GameState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain/Player.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -58,8 +87,24 @@
         <option value="$PROJECT_DIR$/GameBrain/GameState.cs" />
         <option value="$PROJECT_DIR$/GameBrain/Battleships.cs" />
         <option value="$PROJECT_DIR$/MenuSystem/MenuItem.cs" />
-        <option value="$PROJECT_DIR$/MenuSystem/Menu.cs" />
         <option value="$PROJECT_DIR$/GameConsoleUI/BattleshipsConsoleUI.cs" />
+        <option value="$PROJECT_DIR$/MenuSystem/Menu.cs" />
+        <option value="$PROJECT_DIR$/DAL/Class1.cs" />
+        <option value="$PROJECT_DIR$/Domain/Class1.cs" />
+        <option value="$PROJECT_DIR$/Domain/BoardState.cs" />
+        <option value="$PROJECT_DIR$/Domain/Boat.cs" />
+        <option value="$PROJECT_DIR$/Domain/Game.cs" />
+        <option value="$PROJECT_DIR$/Domain/GameBoat.cs" />
+        <option value="$PROJECT_DIR$/Domain/GameOption.cs" />
+        <option value="$PROJECT_DIR$/Domain/GameOptionBoat.cs" />
+        <option value="$PROJECT_DIR$/Domain/PlayerBoardState.cs" />
+        <option value="$PROJECT_DIR$/CsharpProject.sln" />
+        <option value="$PROJECT_DIR$/DAL/ApplicationDbCOntextFactory.cs" />
+        <option value="$PROJECT_DIR$/Domain/Enums/EBoatsCanTouch.cs" />
+        <option value="$PROJECT_DIR$/Domain/Enums/ENextMoveAfterHit.cs" />
+        <option value="$PROJECT_DIR$/Domain/Enums/EPlayerType.cs" />
+        <option value="$PROJECT_DIR$/DAL/ApplicationDbContext.cs" />
+        <option value="$PROJECT_DIR$/Domain/Player.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp/Program.cs" />
       </list>
     </option>
@@ -117,7 +162,12 @@
       <workItem from="1602426993746" duration="3061000" />
       <workItem from="1602432908657" duration="8805000" />
       <workItem from="1602670692744" duration="4609000" />
-      <workItem from="1602675639686" duration="5443000" />
+      <workItem from="1602675639686" duration="5685000" />
+      <workItem from="1602774305307" duration="310000" />
+      <workItem from="1603390138576" duration="322000" />
+      <workItem from="1603390771954" duration="505000" />
+      <workItem from="1604787504293" duration="72000" />
+      <workItem from="1604832597694" duration="11905000" />
     </task>
     <servers />
   </component>
@@ -142,22 +192,26 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1453" height="286" key="GridCell.Tab.0.bottom" timestamp="1602680975617">
+    <state width="1453" height="357" key="GridCell.Tab.0.bottom" timestamp="1604844396874">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="286" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602680975617" />
-    <state width="1453" height="286" key="GridCell.Tab.0.center" timestamp="1602680975617">
+    <state width="1453" height="357" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604844396874" />
+    <state width="1453" height="270" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
+    <state width="1453" height="357" key="GridCell.Tab.0.center" timestamp="1604844396874">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="286" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602680975617" />
-    <state width="1453" height="286" key="GridCell.Tab.0.left" timestamp="1602680975617">
+    <state width="1453" height="357" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604844396874" />
+    <state width="1453" height="270" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
+    <state width="1453" height="357" key="GridCell.Tab.0.left" timestamp="1604844396874">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="286" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602680975617" />
-    <state width="1453" height="286" key="GridCell.Tab.0.right" timestamp="1602680975617">
+    <state width="1453" height="357" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604844396874" />
+    <state width="1453" height="270" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
+    <state width="1453" height="357" key="GridCell.Tab.0.right" timestamp="1604844396874">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="286" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602680975617" />
+    <state width="1453" height="357" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604844396874" />
+    <state width="1453" height="270" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
     <state width="1453" height="252" key="GridCell.Tab.1.bottom" timestamp="1602443952183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -222,9 +276,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1453" height="252" key="GridCell.Tab.4.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602443952184" />
-    <state x="753" y="246" key="Rider.ProjectTemplateDialog.Size" timestamp="1602246061321">
+    <state x="753" y="246" key="Rider.ProjectTemplateDialog.Size" timestamp="1604832929772">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="753" y="246" key="Rider.ProjectTemplateDialog.Size/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604832929772" />
     <state x="753" y="246" key="Rider.ProjectTemplateDialog.Size/0.0.1920.1040@0.0.1920.1040" timestamp="1602246061321" />
     <state width="756" height="445" key="XDebugger.FullValuePopup" timestamp="1602435961529">
       <screen x="0" y="0" width="1920" height="1040" />
