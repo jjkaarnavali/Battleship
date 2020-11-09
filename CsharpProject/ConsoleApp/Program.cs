@@ -6,6 +6,7 @@ using GameConsoleUI;
 using MenuSystem;
 using DAL;
 using Domain;
+using Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -17,7 +18,7 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             
-            var dbOptions = new DbContextOptionsBuilder<ApplicationDbContext>().UseSqlServer(
+            /*var dbOptions = new DbContextOptionsBuilder<ApplicationDbContext>().UseSqlServer(
                 @"
                     Server=barrel.itcollege.ee,1533;
                     User Id=student;
@@ -60,13 +61,14 @@ namespace ConsoleApp
                 Name = "Standard 10x10"
             };
             game.GameOption = gameOption;
+            game.BoardState = "";
             
             dbCtx.Games.Add(game);
             dbCtx.SaveChanges();
 
             playerA.GameId = game.GameId;
             playerB.GameId = game.GameId;
-            dbCtx.SaveChanges();
+            dbCtx.SaveChanges();*/
             
             Console.WriteLine("===========> BATTLESHIPS <===========");
             var menuD = new Menu(MenuLevel.Level2Plus);
@@ -116,8 +118,14 @@ namespace ConsoleApp
                 menu.AddMenuItem(new MenuItem("Save game",
                     userChoice: "s", () => { return SaveGameAction(battleshipGame); })
                 );
+                menu.AddMenuItem(new MenuItem("Save game to database",
+                    userChoice: "d", () => { return SaveGameActionDB(battleshipGame); })
+                );
                 menu.AddMenuItem(new MenuItem("Load game",
                     userChoice: "l", () => { return LoadGameAction(battleshipGame); })
+                );
+                menu.AddMenuItem(new MenuItem("Load game from DB",
+                    userChoice: "q", () => { return LoadGameActionDB(battleshipGame); })
                 );
 
                 menu.AddMenuItem(new MenuItem("Exit game",
@@ -227,6 +235,52 @@ namespace ConsoleApp
             
             return "";
         }
+        
+        static string LoadGameActionDB(Battleships game)
+        {
+            /*var files = System.IO.Directory.EnumerateFiles(".", "*.json").ToList();
+            for (int i = 0; i < files.Count; i++)
+            {
+                Console.WriteLine($"{i} - {files[i]}");
+            }
+
+            var fileNo = Console.ReadLine();
+            var fileName = files[int.Parse(fileNo!.Trim())];
+            var jsonString = System.IO.File.ReadAllText(fileName);*/
+            var dbOptions = new DbContextOptionsBuilder<ApplicationDbContext>().UseSqlServer(
+                @"
+                    Server=barrel.itcollege.ee,1533;
+                    User Id=student;
+                    Password=Student.Bad.password.0;
+                    Database=jakaar_battleship_db;
+                    MultipleActiveResultSets=true;
+                    "
+            ).Options;
+            
+            using var dbCtx = new ApplicationDbContext(dbOptions);
+
+            var saves = dbCtx.Games.ToList();
+            for (int i = 0; i < saves.Count(); i++)
+            {
+                Console.WriteLine($"{saves[i].GameId} - {saves[i].Description}");
+            }
+
+            var saveId = Console.ReadLine();
+            foreach (var gamee in saves)
+            {
+                if (gamee.GameId.ToString() == saveId)
+                {
+                    var jsonString = gamee.BoardState;
+                    game.SetGameStateFromJsonString(jsonString);
+                }
+            }
+            
+            
+            BattleshipsConsoleUI.DrawBoard(game.GetP1Board(), 1); 
+            BattleshipsConsoleUI.DrawBoard(game.GetP2Board(), 2);
+            
+            return "";
+        }
 
         static string SaveGameAction(Battleships game)
         {
@@ -245,6 +299,114 @@ namespace ConsoleApp
             var serializedGame = game.GetSerializedGameState();
             
             System.IO.File.WriteAllText(fileName, serializedGame);
+            return "";
+        }
+        
+        static string SaveGameActionDB(Battleships game)
+        {
+            var defaultName = "save_" + DateTime.Now.ToString("yyyy-MM-dd");
+            Console.Write($"File name ({defaultName}): ");
+            var saveName = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(saveName))
+            {
+                saveName = defaultName;
+            }
+            
+            var serializedGame = game.GetSerializedGameState();
+            
+            var dbOptions = new DbContextOptionsBuilder<ApplicationDbContext>().UseSqlServer(
+                @"
+                    Server=barrel.itcollege.ee,1533;
+                    User Id=student;
+                    Password=Student.Bad.password.0;
+                    Database=jakaar_battleship_db;
+                    MultipleActiveResultSets=true;
+                    "
+            ).Options;
+            
+            using var dbCtx = new ApplicationDbContext(dbOptions);
+            
+            
+            var playerA = new Player()
+            {
+                Name = "A"
+            };
+            
+            var playerB = new Player()
+            {
+                Name = "B"
+            };
+            var gameSave = new Game()
+            {
+                Description = saveName
+            };
+
+            gameSave.PlayerA = playerA;
+            gameSave.PlayerB = playerB;
+            //playerA.Game = game;
+            //playerB.Game = game;
+
+            var moveBy = "";
+            if (game.NextMoveByP1)
+            {
+                moveBy = "SamePlayer";
+            }
+            else
+            {
+                moveBy = "OtherPlayer";
+            }
+
+            if (moveBy.Equals("SamePlayer"))
+            {
+                var gameOption = new GameOption()
+                {
+                    Name = "Standard 10x10",
+                    BoardWidth = 10,
+                    BoardHeight = 10,
+                    ENextMoveAfterHit = ENextMoveAfterHit.SamePlayer
+                };
+                gameSave.GameOption = gameOption;
+            }
+            else
+            {
+                var gameOption = new GameOption()
+                {
+                    Name = "Standard 10x10",
+                    BoardWidth = 10,
+                    BoardHeight = 10,
+                    ENextMoveAfterHit = ENextMoveAfterHit.OtherPlayer
+                };
+                gameSave.GameOption = gameOption;
+            }
+
+            /*var playerABoardState = new PlayerBoardState()
+            {
+                Player = playerA,
+                BoardState = game.GetSerializedGameState()
+            };
+            
+            var playerBBoardState = new PlayerBoardState()
+            {
+                Player = playerB,
+                CreatedAt = DateTime.Now,
+                BoardState = game.GetSerializedGameState()
+            };*/
+
+
+
+            gameSave.BoardState = game.GetSerializedGameState();
+            dbCtx.Games.Add(gameSave);
+            dbCtx.SaveChanges();
+
+            playerA.GameId = gameSave.GameId;
+            playerB.GameId = gameSave.GameId;
+            dbCtx.SaveChanges();
+
+            //playerABoardState.PlayerId = gameSave.PlayerAId;
+            //playerBBoardState.PlayerId = gameSave.PlayerBId;
+            dbCtx.SaveChanges();
+            
+           
             return "";
         }
 

@@ -22,5 +22,8 @@ namespace Domain
         //[ForeignKey(nameof(PlayerBId))]
         public Player PlayerB { get; set; } = null!;
         
+        // serialized to json
+        public string BoardState { get; set; } = null!;
+        
     }
 }

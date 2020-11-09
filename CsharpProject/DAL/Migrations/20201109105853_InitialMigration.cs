@@ -74,7 +74,8 @@ namespace DAL.Migrations
                     GameOptionId = table.Column<int>(nullable: false),
                     Description = table.Column<string>(maxLength: 512, nullable: false),
                     PlayerAId = table.Column<int>(nullable: false),
-                    PlayerBId = table.Column<int>(nullable: false)
+                    PlayerBId = table.Column<int>(nullable: false),
+                    BoardState = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
