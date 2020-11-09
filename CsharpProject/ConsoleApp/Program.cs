@@ -73,23 +73,38 @@ namespace ConsoleApp
             Console.WriteLine("===========> BATTLESHIPS <===========");
             var menuD = new Menu(MenuLevel.Level2Plus);
             menuD.AddMenuItem(new MenuItem("Sub 5", "1", DefaulMenuAction));
+            menuD.AddMenuItem(new MenuItem("Exit",
+                userChoice: "e",
+                DefaulMenuAction));
             
             var menuC = new Menu(MenuLevel.Level2Plus);
             menuC.AddMenuItem(new MenuItem("Sub 4", "1", menuD.RunMenu));
+            menuC.AddMenuItem(new MenuItem("Exit",
+                userChoice: "e",
+                DefaulMenuAction));
             
             var menuB = new Menu(MenuLevel.Level2Plus);
             menuB.AddMenuItem(new MenuItem("Sub 3", "1", menuC.RunMenu));
+            menuB.AddMenuItem(new MenuItem("Exit",
+                userChoice: "e",
+                DefaulMenuAction));
            
             
             var menuA = new Menu(MenuLevel.Level1);
             menuA.AddMenuItem(new MenuItem("Sub 2", "1", menuB.RunMenu));
             menuA.AddMenuItem(new MenuItem("testing", "2", DefaulMenuAction));
+            menuA.AddMenuItem(new MenuItem("Exit",
+                userChoice: "e",
+                DefaulMenuAction));
             
             var menu = new Menu(MenuLevel.Level0);
             menu.AddMenuItem(new MenuItem("Go to submenu 1", "s", menuA.RunMenu));
             menu.AddMenuItem(new MenuItem("New game human vs human. Pointless.", "1", Battleships));
             menu.AddMenuItem(new MenuItem("New game puny human vs mighty AI", "2", DefaulMenuAction));
             menu.AddMenuItem(new MenuItem("New game mighty AI vs superior AI", "3", DefaulMenuAction));
+            menu.AddMenuItem(new MenuItem("Exit",
+                userChoice: "e",
+                DefaulMenuAction));
             
             menu.RunMenu();
         }
@@ -114,7 +129,7 @@ namespace ConsoleApp
                 BattleshipsConsoleUI.DrawBoard(battleshipGame.GetP1Board(), 1);
                 BattleshipsConsoleUI.DrawBoard(battleshipGame.GetP2Board(), 2);
 
-                var menu = new Menu(MenuLevel.Level0);
+                var menu = new Menu(MenuLevel.Custom);
                 menu.AddMenuItem(new MenuItem("Save game",
                     userChoice: "s", () => { return SaveGameAction(battleshipGame); })
                 );
@@ -127,14 +142,14 @@ namespace ConsoleApp
                 menu.AddMenuItem(new MenuItem("Load game from DB",
                     userChoice: "q", () => { return LoadGameActionDB(battleshipGame); })
                 );
-
+                menu.AddMenuItem(new MenuItem($"Player {(battleshipGame.NextMoveByP1 ? "1" : "2")} make a move",
+                    userChoice: "p",
+                    DefaulMenuAction));
                 menu.AddMenuItem(new MenuItem("Exit game",
                     userChoice: "e",
                     DefaulMenuAction));
                 
-                menu.AddMenuItem(new MenuItem($"Player {(battleshipGame.NextMoveByP1 ? "1" : "2")} make a move",
-                    userChoice: "p",
-                    DefaulMenuAction));
+                
 
                 
                

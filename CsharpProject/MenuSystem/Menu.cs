@@ -10,6 +10,7 @@ using System.Linq;
         Level0,
         Level1,
         Level2Plus,
+        Custom
     }
 
     public class Menu
@@ -18,7 +19,7 @@ using System.Linq;
         
         private readonly MenuLevel _menuLevel;
         
-        private readonly string[] reservedActions = new[] {"x", "m", "r"};
+        private readonly string[] reservedActions = new[] {"m", "r"};
         
         public Menu(MenuLevel level)
         {
@@ -53,16 +54,19 @@ using System.Linq;
                 switch (_menuLevel)
                 {
                     case MenuLevel.Level0: 
-                        Console.WriteLine("X) eXit");
+                        
                         break;
                     case MenuLevel.Level1: 
                         Console.WriteLine("M) Return to Main");
-                        Console.WriteLine("X) eXit");
+                        
                         break;
                     case MenuLevel.Level2Plus: 
                         Console.WriteLine("R) Return to previous");
                         Console.WriteLine("M) Return to Main");
-                        Console.WriteLine("X) eXit");
+                        
+                        break;
+                    case MenuLevel.Custom: 
+                        
                         break;
                     default:
                         throw new Exception("Unknown menu depth!");
@@ -82,9 +86,16 @@ using System.Linq;
                     }
                     if (userChoice == "e")
                     {
-                        userChoice = "";
+                        if (_menuLevel == MenuLevel.Custom)
+                        {
+                            break;
+                        }
+                        Console.WriteLine("Closing down......");
+                        userChoice = "e";
                         break;
                     }
+                    
+                    
                     // No it wasn't, try to find keyword in MenuItems
                     if (MenuItems.TryGetValue(userChoice, out var userMenuItem))
                     {
@@ -114,14 +125,8 @@ using System.Linq;
                     Console.WriteLine("I don't have this option!");
                     userChoice = "";
                 }
-                if (userChoice == "x")
-                {
-                    if (_menuLevel == MenuLevel.Level0)
-                    {
-                        Console.WriteLine("Closing down......");
-                    }
-                    break;
-                }
+                
+                
                 
                 if (_menuLevel != MenuLevel.Level0 && userChoice == "m")
                 {
@@ -145,7 +150,7 @@ using System.Linq;
                     break;
                 }
 
-            } while (userChoice != "x" && userChoice !="m" && userChoice !="r");
+            } while (userChoice != "e" && userChoice !="m" && userChoice !="r");
 
             return userChoice;
         }
