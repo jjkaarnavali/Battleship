@@ -80,7 +80,7 @@ using System.Linq;
                 // Is it a reserved keyword
                 if (!reservedActions.Contains(userChoice))
                 {
-                    if (userChoice == "p")
+                    if (userChoice == "p" || userChoice == "n" || userChoice.Length > 10)
                     {
                         return userChoice;
                     }

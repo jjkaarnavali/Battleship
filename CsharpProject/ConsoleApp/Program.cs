@@ -8,7 +8,7 @@ using DAL;
 using Domain;
 using Domain.Enums;
 using Microsoft.EntityFrameworkCore;
-
+using Newtonsoft.Json.Linq;
 
 
 namespace ConsoleApp
@@ -106,6 +106,8 @@ namespace ConsoleApp
                 userChoice: "e",
                 DefaulMenuAction));
             
+           
+            
             menu.RunMenu();
         }
 
@@ -123,17 +125,46 @@ namespace ConsoleApp
 
         static string Battleships()
         {
+            var battleshipGame = new Battleships();
+            var bSize = 10;
 
+            var loadGameMenu = new Menu(MenuLevel.Custom);
+            loadGameMenu.AddMenuItem(new MenuItem("Load game",
+                userChoice: "l", () => { return LoadGameAction(); })
+            );
+            loadGameMenu.AddMenuItem(new MenuItem("New Game",
+                userChoice: "n", () => { return DefaulMenuAction(); })
+            );
+            var userChoiceFirst = loadGameMenu.RunMenu();
+            Console.WriteLine(userChoiceFirst);
+            if (JObject.Parse(userChoiceFirst).HasValues)
+            {
+                dynamic d = JObject.Parse(userChoiceFirst);
+            
+                GameBrain.Battleships.s = d.Height;
+            
+                battleshipGame = new Battleships();
+                battleshipGame.SetGameStateFromJsonString(userChoiceFirst);
+            
+                BattleshipsConsoleUI.DrawBoard(battleshipGame.GetP1Board(battleshipGame.bSize), 1); 
+                BattleshipsConsoleUI.DrawBoard(battleshipGame.GetP2Board(battleshipGame.bSize), 2);
+            }
+            else
+            {
+                bSize = GameSettings();
+                if (bSize == null)
+                {
+                    bSize = 10;
+                }
+                GameBrain.Battleships.s = bSize;
+                battleshipGame = new Battleships();
+                Console.WriteLine(GameBrain.Battleships.s);
+                BattleshipsConsoleUI.DrawBoard(battleshipGame.GetP1Board(bSize), 1);
+                PlaceShipAction(battleshipGame);
+            }
             
             
             var over = false;
-            var bSize = GameSettings();
-            if (bSize == null)
-            {
-                bSize = 10;
-            }
-            var battleshipGame = new Battleships();
-            GameBrain.Battleships.s = bSize;
             
             do
             {
@@ -148,12 +179,11 @@ namespace ConsoleApp
                 menu.AddMenuItem(new MenuItem("Save game to database",
                     userChoice: "d", () => { return SaveGameActionDB(battleshipGame); })
                 );
+                
                 menu.AddMenuItem(new MenuItem("Load game",
-                    userChoice: "l", () => { return LoadGameAction(battleshipGame); })
+                    userChoice: "l", () => { return LoadGameAction(); })
                 );
-                menu.AddMenuItem(new MenuItem("Load game from DB",
-                    userChoice: "q", () => { return LoadGameActionDB(battleshipGame); })
-                );
+                
                 menu.AddMenuItem(new MenuItem($"Player {(battleshipGame.NextMoveByP1 ? "1" : "2")} make a move",
                     userChoice: "p",
                     DefaulMenuAction));
@@ -161,11 +191,6 @@ namespace ConsoleApp
                     userChoice: "e",
                     DefaulMenuAction));
                 
-                
-
-                
-               
-
                 var userChoice = menu.RunMenu();
 
                 if (userChoice == "p")
@@ -174,6 +199,11 @@ namespace ConsoleApp
                     BattleshipsConsoleUI.SwitchPlayer(battleshipGame);
                 }
                 if (userChoice == "e" || userChoice == "x")
+                {
+                    over = true;
+                }
+
+                if (battleshipGame.IsGameOver())
                 {
                     over = true;
                 }
@@ -244,7 +274,7 @@ namespace ConsoleApp
             return (x, y);
         }
         
-        static string LoadGameAction(Battleships game)
+        static string LoadGameAction()
         {
             var files = System.IO.Directory.EnumerateFiles(".", "*.json").ToList();
             for (int i = 0; i < files.Count; i++)
@@ -255,12 +285,10 @@ namespace ConsoleApp
             var fileNo = Console.ReadLine();
             var fileName = files[int.Parse(fileNo!.Trim())];
             var jsonString = System.IO.File.ReadAllText(fileName);
-            game.SetGameStateFromJsonString(jsonString);
-            
-            BattleshipsConsoleUI.DrawBoard(game.GetP1Board(game.bSize), 1); 
-            BattleshipsConsoleUI.DrawBoard(game.GetP2Board(game.bSize), 2);
-            
-            return "";
+
+
+
+            return jsonString;
         }
         
         static string LoadGameActionDB(Battleships game)
@@ -445,6 +473,7 @@ namespace ConsoleApp
                           $" and Y (1-{game.GetP1Board(game.bSize).GetLength(1)})" +
                           $" coordinates of the shot like this (X,Y): ");
             var (x, y) = GetShotCoordinates(game);
+            
             game.TakeAShot(x, y, game.NextMoveByP1);
             BattleshipsConsoleUI.DrawBoard(game.GetP1Board(game.bSize), 1); 
             BattleshipsConsoleUI.DrawBoard(game.GetP2Board(game.bSize), 2);
@@ -460,6 +489,32 @@ namespace ConsoleApp
                 return 10;
             }
             return int.Parse(bSize);
+        }
+        
+        static void PlaceShipAction(Battleships game)
+        {
+            
+            Console.WriteLine("Write the length of the ship!");
+            var shipSize = int.Parse(Console.ReadLine());
+            Console.WriteLine("Write 0 if ship will be placed horizontally and 1 if vertically");
+            var horizontal = int.Parse(Console.ReadLine());
+            bool horizontalBool = true;
+            if (horizontal == 0)
+            {
+                horizontalBool = true;
+            }else if (horizontal == 1)
+            {
+                horizontalBool = false;
+            }
+            Console.Write($"Give X (1-{game.GetP1Board(game.bSize).GetLength(0)})" +
+                          $" and Y (1-{game.GetP1Board(game.bSize).GetLength(1)})" +
+                          $" coordinates of the ship's starting point like this (X,Y): ");
+            var (x, y) = GetShotCoordinates(game);
+            game.PlaceShip(horizontalBool, shipSize, x, y, game.NextMoveByP1);
+            
+            
+           
+            
         }
 
     }

@@ -9,9 +9,9 @@ namespace GameBrain
         public static int s { get; set; }
         
 
-        private CellState[,] _P1board = new CellState[15,15];
+        private CellState[,] _P1board = new CellState[s,s];
         
-        private CellState[,] _P2board = new CellState[15,15];
+        private CellState[,] _P2board = new CellState[s,s];
 
         
 
@@ -38,8 +38,85 @@ namespace GameBrain
             return p2board;
         }
 
-       
 
+
+        public bool PlaceShip(bool horizontal, int shipSize, int x, int y, bool p)
+        {
+            bool canPlace = true;
+            if (horizontal && p)
+            {
+                if (x + shipSize <= _P1board.Length)
+                {
+                    for (int i = 0; i < shipSize; i++)
+                    {
+                        if (_P1board[x + i, y] == CellState.Empty)
+                        {
+                            _P1board[x + i, y] = CellState.Ship;
+                        }
+                    }
+                }
+                else
+                {
+                    canPlace = false;
+                }
+                
+            }
+            if (!horizontal && p)
+            {
+                if (y + shipSize <= _P1board.Length)
+                {
+                    for (int i = 0; i < shipSize; i++)
+                    {
+                        if (_P1board[x, y + i] == CellState.Empty)
+                        {
+                            _P1board[x, y + i] = CellState.Ship;
+                        }
+                    }
+                }
+                else
+                {
+                    canPlace = false;
+                }
+                
+            }
+            if (horizontal && !p)
+            {
+                if (x + shipSize <= _P1board.Length)
+                {
+                    for (int i = 0; i < shipSize; i++)
+                    {
+                        if (_P1board[x + i, y] == CellState.Empty)
+                        {
+                            _P1board[x + i, y] = CellState.Ship;
+                        }
+                    }
+                }
+                else
+                {
+                    canPlace = false;
+                }
+                
+            }
+            if (!horizontal && !p)
+            {
+                if (y + shipSize <= _P1board.Length)
+                {
+                    for (int i = 0; i < shipSize; i++)
+                    {
+                        if (_P1board[x, y + i] == CellState.Empty)
+                        {
+                            _P1board[x, y + i] = CellState.Ship;
+                        }
+                    }
+                }
+                else
+                {
+                    canPlace = false;
+                }
+                
+            }
+            return canPlace;
+        }
         public bool TakeAShot(int x, int y, bool p)
         {
             if (!p)
@@ -125,6 +202,20 @@ namespace GameBrain
                 }
             }
             
+        }
+
+        public bool IsGameOver()
+        {
+            bool gameOver = true;
+            foreach (CellState cell in _P1board)
+            {
+                if (cell == CellState.Ship)
+                {
+                    gameOver = false;
+                }
+            }
+
+            return gameOver;
         }
 
       
