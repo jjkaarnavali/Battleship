@@ -99,7 +99,7 @@ namespace ConsoleApp
             
             var menu = new Menu(MenuLevel.Level0);
             menu.AddMenuItem(new MenuItem("Go to submenu 1", "s", menuA.RunMenu));
-            menu.AddMenuItem(new MenuItem("New game human vs human. Pointless.", "1", Battleships));
+            menu.AddMenuItem(new MenuItem("New game human vs human.", "1", Battleships));
             menu.AddMenuItem(new MenuItem("New game puny human vs mighty AI", "2", DefaulMenuAction));
             menu.AddMenuItem(new MenuItem("New game mighty AI vs superior AI", "3", DefaulMenuAction));
             menu.AddMenuItem(new MenuItem("Exit",
@@ -114,20 +114,32 @@ namespace ConsoleApp
             Console.WriteLine("Not implemented yet!");
             return "";
         }
+        static int BoardSize(int userChoice)
+        {
+            return userChoice;
+        }
+
+        
 
         static string Battleships()
         {
-            
 
             
-            var battleshipGame = new Battleships();
+            
             var over = false;
+            var bSize = GameSettings();
+            if (bSize == null)
+            {
+                bSize = 10;
+            }
+            var battleshipGame = new Battleships();
+            GameBrain.Battleships.s = bSize;
             
             do
             {
-
-                BattleshipsConsoleUI.DrawBoard(battleshipGame.GetP1Board(), 1);
-                BattleshipsConsoleUI.DrawBoard(battleshipGame.GetP2Board(), 2);
+                
+                BattleshipsConsoleUI.DrawBoard(battleshipGame.GetP1Board(bSize), 1);
+                BattleshipsConsoleUI.DrawBoard(battleshipGame.GetP2Board(bSize), 2);
 
                 var menu = new Menu(MenuLevel.Custom);
                 menu.AddMenuItem(new MenuItem("Save game",
@@ -202,17 +214,17 @@ namespace ConsoleApp
             bool yIsNr = int.TryParse(tmp[1].Trim(), out intY);
             if (!xIsNr || !yIsNr)
             {
-                Console.WriteLine("Coordinates have to numbers! Try again: ");
+                Console.WriteLine("Coordinates have to be numbers! Try again: ");
                 return GetShotCoordinates(game);
             }
 
             
             
-            if (int.Parse(tmp[0].Trim()) > game.GetP1Board().GetLength(0) ||
-                   int.Parse(tmp[1].Trim()) > game.GetP1Board().GetLength(1))
+            if (int.Parse(tmp[0].Trim()) > game.GetP1Board(game.bSize).GetLength(0) ||
+                   int.Parse(tmp[1].Trim()) > game.GetP1Board(game.bSize).GetLength(1))
             {
                 Console.WriteLine($"Given coordinates are out of range! Max coords are" +
-                                  $" {game.GetP1Board().GetLength(0)},{game.GetP1Board().GetLength(0)}" +
+                                  $" {game.GetP1Board(game.bSize).GetLength(0)},{game.GetP1Board(game.bSize).GetLength(0)}" +
                                   $" Try again: ");
                 return GetShotCoordinates(game);
             }
@@ -245,8 +257,8 @@ namespace ConsoleApp
             var jsonString = System.IO.File.ReadAllText(fileName);
             game.SetGameStateFromJsonString(jsonString);
             
-            BattleshipsConsoleUI.DrawBoard(game.GetP1Board(), 1); 
-            BattleshipsConsoleUI.DrawBoard(game.GetP2Board(), 2);
+            BattleshipsConsoleUI.DrawBoard(game.GetP1Board(game.bSize), 1); 
+            BattleshipsConsoleUI.DrawBoard(game.GetP2Board(game.bSize), 2);
             
             return "";
         }
@@ -291,8 +303,8 @@ namespace ConsoleApp
             }
             
             
-            BattleshipsConsoleUI.DrawBoard(game.GetP1Board(), 1); 
-            BattleshipsConsoleUI.DrawBoard(game.GetP2Board(), 2);
+            BattleshipsConsoleUI.DrawBoard(game.GetP1Board(game.bSize), 1); 
+            BattleshipsConsoleUI.DrawBoard(game.GetP2Board(game.bSize), 2);
             
             return "";
         }
@@ -427,15 +439,27 @@ namespace ConsoleApp
 
         static void GameAction(Battleships game)
         {
+            
             Console.WriteLine("Upper left corner is (1,1)!");
-            Console.Write($"Give X (1-{game.GetP1Board().GetLength(0)})" +
-                          $" and Y (1-{game.GetP1Board().GetLength(1)})" +
+            Console.Write($"Give X (1-{game.GetP1Board(game.bSize).GetLength(0)})" +
+                          $" and Y (1-{game.GetP1Board(game.bSize).GetLength(1)})" +
                           $" coordinates of the shot like this (X,Y): ");
             var (x, y) = GetShotCoordinates(game);
             game.TakeAShot(x, y, game.NextMoveByP1);
-            BattleshipsConsoleUI.DrawBoard(game.GetP1Board(), 1); 
-            BattleshipsConsoleUI.DrawBoard(game.GetP2Board(), 2);
+            BattleshipsConsoleUI.DrawBoard(game.GetP1Board(game.bSize), 1); 
+            BattleshipsConsoleUI.DrawBoard(game.GetP2Board(game.bSize), 2);
             
+        }
+
+        static int GameSettings()
+        {
+            Console.WriteLine("The game board is a square, give the length of the board size!");
+            var bSize = Console.ReadLine();
+            if (bSize.Length == 0)
+            {
+                return 10;
+            }
+            return int.Parse(bSize);
         }
 
     }

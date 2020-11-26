@@ -19,7 +19,15 @@ namespace GameConsoleUI
             var height = board.GetUpperBound(1) + 1;
             for (int colIndex = 0; colIndex < width; colIndex++)
             {
-                Console.Write($"  {colIndex + 1} ");
+                if (colIndex + 1 >= 10)
+                {
+                    Console.Write($"  {colIndex + 1}");
+                }
+                else
+                {
+                    Console.Write($"  {colIndex + 1} ");
+                }
+                    
             }
             Console.Write("\n");
             

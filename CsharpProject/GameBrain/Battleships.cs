@@ -5,22 +5,35 @@ namespace GameBrain
 {
     public class Battleships
     {
-        private CellState[,] _P1board = new CellState[10,10];
-        private CellState[,] _P2board = new CellState[10,10];
+
+        public static int s { get; set; }
+        
+
+        private CellState[,] _P1board = new CellState[15,15];
+        
+        private CellState[,] _P2board = new CellState[15,15];
+
+        
 
         private bool _nextMoveByP1 = true;
         
         public bool NextMoveByP1 => _nextMoveByP1;
+        public int bSize = 10;
 
-        public CellState[,] GetP1Board()
+        
+
+        public CellState[,] GetP1Board(int dim)
         {
-            var p1board = new CellState[10,10];
+            
+            var p1board = new CellState[dim,dim];
+            bSize = dim;
             Array.Copy(_P1board, p1board, _P1board.Length);
             return p1board;
         }
-        public CellState[,] GetP2Board()
+        public CellState[,] GetP2Board(int dim)
         {
-            var p2board = new CellState[10,10];
+            var p2board = new CellState[dim,dim];
+            bSize = dim;
             Array.Copy(_P2board, p2board, _P2board.Length);
             return p2board;
         }
