@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿﻿﻿using System;
  using System.Diagnostics;
  using System.Linq;
 using System.Xml.Schema;
@@ -717,7 +717,7 @@ namespace ConsoleApp
 
             if (player == 1)
             {
-                BattleshipsConsoleUI.DrawBoard(game.GetP1Board(game.bSize), 1); 
+                BattleshipsConsoleUI.DrawBoard(game.GetP1Board(GameBrain.Battleships.s), 1); 
                 
                 
                 Console.WriteLine($"Player 1 write 0 if you want your {shipName} (1x{ship}) to be placed horizontally and 1 if vertically");

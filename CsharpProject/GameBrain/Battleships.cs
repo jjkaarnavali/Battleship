@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Text.Json;
 
 namespace GameBrain
@@ -168,9 +168,6 @@ namespace GameBrain
         
         public bool PlaceShipP2(bool horizontal, int shipSize, int x, int y, bool canShipsTouch)
         {
-            var width = s;
-            var height = s;
-            
             if (horizontal)
             {
                 
@@ -187,10 +184,7 @@ namespace GameBrain
                 {
                     for (int i = 0; i < shipSize + 2; i++)
                     {
-                        if (x - 1 + i > width || y - 1 > height || x - 1 + i < 0 || y - 1 < 0)
-                        {
-                        }
-                        else if (_P2board[x - 1 + i, y - 1] == CellState.Ship)
+                        if (_P2board[x - 1 + i, y - 1] == CellState.Ship)
                         {
                             return false;
                         }
@@ -198,10 +192,7 @@ namespace GameBrain
                     
                     for (int i = 0; i < shipSize + 2; i++)
                     {
-                        if (x - 1 + i > width || x - 1 + i < 0)
-                        {
-                        }
-                        else if (_P2board[x - 1 + i, y] == CellState.Ship)
+                        if (_P2board[x - 1 + i, y] == CellState.Ship)
                         {
                             return false;
                         }
@@ -209,10 +200,7 @@ namespace GameBrain
                     
                     for (int i = 0; i < shipSize + 2; i++)
                     {
-                        if (x - 1 + i > width || y + 1 > height || x - 1 + i < 0 || y + 1 < 0)
-                        {
-                        }
-                        else if (_P2board[x - 1 + i, y + 1] == CellState.Ship)
+                        if (_P2board[x - 1 + i, y + 1] == CellState.Ship)
                         {
                             return false;
                         }
@@ -244,10 +232,7 @@ namespace GameBrain
                 {
                     for (int i = 0; i < shipSize + 2; i++)
                     {
-                        if (x - 1 > width || y - 1 + i > height || x - 1 < 0 || y - 1 + i < 0)
-                        {
-                        }
-                        else if (_P2board[x - 1, y - 1 + i] == CellState.Ship)
+                        if (_P2board[x - 1, y - 1 + i] == CellState.Ship)
                         {
                             return false;
                         }
@@ -255,10 +240,7 @@ namespace GameBrain
                     
                     for (int i = 0; i < shipSize + 2; i++)
                     {
-                        if (y - 1 + i > height || y - 1 + i < 0)
-                        {
-                        }
-                        else if (_P2board[x, y - 1 + i] == CellState.Ship)
+                        if (_P2board[x, y - 1 + i] == CellState.Ship)
                         {
                             return false;
                         }
@@ -266,10 +248,7 @@ namespace GameBrain
                     
                     for (int i = 0; i < shipSize + 2; i++)
                     {
-                        if (x + 1 > width || y - 1 + i > height || x + 1 < 0 || y - 1 + i < 0)
-                        {
-                        }
-                        else if (_P2board[x + 1, y - 1 + i] == CellState.Ship)
+                        if (_P2board[x + 1, y - 1 + i] == CellState.Ship)
                         {
                             return false;
                         }
