@@ -1,5 +1,6 @@
 ﻿﻿using System;
-using System.Linq;
+ using System.Diagnostics;
+ using System.Linq;
 using System.Xml.Schema;
 using GameBrain;
 using GameConsoleUI;
@@ -152,7 +153,19 @@ namespace ConsoleApp
             else
             {
                 Console.WriteLine(userChoiceFirst);
-                bSize = GameSettings();
+                bSize = GetBoardSize();
+               
+                int nrOfCarriers = GetCarriers();
+           
+                
+                int nrOfBattleships = GetBattleships();
+                
+                int nrOfSubs = GetSubs();
+                
+                int nrOfCruisers = GetCruisers();
+                
+                int nrOfPatrols = GetPatrols();
+                
                 if (bSize == null)
                 {
                     bSize = 10;
@@ -160,16 +173,54 @@ namespace ConsoleApp
                 GameBrain.Battleships.s = bSize;
                 battleshipGame = new Battleships();
                 Console.WriteLine(GameBrain.Battleships.s);
+
+                for (int i = 0; i < nrOfCarriers; i++)
+                {
+                    PlaceShipAction(battleshipGame, 1, 5);
+                }
+                for (int i = 0; i < nrOfBattleships; i++)
+                {
+                    PlaceShipAction(battleshipGame, 1, 4);
+                }
+                for (int i = 0; i < nrOfSubs; i++)
+                {
+                    PlaceShipAction(battleshipGame, 1, 3);
+                }
+                for (int i = 0; i < nrOfCruisers; i++)
+                {
+                    PlaceShipAction(battleshipGame, 1, 2);
+                }
+                for (int i = 0; i < nrOfPatrols; i++)
+                {
+                    PlaceShipAction(battleshipGame, 1, 1);
+                }
               
-                PlaceShipAction(battleshipGame, 1);
+                
 
                 Console.Clear();
                 Console.WriteLine($"Player 2 press any key:");
                 Console.ReadKey();
-
-            
-               
-                PlaceShipAction(battleshipGame, 2);
+                
+                for (int i = 0; i < nrOfCarriers; i++)
+                {
+                    PlaceShipAction(battleshipGame, 2, 5);
+                }
+                for (int i = 0; i < nrOfBattleships; i++)
+                {
+                    PlaceShipAction(battleshipGame, 2, 4);
+                }
+                for (int i = 0; i < nrOfSubs; i++)
+                {
+                    PlaceShipAction(battleshipGame, 2, 3);
+                }
+                for (int i = 0; i < nrOfCruisers; i++)
+                {
+                    PlaceShipAction(battleshipGame, 2, 2);
+                }
+                for (int i = 0; i < nrOfPatrols; i++)
+                {
+                    PlaceShipAction(battleshipGame, 2, 1);
+                }
                 
             }
             
@@ -549,9 +600,9 @@ namespace ConsoleApp
             
         }
 
-        static int GameSettings()
+        static int GetBoardSize()
         {
-            Console.WriteLine("The game board is a square, give the length of the board size!");
+            Console.WriteLine("The game board is a square, give the length of the board size! (default is 10)");
             var bSize = Console.ReadLine();
             if (bSize.Length == 0)
             {
@@ -560,16 +611,87 @@ namespace ConsoleApp
             return int.Parse(bSize);
         }
         
-        static void PlaceShipAction(Battleships game, int player)
+        static int GetCarriers()
         {
+            Console.WriteLine("How many carriers (1x5) do you want? (default is 1)");
+            var nrOfShips = Console.ReadLine();
+            if (nrOfShips.Length == 0)
+            {
+                return 1;
+            }
+            return int.Parse(nrOfShips);
+        }
+        
+        static int GetBattleships()
+        {
+            Console.WriteLine("How many battleships (1x4) do you want? (default is 1)");
+            var nrOfShips = Console.ReadLine();
+            if (nrOfShips.Length == 0)
+            {
+                return 1;
+            }
+            return int.Parse(nrOfShips);
+        }
+        
+        static int GetSubs()
+        {
+            Console.WriteLine("How many submarines (1x3) do you want? (default is 1)");
+            var nrOfShips = Console.ReadLine();
+            if (nrOfShips.Length == 0)
+            {
+                return 1;
+            }
+            return int.Parse(nrOfShips);
+        }
+        
+        static int GetCruisers()
+        {
+            Console.WriteLine("How many cruisers (1x2) do you want? (default is 1)");
+            var nrOfShips = Console.ReadLine();
+            if (nrOfShips.Length == 0)
+            {
+                return 1;
+            }
+            return int.Parse(nrOfShips);
+        }
+        
+        static int GetPatrols()
+        {
+            Console.WriteLine("How many patrols (1x1) do you want? (default is 1)");
+            var nrOfShips = Console.ReadLine();
+            if (nrOfShips.Length == 0)
+            {
+                return 1;
+            }
+            return int.Parse(nrOfShips);
+        }
+        
+        static void PlaceShipAction(Battleships game, int player, int ship)
+        {
+            string shipName = "";
+            if (ship == 5)
+            {
+                shipName = "Carrier";
+            }else if(ship == 4)
+            {
+                shipName = "Battleship";
+            }else if(ship == 3)
+            {
+                shipName = "Submarine";
+            }else if(ship == 2)
+            {
+                shipName = "Cruiser";
+            }else if(ship == 1)
+            {
+                shipName = "Patrol";
+            }
 
             if (player == 1)
             {
                 BattleshipsConsoleUI.DrawBoard(game.GetP1Board(game.bSize), 1); 
-            
-                Console.WriteLine("PLAYER 1 write the length of the ship!");
-                var shipSize = int.Parse(Console.ReadLine());
-                Console.WriteLine("Write 0 if ship will be placed horizontally and 1 if vertically");
+                
+                
+                Console.WriteLine($"Player 1 write 0 if you want your {shipName} (1x{ship}) to be placed horizontally and 1 if vertically");
                 var horizontal = int.Parse(Console.ReadLine());
                 bool horizontalBool = true;
                 if (horizontal == 0)
@@ -583,16 +705,27 @@ namespace ConsoleApp
                               $" and Y (1-{game.GetP1Board(game.bSize).GetLength(1)})" +
                               $" coordinates of the ship's starting point like this (X,Y): ");
                 var (x, y) = GetShotCoordinates(game);
-                game.PlaceShipP1(horizontalBool, shipSize, x, y, game.NextMoveByP1);
+                if (horizontalBool && x + ship > game.bSize)
+                {
+                    Console.WriteLine("Ship is out of bounds! Try again.");
+                    PlaceShipAction(game, player, ship);
+                }else if (!horizontalBool && y + ship > game.bSize)
+                {
+                    Console.WriteLine("Ship is out of bounds! Try again.");
+                    PlaceShipAction(game, player, ship);
+                }
+                else
+                {
+                    game.PlaceShipP1(horizontalBool, ship, x, y);
+                }
+                
             }
 
             if (player == 2)
             {
                 BattleshipsConsoleUI.DrawBoard(game.GetP2Board(game.bSize), 2); 
             
-                Console.WriteLine("PLAYER 2 write the length of the ship!");
-                var shipSize = int.Parse(Console.ReadLine());
-                Console.WriteLine("Write 0 if ship will be placed horizontally and 1 if vertically");
+                Console.WriteLine($"Player 2 write 0 if you want your {shipName} (1x{ship}) to be placed horizontally and 1 if vertically");
                 var horizontal = int.Parse(Console.ReadLine());
                 bool horizontalBool = true;
                 if (horizontal == 0)
@@ -606,13 +739,23 @@ namespace ConsoleApp
                               $" and Y (1-{game.GetP2Board(game.bSize).GetLength(1)})" +
                               $" coordinates of the ship's starting point like this (X,Y): ");
                 var (x, y) = GetShotCoordinates(game);
-                game.PlaceShipP2(horizontalBool, shipSize, x, y, game.NextMoveByP1);
+                
+                if (horizontalBool && x + ship > game.bSize)
+                {
+                    Console.WriteLine("Ship is out of bounds! Try again.");
+                    PlaceShipAction(game, player, ship);
+                }else if (!horizontalBool && y + ship > game.bSize)
+                {
+                    Console.WriteLine("Ship is out of bounds! Try again.");
+                    PlaceShipAction(game, player, ship);
+                }
+                else
+                {
+                    game.PlaceShipP2(horizontalBool, ship, x, y);
+                }
+                
             }
-
-
-
-
-
+            
         }
 
     }

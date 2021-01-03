@@ -6,7 +6,7 @@ namespace GameBrain
     public class Battleships
     {
 
-        public static int s { get; set; }
+        public static int s { get; set; } // size of the board
         
 
         private CellState[,] _P1board = new CellState[s,s];
@@ -41,10 +41,10 @@ namespace GameBrain
 
 
 
-        public bool PlaceShipP1(bool horizontal, int shipSize, int x, int y, bool p)
+        public bool PlaceShipP1(bool horizontal, int shipSize, int x, int y)
         {
             bool canPlace = true;
-            if (horizontal && p)
+            if (horizontal)
             {
                 if (x + shipSize <= _P1board.Length)
                 {
@@ -62,7 +62,7 @@ namespace GameBrain
                 }
                 
             }
-            if (!horizontal && p)
+            if (!horizontal)
             {
                 if (y + shipSize <= _P1board.Length)
                 {
@@ -80,49 +80,14 @@ namespace GameBrain
                 }
                 
             }
-            if (horizontal && !p)
-            {
-                if (x + shipSize <= _P1board.Length)
-                {
-                    for (int i = 0; i < shipSize; i++)
-                    {
-                        if (_P1board[x + i, y] == CellState.Empty)
-                        {
-                            _P1board[x + i, y] = CellState.Ship;
-                        }
-                    }
-                }
-                else
-                {
-                    canPlace = false;
-                }
-                
-            }
-            if (!horizontal && !p)
-            {
-                if (y + shipSize <= _P1board.Length)
-                {
-                    for (int i = 0; i < shipSize; i++)
-                    {
-                        if (_P1board[x, y + i] == CellState.Empty)
-                        {
-                            _P1board[x, y + i] = CellState.Ship;
-                        }
-                    }
-                }
-                else
-                {
-                    canPlace = false;
-                }
-                
-            }
+            
             return canPlace;
         }
         
-        public bool PlaceShipP2(bool horizontal, int shipSize, int x, int y, bool p)
+        public bool PlaceShipP2(bool horizontal, int shipSize, int x, int y)
         {
             bool canPlace = true;
-            if (horizontal && p)
+            if (horizontal)
             {
                 if (x + shipSize <= _P2board.Length)
                 {
@@ -140,7 +105,7 @@ namespace GameBrain
                 }
                 
             }
-            if (!horizontal && p)
+            if (!horizontal)
             {
                 if (y + shipSize <= _P2board.Length)
                 {
@@ -158,42 +123,7 @@ namespace GameBrain
                 }
                 
             }
-            if (horizontal && !p)
-            {
-                if (x + shipSize <= _P2board.Length)
-                {
-                    for (int i = 0; i < shipSize; i++)
-                    {
-                        if (_P2board[x + i, y] == CellState.Empty)
-                        {
-                            _P2board[x + i, y] = CellState.Ship;
-                        }
-                    }
-                }
-                else
-                {
-                    canPlace = false;
-                }
-                
-            }
-            if (!horizontal && !p)
-            {
-                if (y + shipSize <= _P2board.Length)
-                {
-                    for (int i = 0; i < shipSize; i++)
-                    {
-                        if (_P2board[x, y + i] == CellState.Empty)
-                        {
-                            _P2board[x, y + i] = CellState.Ship;
-                        }
-                    }
-                }
-                else
-                {
-                    canPlace = false;
-                }
-                
-            }
+            
             return canPlace;
         }
         public bool TakeAShot(int x, int y, bool p)
