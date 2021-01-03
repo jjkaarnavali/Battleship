@@ -37,10 +37,11 @@ namespace GameBrain
             Array.Copy(_P2board, p2board, _P2board.Length);
             return p2board;
         }
+        
 
 
 
-        public bool PlaceShip(bool horizontal, int shipSize, int x, int y, bool p)
+        public bool PlaceShipP1(bool horizontal, int shipSize, int x, int y, bool p)
         {
             bool canPlace = true;
             if (horizontal && p)
@@ -106,6 +107,84 @@ namespace GameBrain
                         if (_P1board[x, y + i] == CellState.Empty)
                         {
                             _P1board[x, y + i] = CellState.Ship;
+                        }
+                    }
+                }
+                else
+                {
+                    canPlace = false;
+                }
+                
+            }
+            return canPlace;
+        }
+        
+        public bool PlaceShipP2(bool horizontal, int shipSize, int x, int y, bool p)
+        {
+            bool canPlace = true;
+            if (horizontal && p)
+            {
+                if (x + shipSize <= _P2board.Length)
+                {
+                    for (int i = 0; i < shipSize; i++)
+                    {
+                        if (_P2board[x + i, y] == CellState.Empty)
+                        {
+                            _P2board[x + i, y] = CellState.Ship;
+                        }
+                    }
+                }
+                else
+                {
+                    canPlace = false;
+                }
+                
+            }
+            if (!horizontal && p)
+            {
+                if (y + shipSize <= _P2board.Length)
+                {
+                    for (int i = 0; i < shipSize; i++)
+                    {
+                        if (_P2board[x, y + i] == CellState.Empty)
+                        {
+                            _P2board[x, y + i] = CellState.Ship;
+                        }
+                    }
+                }
+                else
+                {
+                    canPlace = false;
+                }
+                
+            }
+            if (horizontal && !p)
+            {
+                if (x + shipSize <= _P2board.Length)
+                {
+                    for (int i = 0; i < shipSize; i++)
+                    {
+                        if (_P2board[x + i, y] == CellState.Empty)
+                        {
+                            _P2board[x + i, y] = CellState.Ship;
+                        }
+                    }
+                }
+                else
+                {
+                    canPlace = false;
+                }
+                
+            }
+            if (!horizontal && !p)
+            {
+                if (y + shipSize <= _P2board.Length)
+                {
+                    for (int i = 0; i < shipSize; i++)
+                    {
+                        if (_P2board[x, y + i] == CellState.Empty)
+                        {
+                            _P2board[x, y + i] = CellState.Ship;
                         }
                     }
                 }
@@ -207,12 +286,26 @@ namespace GameBrain
         public bool IsGameOver()
         {
             bool gameOver = true;
+            bool p1lost = true;
+            bool p2lost = true;
             foreach (CellState cell in _P1board)
             {
                 if (cell == CellState.Ship)
                 {
-                    gameOver = false;
+                    p1lost = false;
                 }
+            }
+            foreach (CellState cell in _P2board)
+            {
+                if (cell == CellState.Ship)
+                {
+                    p2lost = false;
+                }
+            }
+
+            if (!p1lost && !p2lost)
+            {
+                gameOver = false;
             }
 
             return gameOver;

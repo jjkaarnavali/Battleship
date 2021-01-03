@@ -22,13 +22,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dead7b3-3e6b-45d9-9e9a-34249314c623" name="Default Changelist" comment="asks for board size">
+    <list default="true" id="8dead7b3-3e6b-45d9-9e9a-34249314c623" name="Default Changelist" comment="tegelen loadimise tööle saamisega">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameBrain/Battleships.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameBrain/Battleships.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MenuSystem/Menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/Menu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MenuSystem/bin/Debug/netstandard2.1/MenuSystem.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/bin/Debug/netstandard2.1/MenuSystem.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MenuSystem/bin/Debug/netstandard2.1/MenuSystem.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/bin/Debug/netstandard2.1/MenuSystem.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.pdb" afterDir="false" />
     </list>
@@ -41,22 +42,103 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Domain/PlayerBoardState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MenuSystem/Menu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MenuSystem/MenuItem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ConsoleApp/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/A8/Number.Parsing.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GameBrain/CellState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GameBrain/Battleships.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GameConsoleUI/BattleshipsConsoleUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/BoardState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Boat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Game.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/GameBoat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/GameOption.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/GameOptionBoat.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GameBrain/GameState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain/PlayerBoardState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GameBrain/CellState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GameBrain/Battleships.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/42F9CCC8-A8E2-4583-8562-AC6B7554193A/4/Console.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D1EDC9EF-2B65-45BF-ACA5-143DD43A36DE/2a/9bb65c04/JsonTextReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GameBrain/GameState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MenuSystem/Menu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MenuSystem/MenuItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ConsoleApp/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -87,8 +169,8 @@
         <option value="$PROJECT_DIR$/Domain/Player.cs" />
         <option value="$PROJECT_DIR$/Domain/Game.cs" />
         <option value="$PROJECT_DIR$/GameConsoleUI/BattleshipsConsoleUI.cs" />
-        <option value="$PROJECT_DIR$/GameBrain/Battleships.cs" />
         <option value="$PROJECT_DIR$/MenuSystem/Menu.cs" />
+        <option value="$PROJECT_DIR$/GameBrain/Battleships.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp/Program.cs" />
       </list>
     </option>
@@ -155,7 +237,8 @@
       <workItem from="1604916033136" duration="4731000" />
       <workItem from="1604921156330" duration="4806000" />
       <workItem from="1606404511596" duration="7606000" />
-      <workItem from="1606415691589" duration="6300000" />
+      <workItem from="1606415691589" duration="6544000" />
+      <workItem from="1609670629384" duration="7582000" />
     </task>
     <task id="LOCAL-00001" summary="asks for board size">
       <created>1606412120646</created>
@@ -164,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606412120646</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="tegelen loadimise tööle saamisega">
+      <created>1606422260954</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606422260954</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,146 +277,147 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="asks for board size" />
-    <option name="LAST_COMMIT_MESSAGE" value="asks for board size" />
+    <MESSAGE value="tegelen loadimise tööle saamisega" />
+    <option name="LAST_COMMIT_MESSAGE" value="tegelen loadimise tööle saamisega" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="384" key="GridCell.Tab.0.bottom" timestamp="1606421928408">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="237" key="GridCell.Tab.0.bottom" timestamp="1609676619840">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="252" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604934367884" />
-    <state width="1877" height="384" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606421928408" />
+    <state width="1877" height="237" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609676619840" />
+    <state width="1877" height="303" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284036" />
     <state width="1453" height="270" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
-    <state width="1877" height="384" key="GridCell.Tab.0.center" timestamp="1606421928408">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="237" key="GridCell.Tab.0.center" timestamp="1609676619839">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="252" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604934367884" />
-    <state width="1877" height="384" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606421928408" />
+    <state width="1877" height="237" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609676619839" />
+    <state width="1877" height="303" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284035" />
     <state width="1453" height="270" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
-    <state width="1877" height="384" key="GridCell.Tab.0.left" timestamp="1606421928408">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="237" key="GridCell.Tab.0.left" timestamp="1609676619839">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="252" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604934367884" />
-    <state width="1877" height="384" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606421928408" />
+    <state width="1877" height="237" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609676619839" />
+    <state width="1877" height="303" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284035" />
     <state width="1453" height="270" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
-    <state width="1877" height="384" key="GridCell.Tab.0.right" timestamp="1606421928408">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="237" key="GridCell.Tab.0.right" timestamp="1609676619839">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="252" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604934367884" />
-    <state width="1877" height="384" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606421928408" />
+    <state width="1877" height="237" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609676619839" />
+    <state width="1877" height="303" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284036" />
     <state width="1453" height="270" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
-    <state width="1877" height="303" key="GridCell.Tab.1.bottom" timestamp="1606418239299">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="372" key="GridCell.Tab.1.bottom" timestamp="1609675802788">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="252" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604934367885" />
-    <state width="1877" height="303" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606418239299" />
+    <state width="1877" height="372" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609675802788" />
+    <state width="1877" height="303" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284036" />
     <state width="1453" height="252" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602443952183" />
-    <state width="1877" height="303" key="GridCell.Tab.1.center" timestamp="1606418239299">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="372" key="GridCell.Tab.1.center" timestamp="1609675802787">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="252" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604934367885" />
-    <state width="1877" height="303" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606418239299" />
+    <state width="1877" height="372" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609675802787" />
+    <state width="1877" height="303" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284036" />
     <state width="1453" height="252" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602443952183" />
-    <state width="1877" height="303" key="GridCell.Tab.1.left" timestamp="1606418239299">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="372" key="GridCell.Tab.1.left" timestamp="1609675802787">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="252" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604934367885" />
-    <state width="1877" height="303" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606418239299" />
+    <state width="1877" height="372" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609675802787" />
+    <state width="1877" height="303" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284036" />
     <state width="1453" height="252" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602443952183" />
-    <state width="1877" height="303" key="GridCell.Tab.1.right" timestamp="1606418239299">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="372" key="GridCell.Tab.1.right" timestamp="1609675802787">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="252" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604934367885" />
-    <state width="1877" height="303" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606418239299" />
+    <state width="1877" height="372" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609675802787" />
+    <state width="1877" height="303" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284036" />
     <state width="1453" height="252" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602443952183" />
-    <state width="1877" height="303" key="GridCell.Tab.2.bottom" timestamp="1606418239300">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="372" key="GridCell.Tab.2.bottom" timestamp="1609675802788">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="252" key="GridCell.Tab.2.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604934367885" />
-    <state width="1877" height="303" key="GridCell.Tab.2.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606418239300" />
+    <state width="1877" height="372" key="GridCell.Tab.2.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609675802788" />
+    <state width="1877" height="303" key="GridCell.Tab.2.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284036" />
     <state width="1453" height="252" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602443952184" />
-    <state width="1877" height="303" key="GridCell.Tab.2.center" timestamp="1606418239300">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="372" key="GridCell.Tab.2.center" timestamp="1609675802788">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="252" key="GridCell.Tab.2.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604934367885" />
-    <state width="1877" height="303" key="GridCell.Tab.2.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606418239300" />
+    <state width="1877" height="372" key="GridCell.Tab.2.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609675802788" />
+    <state width="1877" height="303" key="GridCell.Tab.2.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284036" />
     <state width="1453" height="252" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602443952183" />
-    <state width="1877" height="303" key="GridCell.Tab.2.left" timestamp="1606418239300">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="372" key="GridCell.Tab.2.left" timestamp="1609675802788">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="252" key="GridCell.Tab.2.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604934367885" />
-    <state width="1877" height="303" key="GridCell.Tab.2.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606418239300" />
+    <state width="1877" height="372" key="GridCell.Tab.2.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609675802788" />
+    <state width="1877" height="303" key="GridCell.Tab.2.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284036" />
     <state width="1453" height="252" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602443952183" />
-    <state width="1877" height="303" key="GridCell.Tab.2.right" timestamp="1606418239300">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="372" key="GridCell.Tab.2.right" timestamp="1609675802788">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="252" key="GridCell.Tab.2.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604934367885" />
-    <state width="1877" height="303" key="GridCell.Tab.2.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606418239300" />
+    <state width="1877" height="372" key="GridCell.Tab.2.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609675802788" />
+    <state width="1877" height="303" key="GridCell.Tab.2.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284036" />
     <state width="1453" height="252" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602443952184" />
-    <state width="1877" height="303" key="GridCell.Tab.3.bottom" timestamp="1606418239300">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="372" key="GridCell.Tab.3.bottom" timestamp="1609675802788">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="252" key="GridCell.Tab.3.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604934367885" />
-    <state width="1877" height="303" key="GridCell.Tab.3.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606418239300" />
+    <state width="1877" height="372" key="GridCell.Tab.3.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609675802788" />
+    <state width="1877" height="303" key="GridCell.Tab.3.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284036" />
     <state width="1453" height="252" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602443952184" />
-    <state width="1877" height="303" key="GridCell.Tab.3.center" timestamp="1606418239300">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="372" key="GridCell.Tab.3.center" timestamp="1609675802788">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="252" key="GridCell.Tab.3.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604934367885" />
-    <state width="1877" height="303" key="GridCell.Tab.3.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606418239300" />
+    <state width="1877" height="372" key="GridCell.Tab.3.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609675802788" />
+    <state width="1877" height="303" key="GridCell.Tab.3.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284036" />
     <state width="1453" height="252" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602443952184" />
-    <state width="1877" height="303" key="GridCell.Tab.3.left" timestamp="1606418239300">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="372" key="GridCell.Tab.3.left" timestamp="1609675802788">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="252" key="GridCell.Tab.3.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604934367885" />
-    <state width="1877" height="303" key="GridCell.Tab.3.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606418239300" />
+    <state width="1877" height="372" key="GridCell.Tab.3.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609675802788" />
+    <state width="1877" height="303" key="GridCell.Tab.3.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284036" />
     <state width="1453" height="252" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602443952184" />
-    <state width="1877" height="303" key="GridCell.Tab.3.right" timestamp="1606418239300">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="372" key="GridCell.Tab.3.right" timestamp="1609675802788">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="252" key="GridCell.Tab.3.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604934367885" />
-    <state width="1877" height="303" key="GridCell.Tab.3.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606418239300" />
+    <state width="1877" height="372" key="GridCell.Tab.3.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609675802788" />
+    <state width="1877" height="303" key="GridCell.Tab.3.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284036" />
     <state width="1453" height="252" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602443952184" />
-    <state width="1877" height="303" key="GridCell.Tab.4.bottom" timestamp="1606418239300">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="372" key="GridCell.Tab.4.bottom" timestamp="1609675802788">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="252" key="GridCell.Tab.4.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604934367885" />
-    <state width="1877" height="303" key="GridCell.Tab.4.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606418239300" />
+    <state width="1877" height="372" key="GridCell.Tab.4.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609675802788" />
+    <state width="1877" height="303" key="GridCell.Tab.4.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284036" />
     <state width="1453" height="252" key="GridCell.Tab.4.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602443952184" />
-    <state width="1877" height="303" key="GridCell.Tab.4.center" timestamp="1606418239300">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="372" key="GridCell.Tab.4.center" timestamp="1609675802788">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="252" key="GridCell.Tab.4.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604934367885" />
-    <state width="1877" height="303" key="GridCell.Tab.4.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606418239300" />
+    <state width="1877" height="372" key="GridCell.Tab.4.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609675802788" />
+    <state width="1877" height="303" key="GridCell.Tab.4.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284036" />
     <state width="1453" height="252" key="GridCell.Tab.4.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602443952184" />
-    <state width="1877" height="303" key="GridCell.Tab.4.left" timestamp="1606418239300">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="372" key="GridCell.Tab.4.left" timestamp="1609675802788">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="252" key="GridCell.Tab.4.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604934367885" />
-    <state width="1877" height="303" key="GridCell.Tab.4.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606418239300" />
+    <state width="1877" height="372" key="GridCell.Tab.4.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609675802788" />
+    <state width="1877" height="303" key="GridCell.Tab.4.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284036" />
     <state width="1453" height="252" key="GridCell.Tab.4.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602443952184" />
-    <state width="1877" height="303" key="GridCell.Tab.4.right" timestamp="1606418239300">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="372" key="GridCell.Tab.4.right" timestamp="1609675802788">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1453" height="252" key="GridCell.Tab.4.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604934367885" />
-    <state width="1877" height="303" key="GridCell.Tab.4.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606418239300" />
+    <state width="1877" height="372" key="GridCell.Tab.4.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609675802788" />
+    <state width="1877" height="303" key="GridCell.Tab.4.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284036" />
     <state width="1453" height="252" key="GridCell.Tab.4.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602443952184" />
     <state x="753" y="246" key="Rider.ProjectTemplateDialog.Size" timestamp="1604832929772">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="753" y="246" key="Rider.ProjectTemplateDialog.Size/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604832929772" />
     <state x="753" y="246" key="Rider.ProjectTemplateDialog.Size/0.0.1920.1040@0.0.1920.1040" timestamp="1602246061321" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606412122973">
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606422262494">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606412122973" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422262494" />
     <state width="756" height="445" key="XDebugger.FullValuePopup" timestamp="1602435961529">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="756" height="445" key="XDebugger.FullValuePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1602435961529" />
-    <state x="406" y="197" width="1313" height="690" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1604924660534">
+    <state x="291" y="335" width="1313" height="690" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1609671946943">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="406" y="197" width="1313" height="690" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604924660534" />
+    <state x="291" y="335" width="1313" height="690" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609671946943" />
     <state x="578" y="271" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1602435752805">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

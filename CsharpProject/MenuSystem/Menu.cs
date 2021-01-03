@@ -107,6 +107,11 @@ using System.Linq;
                     
                 }
 
+                if (_menuLevel == MenuLevel.Custom)
+                {
+                    return userChoice;
+                }
+
                
 
                 if (_menuLevel == MenuLevel.Level0 && userChoice == "r")
