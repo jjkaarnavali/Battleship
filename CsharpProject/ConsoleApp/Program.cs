@@ -156,8 +156,7 @@ namespace ConsoleApp
                 bSize = GetBoardSize();
                
                 int nrOfCarriers = GetCarriers();
-           
-                
+
                 int nrOfBattleships = GetBattleships();
                 
                 int nrOfSubs = GetSubs();
@@ -165,6 +164,8 @@ namespace ConsoleApp
                 int nrOfCruisers = GetCruisers();
                 
                 int nrOfPatrols = GetPatrols();
+
+                bool canShipsTouch = GetTouchRule();
                 
                 if (bSize == null)
                 {
@@ -176,23 +177,23 @@ namespace ConsoleApp
 
                 for (int i = 0; i < nrOfCarriers; i++)
                 {
-                    PlaceShipAction(battleshipGame, 1, 5);
+                    PlaceShipAction(battleshipGame, 1, 5, canShipsTouch);
                 }
                 for (int i = 0; i < nrOfBattleships; i++)
                 {
-                    PlaceShipAction(battleshipGame, 1, 4);
+                    PlaceShipAction(battleshipGame, 1, 4, canShipsTouch);
                 }
                 for (int i = 0; i < nrOfSubs; i++)
                 {
-                    PlaceShipAction(battleshipGame, 1, 3);
+                    PlaceShipAction(battleshipGame, 1, 3, canShipsTouch);
                 }
                 for (int i = 0; i < nrOfCruisers; i++)
                 {
-                    PlaceShipAction(battleshipGame, 1, 2);
+                    PlaceShipAction(battleshipGame, 1, 2, canShipsTouch);
                 }
                 for (int i = 0; i < nrOfPatrols; i++)
                 {
-                    PlaceShipAction(battleshipGame, 1, 1);
+                    PlaceShipAction(battleshipGame, 1, 1, canShipsTouch);
                 }
               
                 
@@ -203,23 +204,23 @@ namespace ConsoleApp
                 
                 for (int i = 0; i < nrOfCarriers; i++)
                 {
-                    PlaceShipAction(battleshipGame, 2, 5);
+                    PlaceShipAction(battleshipGame, 2, 5, canShipsTouch);
                 }
                 for (int i = 0; i < nrOfBattleships; i++)
                 {
-                    PlaceShipAction(battleshipGame, 2, 4);
+                    PlaceShipAction(battleshipGame, 2, 4, canShipsTouch);
                 }
                 for (int i = 0; i < nrOfSubs; i++)
                 {
-                    PlaceShipAction(battleshipGame, 2, 3);
+                    PlaceShipAction(battleshipGame, 2, 3, canShipsTouch);
                 }
                 for (int i = 0; i < nrOfCruisers; i++)
                 {
-                    PlaceShipAction(battleshipGame, 2, 2);
+                    PlaceShipAction(battleshipGame, 2, 2, canShipsTouch);
                 }
                 for (int i = 0; i < nrOfPatrols; i++)
                 {
-                    PlaceShipAction(battleshipGame, 2, 1);
+                    PlaceShipAction(battleshipGame, 2, 1, canShipsTouch);
                 }
                 
             }
@@ -611,6 +612,34 @@ namespace ConsoleApp
             return int.Parse(bSize);
         }
         
+        static bool GetTouchRule()
+        {
+            Console.WriteLine("Do you want the ships to be able to touch each other? (y/n)");
+            var yesOrNo = Console.ReadLine();
+            if (yesOrNo.Length != 1)
+            {
+                Console.WriteLine("You must answer either 'y' for yes or 'n' for no!");
+                GetTouchRule();
+            }
+            else
+            {
+                if (yesOrNo.Equals("y"))
+                {
+                    return true;
+                }
+                else if (yesOrNo.Equals("n"))
+                {
+                    return false;
+                }else
+                {
+                    Console.WriteLine("You must answer either 'y' for yes or 'n' for no!");
+                    GetTouchRule();
+                }
+                
+            }
+            return false;
+        }
+        
         static int GetCarriers()
         {
             Console.WriteLine("How many carriers (1x5) do you want? (default is 1)");
@@ -666,7 +695,7 @@ namespace ConsoleApp
             return int.Parse(nrOfShips);
         }
         
-        static void PlaceShipAction(Battleships game, int player, int ship)
+        static void PlaceShipAction(Battleships game, int player, int ship, bool canShipsTouch)
         {
             string shipName = "";
             if (ship == 5)
@@ -701,14 +730,14 @@ namespace ConsoleApp
                 if (!xIsNr)
                 {
                     Console.WriteLine("Input has to be 0 or 1!");
-                    PlaceShipAction(game, player,ship);
+                    PlaceShipAction(game, player, ship, canShipsTouch);
                 }
                 else
                 {
                     if (int.Parse(check) != 0 && int.Parse(check) != 1)
                     {
                         Console.WriteLine("Input has to be 0 or 1!");
-                        PlaceShipAction(game, player,ship);
+                        PlaceShipAction(game, player, ship, canShipsTouch);
                     }
                     else
                     {
@@ -728,28 +757,25 @@ namespace ConsoleApp
                         if (horizontalBool && x + ship > game.bSize)
                         {
                             Console.WriteLine("Ship is out of bounds! Try again.");
-                            PlaceShipAction(game, player, ship);
+                            PlaceShipAction(game, player, ship, canShipsTouch);
                         }else if (!horizontalBool && y + ship > game.bSize)
                         {
                             Console.WriteLine("Ship is out of bounds! Try again.");
-                            PlaceShipAction(game, player, ship);
+                            PlaceShipAction(game, player, ship, canShipsTouch);
                         }
                         else
                         {
-                            bool canPlace = game.PlaceShipP1(horizontalBool, ship, x, y);
+                            bool canPlace = game.PlaceShipP1(horizontalBool, ship, x, y, canShipsTouch);
 
                             if (!canPlace)
                             {
                                 Console.WriteLine("Ships can't overlap!");
-                                PlaceShipAction(game, player, ship);
+                                PlaceShipAction(game, player, ship, canShipsTouch);
                             }
                         }
                     }
                     
                 }
-
-                
-                
             }
 
             if (player == 2)
@@ -766,14 +792,14 @@ namespace ConsoleApp
                 if (!xIsNr)
                 {
                     Console.WriteLine("Input has to be 0 or 1!");
-                    PlaceShipAction(game, player,ship);
+                    PlaceShipAction(game, player,ship, canShipsTouch);
                 }
                 else
                 {
                     if (int.Parse(check) != 0 && int.Parse(check) != 1)
                     {
                         Console.WriteLine("Input has to be 0 or 1!");
-                        PlaceShipAction(game, player, ship);
+                        PlaceShipAction(game, player, ship, canShipsTouch);
                     }
                     else
                     {
@@ -794,20 +820,20 @@ namespace ConsoleApp
                         if (horizontalBool && x + ship > game.bSize)
                         {
                             Console.WriteLine("Ship is out of bounds! Try again.");
-                            PlaceShipAction(game, player, ship);
+                            PlaceShipAction(game, player, ship, canShipsTouch);
                         }else if (!horizontalBool && y + ship > game.bSize)
                         {
                             Console.WriteLine("Ship is out of bounds! Try again.");
-                            PlaceShipAction(game, player, ship);
+                            PlaceShipAction(game, player, ship, canShipsTouch);
                         }
                         else
                         {
-                            bool canPlace = game.PlaceShipP2(horizontalBool, ship, x, y);
+                            bool canPlace = game.PlaceShipP2(horizontalBool, ship, x, y, canShipsTouch);
 
                             if (!canPlace)
                             {
                                 Console.WriteLine("Ships can't overlap!");
-                                PlaceShipAction(game, player, ship);
+                                PlaceShipAction(game, player, ship, canShipsTouch);
                             }
                             
                         }
