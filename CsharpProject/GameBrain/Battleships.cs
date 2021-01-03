@@ -37,94 +37,105 @@ namespace GameBrain
             Array.Copy(_P2board, p2board, _P2board.Length);
             return p2board;
         }
+
+
+
         
-
-
 
         public bool PlaceShipP1(bool horizontal, int shipSize, int x, int y)
         {
-            bool canPlace = true;
             if (horizontal)
             {
-                if (x + shipSize <= _P1board.Length)
+                for (int i = 0; i < shipSize; i++)
                 {
-                    for (int i = 0; i < shipSize; i++)
+                    if (_P1board[x + i, y] == CellState.Ship)
                     {
-                        if (_P1board[x + i, y] == CellState.Empty)
-                        {
-                            _P1board[x + i, y] = CellState.Ship;
-                        }
+                        return false;
                     }
                 }
-                else
+                
+                for (int i = 0; i < shipSize; i++)
                 {
-                    canPlace = false;
+                    if (_P1board[x + i, y] == CellState.Empty)
+                    { 
+                        _P1board[x + i, y] = CellState.Ship;
+                    }
                 }
+             
+                
                 
             }
             if (!horizontal)
             {
-                if (y + shipSize <= _P1board.Length)
+              
+                for (int i = 0; i < shipSize; i++)
                 {
-                    for (int i = 0; i < shipSize; i++)
+                    if (_P1board[x, y + i] == CellState.Ship)
                     {
-                        if (_P1board[x, y + i] == CellState.Empty)
-                        {
-                            _P1board[x, y + i] = CellState.Ship;
-                        }
+                        return false;
                     }
                 }
-                else
-                {
-                    canPlace = false;
-                }
                 
+                for (int i = 0; i < shipSize; i++)
+                {
+                    if (_P1board[x, y + i] == CellState.Empty) 
+                    { 
+                        _P1board[x, y + i] = CellState.Ship; 
+                    }
+                }
+               
             }
-            
-            return canPlace;
+
+            return true;
         }
         
         public bool PlaceShipP2(bool horizontal, int shipSize, int x, int y)
         {
-            bool canPlace = true;
             if (horizontal)
             {
-                if (x + shipSize <= _P2board.Length)
+                
+                for (int i = 0; i < shipSize; i++)
                 {
-                    for (int i = 0; i < shipSize; i++)
+                    if (_P2board[x + i, y] == CellState.Ship)
                     {
-                        if (_P2board[x + i, y] == CellState.Empty)
-                        {
-                            _P2board[x + i, y] = CellState.Ship;
-                        }
+                        return false;
+                    }
+                    
+                }
+              
+                for (int i = 0; i < shipSize; i++)
+                {
+                    if (_P2board[x + i, y] == CellState.Empty)
+                    {
+                        _P2board[x + i, y] = CellState.Ship;
                     }
                 }
-                else
-                {
-                    canPlace = false;
-                }
+               
                 
             }
             if (!horizontal)
             {
-                if (y + shipSize <= _P2board.Length)
+              
+                for (int i = 0; i < shipSize; i++)
                 {
-                    for (int i = 0; i < shipSize; i++)
+                    if (_P2board[x, y + i] == CellState.Ship)
                     {
-                        if (_P2board[x, y + i] == CellState.Empty)
-                        {
-                            _P2board[x, y + i] = CellState.Ship;
-                        }
+                        return false;
                     }
                 }
-                else
+                
+                for (int i = 0; i < shipSize; i++)
                 {
-                    canPlace = false;
+                    if (_P2board[x, y + i] == CellState.Empty)
+                    {
+                        _P2board[x, y + i] = CellState.Ship;
+                    }
                 }
+             
                 
             }
             
-            return canPlace;
+            return true;
         }
         public bool TakeAShot(int x, int y, bool p)
         {

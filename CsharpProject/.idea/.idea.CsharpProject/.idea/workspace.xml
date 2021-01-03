@@ -22,7 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dead7b3-3e6b-45d9-9e9a-34249314c623" name="Default Changelist" comment="players cant see enemys ships">
+    <list default="true" id="8dead7b3-3e6b-45d9-9e9a-34249314c623" name="Default Changelist" comment="missing: boats may touch or not, boat sizes, database saves">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameBrain/Battleships.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameBrain/Battleships.cs" afterDir="false" />
@@ -36,6 +36,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
@@ -80,11 +81,21 @@
     <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GameConsoleUI/BattleshipsConsoleUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/BoardState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Boat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Game.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/GameBoat.cs" root0="FORCE_HIGHLIGHTING" />
@@ -119,7 +130,11 @@
     <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/42F9CCC8-A8E2-4583-8562-AC6B7554193A/4/Console.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
@@ -145,6 +160,9 @@
     <setting file="file://$PROJECT_DIR$/MenuSystem/Menu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MenuSystem/MenuItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ConsoleApp/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Jan/RiderProjects/icd0008-2020f/CsharpProject/ConsoleApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
@@ -182,8 +200,8 @@
         <option value="$PROJECT_DIR$/Domain/Game.cs" />
         <option value="$PROJECT_DIR$/GameConsoleUI/BattleshipsConsoleUI.cs" />
         <option value="$PROJECT_DIR$/MenuSystem/Menu.cs" />
-        <option value="$PROJECT_DIR$/GameBrain/Battleships.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp/Program.cs" />
+        <option value="$PROJECT_DIR$/GameBrain/Battleships.cs" />
       </list>
     </option>
   </component>
@@ -250,7 +268,7 @@
       <workItem from="1604921156330" duration="4806000" />
       <workItem from="1606404511596" duration="7606000" />
       <workItem from="1606415691589" duration="6544000" />
-      <workItem from="1609670629384" duration="11496000" />
+      <workItem from="1609670629384" duration="13659000" />
     </task>
     <task id="LOCAL-00001" summary="asks for board size">
       <created>1606412120646</created>
@@ -273,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609678401082</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="missing: boats may touch or not, boat sizes, database saves">
+      <created>1609682335984</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1609682335984</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,31 +323,32 @@
     <MESSAGE value="asks for board size" />
     <MESSAGE value="tegelen loadimise tööle saamisega" />
     <MESSAGE value="players cant see enemys ships" />
-    <option name="LAST_COMMIT_MESSAGE" value="players cant see enemys ships" />
+    <MESSAGE value="missing: boats may touch or not, boat sizes, database saves" />
+    <option name="LAST_COMMIT_MESSAGE" value="missing: boats may touch or not, boat sizes, database saves" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="705" key="GridCell.Tab.0.bottom" timestamp="1609681949302">
+    <state width="1877" height="522" key="GridCell.Tab.0.bottom" timestamp="1609684112952">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="705" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609681949302" />
+    <state width="1877" height="522" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609684112952" />
     <state width="1877" height="303" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284036" />
     <state width="1453" height="270" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
-    <state width="1877" height="705" key="GridCell.Tab.0.center" timestamp="1609681949302">
+    <state width="1877" height="522" key="GridCell.Tab.0.center" timestamp="1609684112952">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="705" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609681949302" />
+    <state width="1877" height="522" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609684112952" />
     <state width="1877" height="303" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284035" />
     <state width="1453" height="270" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
-    <state width="1877" height="705" key="GridCell.Tab.0.left" timestamp="1609681949302">
+    <state width="1877" height="522" key="GridCell.Tab.0.left" timestamp="1609684112952">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="705" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609681949302" />
+    <state width="1877" height="522" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609684112952" />
     <state width="1877" height="303" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284035" />
     <state width="1453" height="270" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
-    <state width="1877" height="705" key="GridCell.Tab.0.right" timestamp="1609681949302">
+    <state width="1877" height="522" key="GridCell.Tab.0.right" timestamp="1609684112952">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="705" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609681949302" />
+    <state width="1877" height="522" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609684112952" />
     <state width="1877" height="303" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422284036" />
     <state width="1453" height="270" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
     <state width="1877" height="372" key="GridCell.Tab.1.bottom" timestamp="1609681378305">
@@ -426,10 +452,10 @@
     </state>
     <state x="753" y="246" key="Rider.ProjectTemplateDialog.Size/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604832929772" />
     <state x="753" y="246" key="Rider.ProjectTemplateDialog.Size/0.0.1920.1040@0.0.1920.1040" timestamp="1602246061321" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609678402485">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609682337594">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609678402485" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609682337594" />
     <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422262494" />
     <state width="756" height="445" key="XDebugger.FullValuePopup" timestamp="1602435961529">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -448,24 +474,5 @@
     </state>
     <state x="2606" y="287" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606409974641" />
     <state x="686" y="287" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602424957164" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/ConsoleApp/Program.cs</url>
-          <line>707</line>
-          <properties documentPath="C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\ConsoleApp\Program.cs" initialLine="707">
-            <startOffsets>
-              <option value="24064" />
-            </startOffsets>
-            <endOffsets>
-              <option value="24108" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

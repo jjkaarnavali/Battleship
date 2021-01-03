@@ -692,32 +692,63 @@ namespace ConsoleApp
                 
                 
                 Console.WriteLine($"Player 1 write 0 if you want your {shipName} (1x{ship}) to be placed horizontally and 1 if vertically");
-                var horizontal = int.Parse(Console.ReadLine());
-                bool horizontalBool = true;
-                if (horizontal == 0)
+                var check = Console.ReadLine();
+                
+                var intX = 0;
+                
+                bool xIsNr = int.TryParse(check, out intX);
+
+                if (!xIsNr)
                 {
-                    horizontalBool = true;
-                }else if (horizontal == 1)
-                {
-                    horizontalBool = false;
-                }
-                Console.Write($"Give X (1-{game.GetP1Board(game.bSize).GetLength(0)})" +
-                              $" and Y (1-{game.GetP1Board(game.bSize).GetLength(1)})" +
-                              $" coordinates of the ship's starting point like this (X,Y): ");
-                var (x, y) = GetShotCoordinates(game);
-                if (horizontalBool && x + ship > game.bSize)
-                {
-                    Console.WriteLine("Ship is out of bounds! Try again.");
-                    PlaceShipAction(game, player, ship);
-                }else if (!horizontalBool && y + ship > game.bSize)
-                {
-                    Console.WriteLine("Ship is out of bounds! Try again.");
-                    PlaceShipAction(game, player, ship);
+                    Console.WriteLine("Input has to be 0 or 1!");
+                    PlaceShipAction(game, player,ship);
                 }
                 else
                 {
-                    game.PlaceShipP1(horizontalBool, ship, x, y);
+                    if (int.Parse(check) != 0 && int.Parse(check) != 1)
+                    {
+                        Console.WriteLine("Input has to be 0 or 1!");
+                        PlaceShipAction(game, player,ship);
+                    }
+                    else
+                    {
+                        var horizontal = int.Parse(check);
+                        bool horizontalBool = true;
+                        if (horizontal == 0)
+                        {
+                            horizontalBool = true;
+                        }else if (horizontal == 1)
+                        {
+                            horizontalBool = false;
+                        }
+                        Console.Write($"Give X (1-{game.GetP1Board(game.bSize).GetLength(0)})" +
+                                      $" and Y (1-{game.GetP1Board(game.bSize).GetLength(1)})" +
+                                      $" coordinates of the ship's starting point like this (X,Y): ");
+                        var (x, y) = GetShotCoordinates(game);
+                        if (horizontalBool && x + ship > game.bSize)
+                        {
+                            Console.WriteLine("Ship is out of bounds! Try again.");
+                            PlaceShipAction(game, player, ship);
+                        }else if (!horizontalBool && y + ship > game.bSize)
+                        {
+                            Console.WriteLine("Ship is out of bounds! Try again.");
+                            PlaceShipAction(game, player, ship);
+                        }
+                        else
+                        {
+                            bool canPlace = game.PlaceShipP1(horizontalBool, ship, x, y);
+
+                            if (!canPlace)
+                            {
+                                Console.WriteLine("Ships can't overlap!");
+                                PlaceShipAction(game, player, ship);
+                            }
+                        }
+                    }
+                    
                 }
+
+                
                 
             }
 
@@ -726,32 +757,61 @@ namespace ConsoleApp
                 BattleshipsConsoleUI.DrawBoard(game.GetP2Board(game.bSize), 2); 
             
                 Console.WriteLine($"Player 2 write 0 if you want your {shipName} (1x{ship}) to be placed horizontally and 1 if vertically");
-                var horizontal = int.Parse(Console.ReadLine());
-                bool horizontalBool = true;
-                if (horizontal == 0)
-                {
-                    horizontalBool = true;
-                }else if (horizontal == 1)
-                {
-                    horizontalBool = false;
-                }
-                Console.Write($"Give X (1-{game.GetP2Board(game.bSize).GetLength(0)})" +
-                              $" and Y (1-{game.GetP2Board(game.bSize).GetLength(1)})" +
-                              $" coordinates of the ship's starting point like this (X,Y): ");
-                var (x, y) = GetShotCoordinates(game);
+                var check = Console.ReadLine();
                 
-                if (horizontalBool && x + ship > game.bSize)
+                var intX = 0;
+                
+                bool xIsNr = int.TryParse(check, out intX);
+
+                if (!xIsNr)
                 {
-                    Console.WriteLine("Ship is out of bounds! Try again.");
-                    PlaceShipAction(game, player, ship);
-                }else if (!horizontalBool && y + ship > game.bSize)
-                {
-                    Console.WriteLine("Ship is out of bounds! Try again.");
-                    PlaceShipAction(game, player, ship);
+                    Console.WriteLine("Input has to be 0 or 1!");
+                    PlaceShipAction(game, player,ship);
                 }
                 else
                 {
-                    game.PlaceShipP2(horizontalBool, ship, x, y);
+                    if (int.Parse(check) != 0 && int.Parse(check) != 1)
+                    {
+                        Console.WriteLine("Input has to be 0 or 1!");
+                        PlaceShipAction(game, player, ship);
+                    }
+                    else
+                    {
+                        var horizontal = int.Parse(check);
+                        bool horizontalBool = true;
+                        if (horizontal == 0)
+                        {
+                            horizontalBool = true;
+                        }else if (horizontal == 1)
+                        {
+                            horizontalBool = false;
+                        }
+                        Console.Write($"Give X (1-{game.GetP2Board(game.bSize).GetLength(0)})" +
+                                      $" and Y (1-{game.GetP2Board(game.bSize).GetLength(1)})" +
+                                      $" coordinates of the ship's starting point like this (X,Y): ");
+                        var (x, y) = GetShotCoordinates(game);
+                
+                        if (horizontalBool && x + ship > game.bSize)
+                        {
+                            Console.WriteLine("Ship is out of bounds! Try again.");
+                            PlaceShipAction(game, player, ship);
+                        }else if (!horizontalBool && y + ship > game.bSize)
+                        {
+                            Console.WriteLine("Ship is out of bounds! Try again.");
+                            PlaceShipAction(game, player, ship);
+                        }
+                        else
+                        {
+                            bool canPlace = game.PlaceShipP2(horizontalBool, ship, x, y);
+
+                            if (!canPlace)
+                            {
+                                Console.WriteLine("Ships can't overlap!");
+                                PlaceShipAction(game, player, ship);
+                            }
+                            
+                        }
+                    }
                 }
                 
             }
