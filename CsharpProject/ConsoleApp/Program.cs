@@ -133,6 +133,9 @@ namespace ConsoleApp
             loadGameMenu.AddMenuItem(new MenuItem("Load game",
                 userChoice: "l", () => { return LoadGameAction(); })
             );
+            loadGameMenu.AddMenuItem(new MenuItem("Load game from database",
+                userChoice: "f", () => { return LoadGameActionDB(); })
+            );
             loadGameMenu.AddMenuItem(new MenuItem("New Game",
                 userChoice: "n", () => { return DefaulMenuAction(); })
             );
@@ -232,9 +235,9 @@ namespace ConsoleApp
             {
                 if (battleshipGame.NextMoveByP1)
                 {
-                    BattleshipsConsoleUI.DrawBoard(battleshipGame.GetP1Board(bSize), 1);
+                    BattleshipsConsoleUI.DrawBoard(battleshipGame.GetP1Board(GameBrain.Battleships.s), 1);
                     
-                    CellState[,] copyOfP2Board = battleshipGame.GetP2Board(bSize);
+                    CellState[,] copyOfP2Board = battleshipGame.GetP2Board(GameBrain.Battleships.s);
                     var width = copyOfP2Board.GetUpperBound(0) + 1;
                     var height = copyOfP2Board.GetUpperBound(1) + 1;
                     
@@ -255,7 +258,7 @@ namespace ConsoleApp
                 }
                 else
                 {
-                    CellState[,] copyOfP1Board = battleshipGame.GetP1Board(bSize);
+                    CellState[,] copyOfP1Board = battleshipGame.GetP1Board(GameBrain.Battleships.s);
                     var width = copyOfP1Board.GetUpperBound(0) + 1;
                     var height = copyOfP1Board.GetUpperBound(1) + 1;
                     
@@ -273,7 +276,7 @@ namespace ConsoleApp
                     
                     BattleshipsConsoleUI.DrawBoard(copyOfP1Board, 1);
                     
-                    BattleshipsConsoleUI.DrawBoard(battleshipGame.GetP2Board(bSize), 2);
+                    BattleshipsConsoleUI.DrawBoard(battleshipGame.GetP2Board(GameBrain.Battleships.s), 2);
                 }
                
                 var menu = new Menu(MenuLevel.Custom);
@@ -412,7 +415,7 @@ namespace ConsoleApp
             return jsonString;
         }
         
-        static string LoadGameActionDB(Battleships game)
+        static string LoadGameActionDB()
         {
             /*var files = System.IO.Directory.EnumerateFiles(".", "*.json").ToList();
             for (int i = 0; i < files.Count; i++)
@@ -442,20 +445,18 @@ namespace ConsoleApp
             }
 
             var saveId = Console.ReadLine();
+            var jsonString = "";
             foreach (var gamee in saves)
             {
                 if (gamee.GameId.ToString() == saveId)
                 {
-                    var jsonString = gamee.BoardState;
-                    game.SetGameStateFromJsonString(jsonString);
+                    jsonString = gamee.BoardState;
+                    
                 }
             }
             
             
-            BattleshipsConsoleUI.DrawBoard(game.GetP1Board(game.bSize), 1); 
-            BattleshipsConsoleUI.DrawBoard(game.GetP2Board(game.bSize), 2);
-            
-            return "";
+            return jsonString;
         }
 
         static string SaveGameAction(Battleships game)
