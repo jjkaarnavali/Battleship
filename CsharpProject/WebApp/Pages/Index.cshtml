@@ -1,0 +1,59 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Battleship</h1>
+</div>
+
+<form method="post">
+    <div class="row">
+        <div class="col">
+            <input asp-for="PlayerA" class="form-control" placeholder="Player A">
+        </div>
+        <div class="col">
+            <input asp-for="PlayerB" class="form-control" placeholder="Player B">
+        </div>
+        <div class="col">
+            <button type="submit" class="btn badge-primary">New Game</button>
+        </div>
+    </div>
+</form>
+
+<hr/>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Game[0].Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Game[0].PlayerA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Game[0].PlayerB)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Game) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlayerA.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlayerB.Name)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.GameId">Load</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

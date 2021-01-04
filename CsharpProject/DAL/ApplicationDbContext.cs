@@ -13,6 +13,7 @@ namespace DAL
         public DbSet<GameOptionBoat> GameOptionBoats { get; set; } = null!;
         public DbSet<Boat> Boats { get; set; } = null!;
         public DbSet<GameBoat> GameBoats { get; set; } = null!;
+    
         
         
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
