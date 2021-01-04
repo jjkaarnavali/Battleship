@@ -39,6 +39,17 @@ namespace GameBrain
         }
 
 
+        public CellState GetCell(int x, int y, bool isP1Board)
+        {
+            if (isP1Board)
+            {
+                return _P1board[x, y];
+            }
+            else
+            {
+                return _P2board[x, y];
+            }
+        }
 
         
 

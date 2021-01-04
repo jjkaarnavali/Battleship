@@ -23,23 +23,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dead7b3-3e6b-45d9-9e9a-34249314c623" name="Default Changelist" comment="no touch works on the rightmost column and bottom row">
-      <change afterPath="$PROJECT_DIR$/WebApp/Pages/GamePlay/index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/contentModel.xml" afterDir="false" />
+    <list default="true" id="8dead7b3-3e6b-45d9-9e9a-34249314c623" name="Default Changelist" comment="WebApp algus">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CsharpProject.sln" beforeDir="false" afterPath="$PROJECT_DIR$/CsharpProject.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DAL/ApplicationDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/bin/Debug/netstandard2.1/MenuSystem.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/bin/Debug/netstandard2.1/MenuSystem.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/bin/Debug/netstandard2.1/MenuSystem.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/bin/Debug/netstandard2.1/MenuSystem.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/Debug/netstandard2.1/MenuSystem.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/MenuSystem.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/MenuSystem.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/MenuSystem.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/MenuSystem.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/BoardSquareState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/BoardSquareState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBrain/Battleships.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameBrain/Battleships.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Pages/GamePlay/index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Pages/GamePlay/index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Pages/GamePlay/index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Pages/GamePlay/index.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Pages/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Pages/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Pages/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Pages/Index.cshtml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +44,7 @@
     <setting file="file://$PROJECT_DIR$/Domain/PlayerBoardState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MenuSystem/Menu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MenuSystem/MenuItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/obj/Debug/net5.0/Razor/Pages/GamePlay/index.cshtml.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ConsoleApp/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/A8/Number.Parsing.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/11/Array.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
@@ -98,7 +90,6 @@
         <option value="$PROJECT_DIR$/GameConsoleUI/BattleshipsConsoleUI.cs" />
         <option value="$PROJECT_DIR$/MenuSystem/Menu.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp/Program.cs" />
-        <option value="$PROJECT_DIR$/GameBrain/Battleships.cs" />
         <option value="$PROJECT_DIR$/WebApp/Pages/Error.cshtml.cs" />
         <option value="$PROJECT_DIR$/WebApp/Program.cs" />
         <option value="$PROJECT_DIR$/WebApp/Startup.cs" />
@@ -111,11 +102,14 @@
         <option value="$PROJECT_DIR$/WebApp/Pages/Games/Index.cshtml.cs" />
         <option value="$PROJECT_DIR$/DAL/ApplicationDbContext.cs" />
         <option value="$PROJECT_DIR$/WebApp/Pages/Shared/_Layout.cshtml" />
-        <option value="$PROJECT_DIR$/WebApp/Pages/GamePlay/index.cshtml" />
-        <option value="$PROJECT_DIR$/WebApp/Pages/Index.cshtml" />
         <option value="$PROJECT_DIR$/Domain/Player.cs" />
         <option value="$PROJECT_DIR$/Domain/Game.cs" />
+        <option value="$PROJECT_DIR$/Domain/BoardSquareState.cs" />
+        <option value="$PROJECT_DIR$/GameBrain/Battleships.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Pages/Index.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Pages/Index.cshtml.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Pages/GamePlay/index.cshtml" />
+        <option value="$PROJECT_DIR$/WebApp/Pages/GamePlay/index.cshtml.cs" />
       </list>
     </option>
   </component>
@@ -213,7 +207,7 @@
       <workItem from="1606404511596" duration="7606000" />
       <workItem from="1606415691589" duration="6544000" />
       <workItem from="1609670629384" duration="23837000" />
-      <workItem from="1609759774229" duration="9745000" />
+      <workItem from="1609759774229" duration="18563000" />
     </task>
     <task id="LOCAL-00001" summary="asks for board size">
       <created>1606412120646</created>
@@ -278,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609694319345</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="WebApp algus">
+      <created>1609770806774</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1609770806774</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,32 +310,33 @@
     <MESSAGE value="board size can be changed again" />
     <MESSAGE value="saving and loading works both as file and from db" />
     <MESSAGE value="no touch works on the rightmost column and bottom row" />
-    <option name="LAST_COMMIT_MESSAGE" value="no touch works on the rightmost column and bottom row" />
+    <MESSAGE value="WebApp algus" />
+    <option name="LAST_COMMIT_MESSAGE" value="WebApp algus" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1453" height="196" key="GridCell.Tab.0.bottom" timestamp="1609770109797">
+    <state width="1453" height="89" key="GridCell.Tab.0.bottom" timestamp="1609780670024">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="421" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609694699742" />
-    <state width="1453" height="196" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609770109797" />
+    <state width="1453" height="89" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609780670024" />
     <state width="1453" height="270" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
-    <state width="1453" height="196" key="GridCell.Tab.0.center" timestamp="1609770109797">
+    <state width="1453" height="89" key="GridCell.Tab.0.center" timestamp="1609780670024">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="421" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609694699742" />
-    <state width="1453" height="196" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609770109797" />
+    <state width="1453" height="89" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609780670024" />
     <state width="1453" height="270" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
-    <state width="1453" height="196" key="GridCell.Tab.0.left" timestamp="1609770109797">
+    <state width="1453" height="89" key="GridCell.Tab.0.left" timestamp="1609780670024">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="421" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609694699742" />
-    <state width="1453" height="196" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609770109797" />
+    <state width="1453" height="89" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609780670024" />
     <state width="1453" height="270" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
-    <state width="1453" height="196" key="GridCell.Tab.0.right" timestamp="1609770109797">
+    <state width="1453" height="89" key="GridCell.Tab.0.right" timestamp="1609780670024">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="421" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609694699742" />
-    <state width="1453" height="196" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609770109797" />
+    <state width="1453" height="89" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609780670024" />
     <state width="1453" height="270" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
     <state width="1877" height="421" key="GridCell.Tab.1.bottom" timestamp="1609694699742">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -446,11 +448,11 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2326" y="112" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609766246946" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609694321099">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609770808569">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609694321099" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606422262494" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609770808569" />
     <state width="756" height="445" key="XDebugger.FullValuePopup" timestamp="1602435961529">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

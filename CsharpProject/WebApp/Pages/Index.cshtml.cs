@@ -28,6 +28,9 @@ namespace WebApp.Pages
         [BindProperty]
         public string PlayerB { get; set; } = null!;
         
+        [BindProperty]
+        public int BoardSize { get; set; }
+        
 
         public async Task OnGetAsync()
         {
@@ -54,8 +57,8 @@ namespace WebApp.Pages
             var gameOption = new GameOption()
             {
                 Name = "Standard 10x10",
-                BoardWidth = 10,
-                BoardHeight = 10
+                BoardWidth = BoardSize,
+                BoardHeight = BoardSize
             };
             
             var game = new Game()
@@ -68,6 +71,7 @@ namespace WebApp.Pages
             };
             _context.Games.Add(game);
             await _context.SaveChangesAsync();
+            GameBrain.Battleships.s = BoardSize;
             
             return RedirectToPage("./GamePlay/Index", new { id = game.GameId});
         }

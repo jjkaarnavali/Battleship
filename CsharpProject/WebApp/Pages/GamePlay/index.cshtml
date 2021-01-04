@@ -1,4 +1,70 @@
 ﻿@page
-@model WebApp.Pages.GamePlay.index
 
-GamePlay
+@using Domain
+@using GameBrain
+@model WebApp.Pages.GamePlay.Index
+
+@functions
+{
+    string GetCellContent(CellState cell)
+    {
+        var res = "&nbsp;";
+        switch (cell)
+        {
+            case CellState.Empty :
+                res = "&nbsp;";
+                break;
+            case CellState.Hit :
+                res = "H";
+                break;
+            case CellState.Miss :
+                res = "M";
+                break;
+            case CellState.Ship :
+                res = "O";
+                break;
+        }
+        return res;
+    }
+}
+
+<div class="row" style="float:left">
+    
+    <div class="col-8 text-center">
+        Player 1 board
+        <table class="table table-bordered" name="P1board">
+            @for (int y = 0; y < Battleships.s; y++)
+            {
+                <tr>
+                    @for (int x = 0; x < Battleships.s; x++)
+                    {
+                        <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">@Html.Raw(GetCellContent(Model.Battleships.GetCell(x, y, true)))</td>
+                    }
+                </tr>
+            }
+        </table>
+    </div>
+   
+</div>
+
+<div class="row" style="float:right">
+    
+    <div class="col-8 text-center">
+        Player 2 board
+        <table class="table table-bordered" name="P2board">
+            @for (int y = 0; y < Battleships.s; y++)
+            {
+                <tr>
+                    @for (int x = 0; x < Battleships.s; x++)
+                    {
+                        <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">@Html.Raw(GetCellContent(Model.Battleships.GetCell(x, y, false)))</td>
+                    }
+                </tr>
+            }
+        </table>
+    </div>
+   
+</div>
+
+
+
