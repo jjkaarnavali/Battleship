@@ -6,7 +6,7 @@
 
 @functions
 {
-    string GetCellContent(CellState cell, int? x, int? y, int? posX, int? posY)
+    string GetCellContent(CellState cell, int? x, int? y, int? posX, int? posY, int? shipLength, string? horiz)
     {
         var res = "";
         switch (cell)
@@ -25,6 +25,14 @@
                 break;
         }
         if (res == "&nbsp;" && x == posX && y == posY)
+        {
+            res = "🏴‍☠";
+        }
+        if (horiz == "True" && res == "&nbsp;" && posX < x && x < posX + shipLength && y == posY)
+        {
+            res = "🏴‍☠";
+        }
+        if (horiz == "False" && res == "&nbsp;" && x == posX && posY < y && y < posY + shipLength)
         {
             res = "🏴‍☠";
         }
@@ -55,7 +63,7 @@
                         <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="down-right" asp-route-canTouch="@Model.CanTouch">↘️</a>️</td>
                     </tr>
                     <tr>
-                        <td onclick="window.location.href = '?x=@Model.PosX&y=@Model.PosY&id=@Model.Game.GameId&horizont=@Model.Horizontal&canTouch=@Model.CanTouch'" style="cursor: pointer">🆗️</td>
+                        <td onclick="window.location.href = '?x=@Model.PosX&y=@Model.PosY&id=@Model.Game.GameId&canTouch=@Model.CanTouch'" style="cursor: pointer">🆗️</td>
                     </tr>
                 </table>
     </div>
@@ -74,7 +82,7 @@
                     {
 
                         
-                        <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">@Html.Raw(GetCellContent(Model.Battleships.GetCell(x, y, true), x, y, Model.PosX, Model.PosY))</td>
+                        <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">@Html.Raw(GetCellContent(Model.Battleships.GetCell(x, y, true), x, y, Model.PosX, Model.PosY, 5, Model.Horizontal.ToString()))</td>
                     }
                 </tr>
             }
