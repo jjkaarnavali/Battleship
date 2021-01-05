@@ -6,7 +6,7 @@
 
 @functions
 {
-    string GetCellContent(CellState cell, int x, int y, int posX, int posY)
+    string GetCellContent(CellState cell, int? x, int? y, int? posX, int? posY)
     {
         var res = "";
         switch (cell)
@@ -28,12 +28,10 @@
         {
             res = "🏴‍☠";
         }
-        else
-        {
-            res = "&nbsp;";
-        }
+        
         return res;
     }
+    
 }
 
 <div class="row">
@@ -78,7 +76,7 @@
                     <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="down-right">↘️</a>️</td>
                 </tr>
                 <tr>
-                    <td colspan="3"><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY">🆗️</a></td>
+                    <td onclick="window.location.href = '?x=@Model.PosX&y=@Model.PosY&id=@Model.Game.GameId&horizont=@Model.Horizontal'" style="cursor: pointer">🆗️</td>
                 </tr>
             </table>
     
