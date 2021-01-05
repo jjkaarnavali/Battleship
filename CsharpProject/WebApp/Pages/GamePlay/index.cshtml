@@ -15,13 +15,13 @@
                 res = "&nbsp;";
                 break;
             case CellState.Hit :
-                res = "H";
+                res = "🔥";
                 break;
             case CellState.Miss :
-                res = "M";
+                res = "🌊";
                 break;
             case CellState.Ship :
-                res = "O";
+                res = "⚓";
                 break;
         }
         return res;
@@ -30,7 +30,7 @@
 
 <div class="row" style="float:left">
     
-    <div class="col-8 text-center">
+    <div class="col-6 text-center">
         
         
         @Model.Game.PlayerA.Name's board
@@ -68,7 +68,7 @@
 
 <div class="row" style="float:right">
     
-    <div class="col-8 text-center">
+    <div class="col-6 text-center">
         
         @Model.Game.PlayerB.Name's board
             

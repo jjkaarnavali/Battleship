@@ -124,6 +124,10 @@
           <e p="GamePlay" t="Include">
             <e p="Index.cshtml" t="Include" />
             <e p="Index.cshtml.cs" t="Include" />
+            <e p="P1PlaceShips.cshtml" t="Include" />
+            <e p="P1PlaceShips.cshtml.cs" t="Include" />
+            <e p="ShipSettings.cshtml" t="Include" />
+            <e p="ShipSettings.cshtml.cs" t="Include" />
           </e>
           <e p="Games" t="Include">
             <e p="Create.cshtml" t="Include" />

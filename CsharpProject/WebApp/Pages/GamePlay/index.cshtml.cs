@@ -26,8 +26,8 @@ namespace WebApp.Pages.GamePlay
         
         
         public Battleships Battleships { get; set; } = new Battleships();
-        
-        
+       
+
 
         public async Task OnGetAsync(int id, int? x, int? y)
         {

@@ -93,7 +93,7 @@ using Microsoft.Extensions.Logging;
             await _context.SaveChangesAsync();
             GameBrain.Battleships.s = BoardSize;
             
-            return RedirectToPage("./GamePlay/Index", new { id = game.GameId});
+            return RedirectToPage("./GamePlay/ShipSettings", new { id = game.GameId});
         }
         
     }

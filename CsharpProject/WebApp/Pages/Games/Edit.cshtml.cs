@@ -62,7 +62,7 @@ namespace WebApp.Pages_Games
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!GameExists(Game.GameId))
+                if (!GameExists(Game!.GameId))
                 {
                     return NotFound();
                 }

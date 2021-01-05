@@ -1,0 +1,92 @@
+﻿@page
+
+@using Domain
+@using GameBrain
+@model WebApp.Pages.GamePlay.P1PlaceShips
+
+@functions
+{
+    string GetCellContent(CellState cell, int x, int y, int posX, int posY)
+    {
+        var res = "";
+        switch (cell)
+        {
+            case CellState.Empty :
+                res = "&nbsp;";
+                break;
+            case CellState.Hit :
+                res = "🔥";
+                break;
+            case CellState.Miss :
+                res = "🌊";
+                break;
+            case CellState.Ship :
+                res = "⚓";
+                break;
+        }
+        if (res == "&nbsp;" && x == posX && y == posY)
+        {
+            res = "🏴‍☠";
+        }
+        else
+        {
+            res = "&nbsp;";
+        }
+        return res;
+    }
+}
+
+<div class="row">
+    <div class="col-4"></div>
+
+    <div class="col-4 text-center">
+
+
+        @Model.Game.PlayerA.Name's board
+
+
+        <table class="table table-bordered" name="P1board">
+            @for (int y = 0; y < Battleships.s; y++)
+            {
+                <tr>
+                    @for (int x = 0; x < Battleships.s; x++)
+                    {
+
+                        
+                        <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">@Html.Raw(GetCellContent(Model.Battleships.GetCell(x, y, true), x, y, Model.PosX, Model.PosY))</td>
+                    }
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="col-4">
+            <table>
+                <tr>
+                    <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="up-left">↖️</a></td>
+                    <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="up">⬆️</a></td>
+                    <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="up-right">↗️</a>️</td>
+                </tr>
+                <tr>
+                    <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="left">⬅️</a>️</td>
+                    <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="rotate">🔄</a>️</td>
+                    <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="right">➡️</a>️</td>
+    
+                </tr>
+                <tr>
+                    <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="down-left">↙️</a>️</td>
+                    <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="down">⬇️</a>️</td>
+                    <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="down-right">↘️</a>️</td>
+                </tr>
+                <tr>
+                    <td colspan="3"><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY">🆗️</a></td>
+                </tr>
+            </table>
+    
+        </div>
+
+
+</div>
+
+
+
+

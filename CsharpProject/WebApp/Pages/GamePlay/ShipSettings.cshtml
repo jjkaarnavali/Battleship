@@ -1,0 +1,38 @@
+﻿@page
+
+@using Domain
+@using GameBrain
+@model WebApp.Pages.GamePlay.ShipSettings
+
+
+
+<form method="post">
+    <div class="row">
+        <div class="col">
+            <input asp-for="Carrier" class="form-control" placeholder="1">
+        </div>
+        <div class="col">
+            <input asp-for="Battleshipp" class="form-control" placeholder="1">
+        </div>
+        <div class="col">
+            <input asp-for="Submarine" class="form-control" placeholder="1">
+        </div>
+        <div class="col">
+            <input asp-for="Cruiser" class="form-control" placeholder="1">
+        </div>
+        <div class="col">
+            <input asp-for="Patrol" class="form-control" placeholder="1">
+        </div>
+        <div class="col">
+            <input asp-for="CanTouch" class="form-control" placeholder="yes">
+        </div>
+        <div class="col">
+            <button type="submit" class="btn badge-primary">Confirm</button>
+        </div>
+    </div>
+</form>
+
+
+
+
+
