@@ -35,7 +35,30 @@
 }
 
 <div class="row">
-    <div class="col-4"></div>
+    
+    <div class="col-4">
+                <table>
+                    <tr>
+                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="up-left" asp-route-canTouch="@Model.CanTouch">↖️</a></td>
+                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="up" asp-route-canTouch="@Model.CanTouch">⬆️</a></td>
+                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="up-right" asp-route-canTouch="@Model.CanTouch">↗️</a>️</td>
+                    </tr>
+                    <tr>
+                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="left" asp-route-canTouch="@Model.CanTouch">⬅️</a>️</td>
+                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="rotate" asp-route-canTouch="@Model.CanTouch">🔄</a>️</td>
+                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="right" asp-route-canTouch="@Model.CanTouch">➡️</a>️</td>
+        
+                    </tr>
+                    <tr>
+                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="down-left" asp-route-canTouch="@Model.CanTouch">↙️</a>️</td>
+                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="down" asp-route-canTouch="@Model.CanTouch">⬇️</a>️</td>
+                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="down-right" asp-route-canTouch="@Model.CanTouch">↘️</a>️</td>
+                    </tr>
+                    <tr>
+                        <td onclick="window.location.href = '?x=@Model.PosX&y=@Model.PosY&id=@Model.Game.GameId&horizont=@Model.Horizontal&canTouch=@Model.CanTouch'" style="cursor: pointer">🆗️</td>
+                    </tr>
+                </table>
+    </div>
 
     <div class="col-4 text-center">
 
@@ -57,30 +80,8 @@
             }
         </table>
     </div>
-    <div class="col-4">
-            <table>
-                <tr>
-                    <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="up-left">↖️</a></td>
-                    <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="up">⬆️</a></td>
-                    <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="up-right">↗️</a>️</td>
-                </tr>
-                <tr>
-                    <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="left">⬅️</a>️</td>
-                    <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="rotate">🔄</a>️</td>
-                    <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="right">➡️</a>️</td>
     
-                </tr>
-                <tr>
-                    <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="down-left">↙️</a>️</td>
-                    <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="down">⬇️</a>️</td>
-                    <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="down-right">↘️</a>️</td>
-                </tr>
-                <tr>
-                    <td onclick="window.location.href = '?x=@Model.PosX&y=@Model.PosY&id=@Model.Game.GameId&horizont=@Model.Horizontal'" style="cursor: pointer">🆗️</td>
-                </tr>
-            </table>
     
-        </div>
 
 
 </div>
