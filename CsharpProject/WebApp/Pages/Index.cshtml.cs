@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,8 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+ using Newtonsoft.Json.Linq;
 
-namespace WebApp.Pages
+ namespace WebApp.Pages
 {
     public class IndexModel : PageModel
     {
@@ -30,6 +31,9 @@ namespace WebApp.Pages
         
         [BindProperty]
         public int BoardSize { get; set; }
+
+        [BindProperty]
+        public int Id { get; set; }
         
 
         public async Task OnGetAsync()
@@ -42,6 +46,22 @@ namespace WebApp.Pages
         
         public async Task<IActionResult> OnPostAsync()
         {
+            if (Id != null && PlayerA == null && PlayerB == null)
+            {
+                var loadGame = _context.Games.Find(Id);
+                
+                dynamic d = JObject.Parse(loadGame.BoardState);
+                if (d.Height != null)
+                {
+                    GameBrain.Battleships.s = d.Height;
+                }
+
+                
+            
+                
+                return RedirectToPage("./GamePlay/Index", new { id = loadGame.GameId});
+                
+            }
             
             var playerA = new Player()
             {

@@ -31,14 +31,33 @@
 <div class="row" style="float:left">
     
     <div class="col-8 text-center">
-        Player 1 board
+        
+        
+        @Model.Game.PlayerA.Name's board
+
+        
         <table class="table table-bordered" name="P1board">
             @for (int y = 0; y < Battleships.s; y++)
             {
                 <tr>
                     @for (int x = 0; x < Battleships.s; x++)
                     {
-                        <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">@Html.Raw(GetCellContent(Model.Battleships.GetCell(x, y, true)))</td>
+                        if (!Model.Battleships.NextMoveByP1 && Model.Battleships.GetCell(x, y, true) == CellState.Ship)
+                        {
+                            <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">&nbsp;</td>
+                        }
+                        else
+                        {
+                            if (Model.Battleships.NextMoveByP1)
+                            {
+                                <td>@Html.Raw(GetCellContent(Model.Battleships.GetCell(x, y, true)))</td>
+                            }
+                            else
+                            {
+                                <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">@Html.Raw(GetCellContent(Model.Battleships.GetCell(x, y, true)))</td>
+                            }
+                        }
+                        
                     }
                 </tr>
             }
@@ -50,14 +69,34 @@
 <div class="row" style="float:right">
     
     <div class="col-8 text-center">
-        Player 2 board
+        
+        @Model.Game.PlayerB.Name's board
+            
+        
         <table class="table table-bordered" name="P2board">
             @for (int y = 0; y < Battleships.s; y++)
             {
                 <tr>
                     @for (int x = 0; x < Battleships.s; x++)
                     {
-                        <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">@Html.Raw(GetCellContent(Model.Battleships.GetCell(x, y, false)))</td>
+                        if (Model.Battleships.NextMoveByP1 && Model.Battleships.GetCell(x, y, false) == CellState.Ship)
+                        {
+                            <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">&nbsp;</td>
+                        }
+                        else
+                        {
+                            if (!Model.Battleships.NextMoveByP1)
+                            {
+                                <td>@Html.Raw(GetCellContent(Model.Battleships.GetCell(x, y, false)))</td>
+                            }
+                            else
+                            {
+                                <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">@Html.Raw(GetCellContent(Model.Battleships.GetCell(x, y, false)))</td>
+                            }
+
+                        }
+
+
                     }
                 </tr>
             }

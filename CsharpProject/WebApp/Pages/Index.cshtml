@@ -54,7 +54,10 @@
                 @Html.DisplayFor(modelItem => item.PlayerB.Name)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.GameId">Load</a>
+                
+                <form method="post">
+                    <button type="submit" asp-route-id="@item.GameId" class="btn badge-primary">Load</button>
+                </form>
             </td>
         </tr>
     }

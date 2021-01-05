@@ -19,9 +19,8 @@ namespace GameBrain
         
         public bool NextMoveByP1 => _nextMoveByP1;
         public int bSize = 10;
-
         
-
+        
         public CellState[,] GetP1Board(int dim)
         {
             

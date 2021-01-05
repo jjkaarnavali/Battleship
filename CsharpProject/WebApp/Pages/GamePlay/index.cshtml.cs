@@ -24,6 +24,7 @@ namespace WebApp.Pages.GamePlay
         
         
         
+        
         public Battleships Battleships { get; set; } = new Battleships();
         
         
@@ -33,9 +34,13 @@ namespace WebApp.Pages.GamePlay
             Game = await _context.Games
                 .Where(x => x.GameId == id)
                 .FirstOrDefaultAsync();
+            
+            Game.PlayerA = _context.Players.Find(Game.PlayerAId);
+            Game.PlayerB = _context.Players.Find(Game.PlayerBId);
 
             if (Game != null && Game.BoardState.Length > 0)
             {
+                
                 Battleships.SetGameStateFromJsonString(Game.BoardState);
             }
 
