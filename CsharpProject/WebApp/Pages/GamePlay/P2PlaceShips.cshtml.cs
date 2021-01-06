@@ -9,13 +9,13 @@ using Microsoft.Extensions.Logging;
 
 namespace WebApp.Pages.GamePlay
 {
-    public class P1PlaceShips : PageModel
+    public class P2PlaceShips : PageModel
     {
         
         private readonly ILogger<IndexModel> _logger;
         private readonly DAL.ApplicationDbContext _context;
 
-        public P1PlaceShips(DAL.ApplicationDbContext context, ILogger<IndexModel> logger)
+        public P2PlaceShips(DAL.ApplicationDbContext context, ILogger<IndexModel> logger)
         {
             _context = context;
             _logger = logger;
@@ -232,7 +232,7 @@ namespace WebApp.Pages.GamePlay
 
                 if (curShip != 0)
                 {
-                    bool check = Battleships.PlaceShipP1(Horizontal, curShip,x.Value, y.Value, touch);
+                    bool check = Battleships.PlaceShipP2(Horizontal, curShip,x.Value, y.Value, touch);
                 
 
                     Game!.BoardState = Battleships.GetSerializedGameState();
@@ -267,8 +267,7 @@ namespace WebApp.Pages.GamePlay
         
         public async Task<IActionResult> OnPostAsync()
         {
-            return RedirectToPage("./P2PlaceShips", new { id = Id, carriers = OGCarrier, battleships = OGBattleshipp, submarines = OGSubmarine, cruisers = OGCruiser, patrols = OGPatrol, canTouch = CanTouch});
-
+            return RedirectToPage("./index", new { id = Id});
         }
     }
 }

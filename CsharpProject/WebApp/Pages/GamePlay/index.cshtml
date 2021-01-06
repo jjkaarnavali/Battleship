@@ -12,13 +12,13 @@
         switch (cell)
         {
             case CellState.Empty :
-                res = "&nbsp;";
+                res = "🌊";
                 break;
             case CellState.Hit :
                 res = "🔥";
                 break;
             case CellState.Miss :
-                res = "🌊";
+                res = "💣";
                 break;
             case CellState.Ship :
                 res = "⚓";
@@ -30,12 +30,14 @@
 
 <div class="row" style="float:left">
     
-    <div class="col-6 text-center">
-        
-        
+    
+
+    <div class="col-4 text-center">
+
+
         @Model.Game.PlayerA.Name's board
 
-        
+
         <table class="table table-bordered" name="P1board">
             @for (int y = 0; y < Battleships.s; y++)
             {
@@ -44,7 +46,7 @@
                     {
                         if (!Model.Battleships.NextMoveByP1 && Model.Battleships.GetCell(x, y, true) == CellState.Ship)
                         {
-                            <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">&nbsp;</td>
+                            <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer" >🌊</td>
                         }
                         else
                         {
@@ -57,22 +59,27 @@
                                 <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">@Html.Raw(GetCellContent(Model.Battleships.GetCell(x, y, true)))</td>
                             }
                         }
-                        
+
                     }
                 </tr>
             }
         </table>
     </div>
-   
-</div>
+    <div class="col-4">
+        @if (Model.Battleships.NextMoveByP1)
+        {
+            <a>@Model.Game.PlayerA.Name's turn!</a>
+        }
+        else
+        {
+            <a>@Model.Game.PlayerB.Name's turn!</a>
+        }
+    </div>
+    <div class="col-4 text-center">
 
-<div class="row" style="float:right">
-    
-    <div class="col-6 text-center">
-        
         @Model.Game.PlayerB.Name's board
-            
-        
+
+
         <table class="table table-bordered" name="P2board">
             @for (int y = 0; y < Battleships.s; y++)
             {
@@ -81,7 +88,7 @@
                     {
                         if (Model.Battleships.NextMoveByP1 && Model.Battleships.GetCell(x, y, false) == CellState.Ship)
                         {
-                            <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">&nbsp;</td>
+                            <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">🌊</td>
                         }
                         else
                         {
@@ -102,8 +109,6 @@
             }
         </table>
     </div>
-   
+
 </div>
-
-
 

@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Domain;
 using GameBrain;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -26,6 +27,8 @@ namespace WebApp.Pages.GamePlay
         
         
         public Battleships Battleships { get; set; } = new Battleships();
+
+        public string Winner { get; set; } = null!;
        
 
 
@@ -52,10 +55,42 @@ namespace WebApp.Pages.GamePlay
                 
 
                 Game!.BoardState = Battleships.GetSerializedGameState();
+
+                
             }
 
             _context.Games.Update(Game);
             await _context.SaveChangesAsync();
+            
+            bool isOver = Battleships.IsGameOver();
+            bool P1Won = false;
+            if (isOver)
+            {
+                if (Battleships.NextMoveByP1)
+                {
+                    P1Won = true;
+                }
+                
+
+                if (P1Won)
+                {
+                    Winner = Game!.PlayerA.Name;
+                }
+                else
+                {
+                    Winner = Game!.PlayerB.Name;
+                }
+
+                IfOver();
+
+            }
         }
+        
+        public IActionResult IfOver()
+        {
+
+            return  Redirect("./GameOver?winner=" + Winner);
+        }
+        
     }
 }

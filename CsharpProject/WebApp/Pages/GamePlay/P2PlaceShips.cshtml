@@ -2,7 +2,7 @@
 
 @using Domain
 @using GameBrain
-@model WebApp.Pages.GamePlay.P1PlaceShips
+@model WebApp.Pages.GamePlay.P2PlaceShips
 
 @functions
 {
@@ -116,7 +116,7 @@
     <div class="col-4 text-center">
 
 
-        @Model.Game.PlayerA.Name's board
+        @Model.Game.PlayerB.Name's board
 
 
         <table class="table table-bordered" name="P1board">
@@ -125,7 +125,7 @@
                 <tr>
                     @for (int x = 0; x < Battleships.s; x++)
                     {
-                        <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">@Html.Raw(GetCellContent(Model.Battleships.GetCell(x, y, true), x, y, Model.PosX, Model.PosY, GetShipSize(), Model.Horizontal))</td>
+                        <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">@Html.Raw(GetCellContent(Model.Battleships.GetCell(x, y, false), x, y, Model.PosX, Model.PosY, GetShipSize(), Model.Horizontal))</td>
                     }
                 </tr>
             }
@@ -136,7 +136,5 @@
 
 
 </div>
-
-
 
 
