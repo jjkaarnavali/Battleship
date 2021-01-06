@@ -6,7 +6,7 @@
 
 @functions
 {
-    string GetCellContent(CellState cell, int? x, int? y, int? posX, int? posY, int? shipLength, string? horiz)
+    string GetCellContent(CellState cell, int? x, int? y, int? posX, int? posY, int? shipLength, bool? horiz)
     {
         var res = "";
         switch (cell)
@@ -28,16 +28,38 @@
         {
             res = "🏴‍☠";
         }
-        if (horiz == "True" && res == "&nbsp;" && posX < x && x < posX + shipLength && y == posY)
+        if (horiz == true && res == "&nbsp;" && posX < x && x < posX + shipLength && y == posY)
         {
             res = "🏴‍☠";
         }
-        if (horiz == "False" && res == "&nbsp;" && x == posX && posY < y && y < posY + shipLength)
+        if (horiz == false && res == "&nbsp;" && x == posX && posY < y && y < posY + shipLength)
         {
             res = "🏴‍☠";
         }
         
         return res;
+    }
+    int GetShipSize()
+    {
+        int curShip = 0;
+        if (Model.Carrier != 0)
+        {
+            curShip = 5;
+        }else if (Model.Carrier == 0 && Model.Battleshipp != 0)
+        {
+            curShip = 4;
+        }else if (Model.Carrier == 0 && Model.Battleshipp == 0 && Model.Submarine != 0)
+        {
+            curShip = 3;
+        }else if (Model.Carrier == 0 && Model.Battleshipp == 0 && Model.Submarine == 0 && Model.Cruiser != 0)
+        {
+            curShip = 2;
+        }else if (Model.Carrier == 0 && Model.Battleshipp != 0 && Model.Submarine == 0 && Model.Cruiser == 0 && Model.Patrol != 0)
+        {
+            curShip = 1;
+        }
+        
+        return curShip;
     }
     
 }
@@ -47,23 +69,23 @@
     <div class="col-4">
                 <table>
                     <tr>
-                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="up-left" asp-route-canTouch="@Model.CanTouch">↖️</a></td>
-                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="up" asp-route-canTouch="@Model.CanTouch">⬆️</a></td>
-                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="up-right" asp-route-canTouch="@Model.CanTouch">↗️</a>️</td>
+                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-horiz="@Model.Horizontal" asp-route-dir="up-left" asp-route-canTouch="@Model.CanTouch" asp-route-carriers="@Model.Carrier" asp-route-battleships="@Model.Battleshipp" asp-route-submarines="@Model.Submarine" asp-route-cruisers="@Model.Cruiser" asp-route-patrols="@Model.Patrol">↖️</a></td>
+                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-horiz="@Model.Horizontal" asp-route-dir="up" asp-route-canTouch="@Model.CanTouch" asp-route-carriers="@Model.Carrier" asp-route-battleships="@Model.Battleshipp" asp-route-submarines="@Model.Submarine" asp-route-cruisers="@Model.Cruiser" asp-route-patrols="@Model.Patrol">⬆️</a></td>
+                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-horiz="@Model.Horizontal" asp-route-dir="up-right" asp-route-canTouch="@Model.CanTouch" asp-route-carriers="@Model.Carrier" asp-route-battleships="@Model.Battleshipp" asp-route-submarines="@Model.Submarine" asp-route-cruisers="@Model.Cruiser" asp-route-patrols="@Model.Patrol">↗️</a>️</td>
                     </tr>
                     <tr>
-                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="left" asp-route-canTouch="@Model.CanTouch">⬅️</a>️</td>
-                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="rotate" asp-route-canTouch="@Model.CanTouch">🔄</a>️</td>
-                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="right" asp-route-canTouch="@Model.CanTouch">➡️</a>️</td>
+                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-horiz="@Model.Horizontal" asp-route-dir="left" asp-route-canTouch="@Model.CanTouch" asp-route-carriers="@Model.Carrier" asp-route-battleships="@Model.Battleshipp" asp-route-submarines="@Model.Submarine" asp-route-cruisers="@Model.Cruiser" asp-route-patrols="@Model.Patrol">⬅️</a>️</td>
+                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-horiz="@Model.Horizontal" asp-route-dir="rotate" asp-route-canTouch="@Model.CanTouch" asp-route-carriers="@Model.Carrier" asp-route-battleships="@Model.Battleshipp" asp-route-submarines="@Model.Submarine" asp-route-cruisers="@Model.Cruiser" asp-route-patrols="@Model.Patrol">🔄</a>️</td>
+                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-horiz="@Model.Horizontal" asp-route-dir="right" asp-route-canTouch="@Model.CanTouch" asp-route-carriers="@Model.Carrier" asp-route-battleships="@Model.Battleshipp" asp-route-submarines="@Model.Submarine" asp-route-cruisers="@Model.Cruiser" asp-route-patrols="@Model.Patrol">➡️</a>️</td>
         
                     </tr>
                     <tr>
-                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="down-left" asp-route-canTouch="@Model.CanTouch">↙️</a>️</td>
-                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="down" asp-route-canTouch="@Model.CanTouch">⬇️</a>️</td>
-                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-dir="down-right" asp-route-canTouch="@Model.CanTouch">↘️</a>️</td>
+                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-horiz="@Model.Horizontal" asp-route-dir="down-left" asp-route-canTouch="@Model.CanTouch" asp-route-carriers="@Model.Carrier" asp-route-battleships="@Model.Battleshipp" asp-route-submarines="@Model.Submarine" asp-route-cruisers="@Model.Cruiser" asp-route-patrols="@Model.Patrol">↙️</a>️</td>
+                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-horiz="@Model.Horizontal" asp-route-dir="down" asp-route-canTouch="@Model.CanTouch" asp-route-carriers="@Model.Carrier" asp-route-battleships="@Model.Battleshipp" asp-route-submarines="@Model.Submarine" asp-route-cruisers="@Model.Cruiser" asp-route-patrols="@Model.Patrol">⬇️</a>️</td>
+                        <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-horiz="@Model.Horizontal" asp-route-dir="down-right" asp-route-canTouch="@Model.CanTouch" asp-route-carriers="@Model.Carrier" asp-route-battleships="@Model.Battleshipp" asp-route-submarines="@Model.Submarine" asp-route-cruisers="@Model.Cruiser" asp-route-patrols="@Model.Patrol">↘️</a>️</td>
                     </tr>
                     <tr>
-                        <td onclick="window.location.href = '?x=@Model.PosX&y=@Model.PosY&id=@Model.Game.GameId&canTouch=@Model.CanTouch'" style="cursor: pointer">🆗️</td>
+                        <td onclick="window.location.href = '?x=@Model.PosX&y=@Model.PosY&id=@Model.Game.GameId&canTouch=@Model.CanTouch&horiz=@Model.Horizontal&carriers=@Model.Carrier&battleships=@Model.Battleshipp&submarines=@Model.Submarine&cruisers=@Model.Cruiser&patrols=@Model.Patrol'" style="cursor: pointer">🆗️</td>
                     </tr>
                 </table>
     </div>
@@ -80,9 +102,7 @@
                 <tr>
                     @for (int x = 0; x < Battleships.s; x++)
                     {
-
-                        
-                        <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">@Html.Raw(GetCellContent(Model.Battleships.GetCell(x, y, true), x, y, Model.PosX, Model.PosY, 5, Model.Horizontal.ToString()))</td>
+                        <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">@Html.Raw(GetCellContent(Model.Battleships.GetCell(x, y, true), x, y, Model.PosX, Model.PosY, GetShipSize(), Model.Horizontal))</td>
                     }
                 </tr>
             }

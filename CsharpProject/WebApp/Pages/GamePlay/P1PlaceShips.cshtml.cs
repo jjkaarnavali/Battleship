@@ -49,12 +49,12 @@ namespace WebApp.Pages.GamePlay
         public int PosX { get; set; } = 0;
         [BindProperty(SupportsGet = true)]
         public int PosY { get; set; } = 0;
-        [BindProperty(SupportsGet = true)]
+        
         public bool Horizontal { get; set; }
        
 
 
-        public async Task OnGetAsync(int id, int? carriers, int? battleships, int? submarines, int? cruisers, int? patrols, string? canTouch, int? x, int? y, string? dir)
+        public async Task OnGetAsync(int id, int? carriers, int? battleships, int? submarines, int? cruisers, int? patrols, string? canTouch, int? x, int? y, string? dir, bool? horiz)
         {
             Game = await _context.Games
                 .Where(x => x.GameId == id)
@@ -85,7 +85,12 @@ namespace WebApp.Pages.GamePlay
             {
                 CanTouch = "no";
             }
-            
+
+           
+            if (horiz != null)
+            {
+                Horizontal = horiz.Value;
+            }
             
             switch (dir)
             {
@@ -117,9 +122,17 @@ namespace WebApp.Pages.GamePlay
                 case "down-left":
                     PosY++;
                     PosX--;
+                    if (PosY == Battleships.s)
+                    {
+                        PosY--;
+                    }
                     break;
                 case "down":
                     PosY++;
+                    if (PosY == Battleships.s)
+                    {
+                        PosY--;
+                    }
                     break;
                 case "down-right":
                     PosY++;
@@ -128,10 +141,33 @@ namespace WebApp.Pages.GamePlay
                     {
                         PosX--;
                     }
+                    if (PosY == Battleships.s)
+                    {
+                        PosY--;
+                    }
                     break;
                 case "rotate":
                     Horizontal = !Horizontal;
                     break;
+            }
+            
+
+            int curShip = 0;
+            if (carriers != 0)
+            {
+                curShip = 5;
+            }else if (carriers == 0 && battleships != 0)
+            {
+                curShip = 4;
+            }else if (carriers == 0 && battleships == 0 && submarines != 0)
+            {
+                curShip = 3;
+            }else if (carriers == 0 && battleships == 0 && submarines == 0 && cruisers != 0)
+            {
+                curShip = 2;
+            }else if (carriers == 0 && battleships == 0 && submarines == 0 && cruisers == 0 && patrols != 0)
+            {
+                curShip = 1;
             }
 
             if (PosX < 0)
@@ -142,27 +178,21 @@ namespace WebApp.Pages.GamePlay
             {
                 PosY = 0;
             }
-            if (PosX + 5 > Battleships.s && Horizontal)
+            if (PosX + curShip > Battleships.s && Horizontal)
             {
-                PosX = Battleships.s - 5;
+                PosX = Battleships.s - curShip;
             }else if (PosX > Battleships.s && !Horizontal)
             {
                 PosX = Battleships.s - 1;
             }
-            if (PosY + 5 > Battleships.s && !Horizontal)
+            if (PosY + curShip > Battleships.s && !Horizontal)
             {
-                PosY = Battleships.s - 5;
+                PosY = Battleships.s - curShip;
             }else if (PosY > Battleships.s && Horizontal)
             {
-                PosY = Battleships.s;
+                PosY = Battleships.s - 1;
             }
             
-            
-
-            
-            
-            
-
             if (x != null && y != null)
             {
                 bool touch = false;
@@ -170,12 +200,34 @@ namespace WebApp.Pages.GamePlay
                 {
                     touch = true;
                 }
-                
-                
-                Battleships.PlaceShipP1(Horizontal, 5,x.Value, y.Value, touch);
+
                 
 
-                Game!.BoardState = Battleships.GetSerializedGameState();
+                if (curShip != 0)
+                {
+                    bool check = Battleships.PlaceShipP1(Horizontal, curShip,x.Value, y.Value, touch);
+                
+
+                    Game!.BoardState = Battleships.GetSerializedGameState();
+                    
+                    if (check && carriers != 0 && curShip == 5)
+                    {
+                        Carrier--;
+                    }else if (check && battleships != 0 && curShip == 4)
+                    {
+                        Battleshipp--;
+                    }else if (check && submarines != 0 && curShip == 3)
+                    {
+                        Submarine--;
+                    }else if (check && cruisers != 0 && curShip == 2)
+                    {
+                        Cruiser--;
+                    }else if (check && patrols != 0 && curShip == 1)
+                    {
+                        Patrol--;
+                    }
+                }
+                
                 
                 
             }
