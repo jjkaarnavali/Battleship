@@ -122,8 +122,6 @@
           <e p="Error.cshtml" t="Include" />
           <e p="Error.cshtml.cs" t="Include" />
           <e p="GamePlay" t="Include">
-            <e p="GameOver.cshtml" t="Include" />
-            <e p="GameOver.cshtml.cs" t="Include" />
             <e p="Index.cshtml" t="Include" />
             <e p="Index.cshtml.cs" t="Include" />
             <e p="P1PlaceShips.cshtml" t="Include" />

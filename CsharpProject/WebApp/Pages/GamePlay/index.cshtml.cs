@@ -80,16 +80,7 @@ namespace WebApp.Pages.GamePlay
                 {
                     Winner = Game!.PlayerB.Name;
                 }
-
-                IfOver();
-
             }
-        }
-        
-        public IActionResult IfOver()
-        {
-
-            return  Redirect("./GameOver?winner=" + Winner);
         }
         
     }

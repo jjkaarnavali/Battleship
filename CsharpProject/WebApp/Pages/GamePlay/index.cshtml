@@ -26,9 +26,18 @@
         }
         return res;
     }
+
+    
 }
 
-<div class="row" style="float:left">
+@if (Model.Winner != null)
+{
+    <a>Player @Model.Winner has won!</a>
+    <a href="/">Return to homepage!</a>
+}
+else
+{
+    <div class="row" style="float:left">
     
     
 
@@ -102,8 +111,6 @@
                             }
 
                         }
-
-
                     }
                 </tr>
             }
@@ -111,4 +118,6 @@
     </div>
 
 </div>
+}
+
 

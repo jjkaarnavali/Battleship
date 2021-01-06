@@ -23,16 +23,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dead7b3-3e6b-45d9-9e9a-34249314c623" name="Default Changelist" comment="webapp, P1 can place all the ships available">
-      <change afterPath="$PROJECT_DIR$/WebApp/Pages/GamePlay/GameOver.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApp/Pages/GamePlay/GameOver.cshtml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApp/Pages/GamePlay/P2PlaceShips.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApp/Pages/GamePlay/P2PlaceShips.cshtml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApp/Pages/GamePlay/ShipSettings.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/contentModel.xml" afterDir="false" />
+    <list default="true" id="8dead7b3-3e6b-45d9-9e9a-34249314c623" name="Default Changelist" comment="webapp, Players can place ships and play, but game doesnt end when it has to">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Pages/GamePlay/P1PlaceShips.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Pages/GamePlay/P1PlaceShips.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Pages/GamePlay/P1PlaceShips.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Pages/GamePlay/P1PlaceShips.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/Pages/GamePlay/index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Pages/GamePlay/index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/Pages/GamePlay/index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Pages/GamePlay/index.cshtml.cs" afterDir="false" />
     </list>
@@ -115,9 +107,9 @@
         <option value="$PROJECT_DIR$/WebApp/Pages/GamePlay/P2PlaceShips.cshtml.cs" />
         <option value="$PROJECT_DIR$/WebApp/Pages/GamePlay/P1PlaceShips.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Pages/GamePlay/P2PlaceShips.cshtml" />
-        <option value="$PROJECT_DIR$/WebApp/Pages/GamePlay/index.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Pages/GamePlay/GameOver.cshtml.cs" />
         <option value="$PROJECT_DIR$/WebApp/Pages/GamePlay/GameOver.cshtml" />
+        <option value="$PROJECT_DIR$/WebApp/Pages/GamePlay/index.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Pages/GamePlay/index.cshtml.cs" />
       </list>
     </option>
@@ -219,7 +211,7 @@
       <workItem from="1609759774229" duration="19182000" />
       <workItem from="1609845828664" duration="2643000" />
       <workItem from="1609848510967" duration="22844000" />
-      <workItem from="1609934395445" duration="10313000" />
+      <workItem from="1609934395445" duration="12929000" />
     </task>
     <task id="LOCAL-00001" summary="asks for board size">
       <created>1606412120646</created>
@@ -347,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609937957280</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="webapp, Players can place ships and play, but game doesnt end when it has to">
+      <created>1609945133619</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1609945133619</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,36 +386,37 @@
     <MESSAGE value="Ship placing v4, can't go out of map (on the right side) any more" />
     <MESSAGE value="webapp, P1PlaceShips oli giti lisamata" />
     <MESSAGE value="webapp, P1 can place all the ships available" />
-    <option name="LAST_COMMIT_MESSAGE" value="webapp, P1 can place all the ships available" />
+    <MESSAGE value="webapp, Players can place ships and play, but game doesnt end when it has to" />
+    <option name="LAST_COMMIT_MESSAGE" value="webapp, Players can place ships and play, but game doesnt end when it has to" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2012" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1609849162429">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2012" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609849162429" />
-    <state width="1877" height="134" key="GridCell.Tab.0.bottom" timestamp="1609944496139">
+    <state width="1877" height="134" key="GridCell.Tab.0.bottom" timestamp="1609947233161">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="421" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609694699742" />
-    <state width="1877" height="134" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609944496139" />
+    <state width="1877" height="134" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609947233161" />
     <state width="1453" height="270" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
-    <state width="1877" height="134" key="GridCell.Tab.0.center" timestamp="1609944496139">
+    <state width="1877" height="134" key="GridCell.Tab.0.center" timestamp="1609947233160">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="421" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609694699742" />
-    <state width="1877" height="134" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609944496139" />
+    <state width="1877" height="134" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609947233160" />
     <state width="1453" height="270" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
-    <state width="1877" height="134" key="GridCell.Tab.0.left" timestamp="1609944496139">
+    <state width="1877" height="134" key="GridCell.Tab.0.left" timestamp="1609947233160">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="421" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609694699742" />
-    <state width="1877" height="134" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609944496139" />
+    <state width="1877" height="134" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609947233160" />
     <state width="1453" height="270" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
-    <state width="1877" height="134" key="GridCell.Tab.0.right" timestamp="1609944496139">
+    <state width="1877" height="134" key="GridCell.Tab.0.right" timestamp="1609947233161">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="421" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609694699742" />
-    <state width="1877" height="134" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609944496139" />
+    <state width="1877" height="134" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609947233161" />
     <state width="1453" height="270" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
     <state width="1877" height="264" key="GridCell.Tab.1.bottom" timestamp="1609944184456">
       <screen x="1920" y="0" width="1920" height="1040" />
@@ -528,11 +528,11 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2326" y="112" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609766246946" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609937959081">
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609945145216">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609694321099" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609937959081" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609945145216" />
     <state width="756" height="445" key="XDebugger.FullValuePopup" timestamp="1602435961529">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
