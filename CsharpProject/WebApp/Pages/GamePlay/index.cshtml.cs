@@ -29,6 +29,8 @@ namespace WebApp.Pages.GamePlay
         public Battleships Battleships { get; set; } = new Battleships();
 
         public string Winner { get; set; } = null!;
+
+        public bool SwitchPlayer { get; set; } = false;
        
 
 
@@ -51,7 +53,13 @@ namespace WebApp.Pages.GamePlay
 
             if (x != null && y != null)
             {
+                bool checkIfHit = Battleships.NextMoveByP1;
                 Battleships.TakeAShot(x.Value, y.Value, Battleships.NextMoveByP1);
+
+                if (checkIfHit != Battleships.NextMoveByP1)
+                {
+                    SwitchPlayer = true;
+                }
                 
 
                 Game!.BoardState = Battleships.GetSerializedGameState();
