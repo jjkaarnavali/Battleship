@@ -54,7 +54,7 @@ namespace WebApp.Pages.GamePlay
             if (x != null && y != null)
             {
                 bool checkIfHit = Battleships.NextMoveByP1;
-                Battleships.TakeAShot(x.Value, y.Value, Battleships.NextMoveByP1);
+                Battleships.TakeAShot(x.Value - 1, y.Value - 1, Battleships.NextMoveByP1);
 
                 if (checkIfHit != Battleships.NextMoveByP1)
                 {

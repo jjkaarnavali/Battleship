@@ -35,6 +35,11 @@
         }
         return Model.Game.PlayerB.Name;
     }
+    char GetLetter(int x)
+    {
+        string alpha = "0ABCDEFGHIJKLMNOPQRSTUVWXYZÕÄÖÜ";
+        return alpha[x];
+    }
 
     
 }
@@ -69,15 +74,20 @@ else
 
 
             @Model.Game.PlayerA.Name's board
-
-
+            
             <table class="table table-bordered" name="P1board">
-                @for (int y = 0; y < Battleships.s; y++)
+                @for (int y = 0; y < Battleships.s + 1; y++)
                 {
                     <tr>
-                        @for (int x = 0; x < Battleships.s; x++)
+                        @for (int x = 0; x < Battleships.s + 1; x++)
                         {
-                            if (!Model.Battleships.NextMoveByP1 && Model.Battleships.GetCell(x, y, true) == CellState.Ship)
+                            if (x == 0)
+                            {
+                                <td>@GetLetter(@y)</td>
+                            }else if (y == 0)
+                            {
+                                <td>@x</td>
+                            }else if (!Model.Battleships.NextMoveByP1 && Model.Battleships.GetCell(x - 1, y - 1, true) == CellState.Ship)
                             {
                                 <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer" >🌊</td>
                             }
@@ -85,11 +95,11 @@ else
                             {
                                 if (Model.Battleships.NextMoveByP1)
                                 {
-                                    <td>@Html.Raw(GetCellContent(Model.Battleships.GetCell(x, y, true)))</td>
+                                    <td>@Html.Raw(GetCellContent(Model.Battleships.GetCell(x - 1, y - 1, true)))</td>
                                 }
                                 else
                                 {
-                                    <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">@Html.Raw(GetCellContent(Model.Battleships.GetCell(x, y, true)))</td>
+                                    <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">@Html.Raw(GetCellContent(Model.Battleships.GetCell(x - 1, y - 1, true)))</td>
                                 }
                             }
 
@@ -103,15 +113,20 @@ else
         <div class="text-center">
 
             @Model.Game.PlayerB.Name's board
-
-
+            
             <table class="table table-bordered" name="P2board">
-                @for (int y = 0; y < Battleships.s; y++)
+                @for (int y = 0; y < Battleships.s + 1; y++)
                 {
                     <tr>
-                        @for (int x = 0; x < Battleships.s; x++)
+                        @for (int x = 0; x < Battleships.s + 1; x++)
                         {
-                            if (Model.Battleships.NextMoveByP1 && Model.Battleships.GetCell(x, y, false) == CellState.Ship)
+                            if (x == 0)
+                            {
+                                <td>@GetLetter(@y)</td>
+                            }else if (y == 0)
+                            {
+                                <td>@x</td>
+                            }else if (Model.Battleships.NextMoveByP1 && Model.Battleships.GetCell(x - 1, y - 1, false) == CellState.Ship)
                             {
                                 <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">🌊</td>
                             }
@@ -119,11 +134,11 @@ else
                             {
                                 if (!Model.Battleships.NextMoveByP1)
                                 {
-                                    <td>@Html.Raw(GetCellContent(Model.Battleships.GetCell(x, y, false)))</td>
+                                    <td>@Html.Raw(GetCellContent(Model.Battleships.GetCell(x - 1, y - 1, false)))</td>
                                 }
                                 else
                                 {
-                                    <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">@Html.Raw(GetCellContent(Model.Battleships.GetCell(x, y, false)))</td>
+                                    <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">@Html.Raw(GetCellContent(Model.Battleships.GetCell(x - 1, y - 1, false)))</td>
                                 }
 
                             }
@@ -134,7 +149,10 @@ else
         </div>
         
 
-</div>
+    </div>
+    <a>⚓ = my ships</a>
+    <a>🔥 = hit</a>
+    <a>💣 = missed shot</a>
 }
 
 
