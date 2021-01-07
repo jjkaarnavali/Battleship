@@ -49,16 +49,18 @@
 }
 else
 {
-    <header>
-        @if (Model.Battleships.NextMoveByP1)
-                                {
-                                    <a>@Model.Game.PlayerA.Name's turn!</a>
-                                }
-                                else
-                                {
-                                    <a>@Model.Game.PlayerB.Name's turn!</a>
-                                }
-    </header>
+    @if (Model.Battleships.NextMoveByP1)
+    {
+        <div class="text-center">
+            <h1 class="display-8">@Model.Game.PlayerA.Name's turn</h1>
+        </div>
+    }
+    else
+    {
+        <div class="text-center">
+            <h1 class="display-8">@Model.Game.PlayerB.Name's turn</h1>
+        </div>
+    }
     <div class="row">
     
     

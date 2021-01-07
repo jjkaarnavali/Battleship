@@ -11,14 +11,13 @@
 <form method="post">
     <div class="row">
         <div class="col">
-            <input asp-for="PlayerA" class="form-control" placeholder="Player A">
+            <input asp-for="PlayerA" class="form-control" placeholder="Player A" maxlength="20">
         </div>
         <div class="col">
-            <input asp-for="PlayerB" class="form-control" placeholder="Player B">
+            <input asp-for="PlayerB" class="form-control" placeholder="Player B" maxlength="20">
         </div>
         <div class="col">
-            <input asp-for="BoardSize" class="form-control" placeholder="10" value="10">
-            <a>Min = 5, Max = 30</a>
+            <input asp-for="BoardSize" class="form-control" placeholder="10" value="10" min="5" max="30">
         </div>
         <input asp-for="NewGame" type="hidden" value="new">
         <div class="col">
