@@ -24,6 +24,10 @@
                 res = "⚓";
                 break;
         }
+        if (Model.Carrier == 0 && Model.Battleshipp == 0 && Model.Submarine == 0 && Model.Cruiser == 0 && Model.Patrol == 0)
+        {
+            return res;
+        }
         if (res == "🌊" && x == posX && y == posY)
         {
             res = "🏴‍☠";
@@ -61,6 +65,16 @@
         
         return curShip;
     }
+    char GetLetter(int x)
+    {
+        string alpha = "0ABCDEFGHIJKLMNOPQRSTUVWXYZÕÄÖÜ";
+        return alpha[x];
+    }
+    
+    int AddOne(int x)
+    {
+        return x + 1;
+    }
     
 }
 <div class="text-center">
@@ -69,7 +83,29 @@
 <div class="row">
     
     <div>
-                <table>
+    
+    @if (Model.Carrier == 0 && Model.Battleshipp == 0 && Model.Submarine == 0 && Model.Cruiser == 0 && Model.Patrol == 0)
+                            {
+                                <form method="post">
+                                    
+                                    <input asp-for="OGCarrier" type="hidden" value="@Model.OGCarrier">
+                                            
+                                    <input asp-for="OGBattleshipp" type="hidden" value="@Model.OGBattleshipp">
+                                           
+                                    <input asp-for="OGSubmarine" type="hidden" value="@Model.OGSubmarine">
+                                            
+                                    <input asp-for="OGCruiser" type="hidden" value="@Model.OGCruiser">
+                                           
+                                    <input asp-for="OGPatrol" type="hidden" value="@Model.OGPatrol">
+                                            
+                                    <input asp-for="CanTouch" type="hidden" value="@Model.CanTouch">
+                                            
+                                    <button type="submit" class="btn badge-primary">Confirm</button>
+                                </form>
+                            }
+    else
+    {
+        <table>
                     <tr>
                         <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-horiz="@Model.Horizontal" asp-route-dir="up-left" asp-route-canTouch="@Model.CanTouch" asp-route-carriers="@Model.Carrier" asp-route-battleships="@Model.Battleshipp" asp-route-submarines="@Model.Submarine" asp-route-cruisers="@Model.Cruiser" asp-route-patrols="@Model.Patrol" asp-route-ogcarriers="@Model.OGCarrier" asp-route-ogbattleships="@Model.OGBattleshipp" asp-route-ogsubmarines="@Model.OGSubmarine" asp-route-ogcruisers="@Model.OGCruiser" asp-route-ogpatrols="@Model.OGPatrol">↖️</a></td>
                         <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-horiz="@Model.Horizontal" asp-route-dir="up" asp-route-canTouch="@Model.CanTouch" asp-route-carriers="@Model.Carrier" asp-route-battleships="@Model.Battleshipp" asp-route-submarines="@Model.Submarine" asp-route-cruisers="@Model.Cruiser" asp-route-patrols="@Model.Patrol" asp-route-ogcarriers="@Model.OGCarrier" asp-route-ogbattleships="@Model.OGBattleshipp" asp-route-ogsubmarines="@Model.OGSubmarine" asp-route-ogcruisers="@Model.OGCruiser" asp-route-ogpatrols="@Model.OGPatrol">⬆️</a></td>
@@ -87,44 +123,34 @@
                         <td><a asp-route-id="@Model.Game.GameId" asp-route-posx="@Model.PosX" asp-route-posy="@Model.PosY" asp-route-horiz="@Model.Horizontal" asp-route-dir="down-right" asp-route-canTouch="@Model.CanTouch" asp-route-carriers="@Model.Carrier" asp-route-battleships="@Model.Battleshipp" asp-route-submarines="@Model.Submarine" asp-route-cruisers="@Model.Cruiser" asp-route-patrols="@Model.Patrol" asp-route-ogcarriers="@Model.OGCarrier" asp-route-ogbattleships="@Model.OGBattleshipp" asp-route-ogsubmarines="@Model.OGSubmarine" asp-route-ogcruisers="@Model.OGCruiser" asp-route-ogpatrols="@Model.OGPatrol">↘️</a>️</td>
                     </tr>
                     <tr>
-                        @if (Model.Carrier == 0 && Model.Battleshipp == 0 && Model.Submarine == 0 && Model.Cruiser == 0 && Model.Patrol == 0)
-                        {
-                            <form method="post">
-                                
-                                <input asp-for="OGCarrier" type="hidden" value="@Model.OGCarrier">
-                                        
-                                <input asp-for="OGBattleshipp" type="hidden" value="@Model.OGBattleshipp">
-                                       
-                                <input asp-for="OGSubmarine" type="hidden" value="@Model.OGSubmarine">
-                                        
-                                <input asp-for="OGCruiser" type="hidden" value="@Model.OGCruiser">
-                                       
-                                <input asp-for="OGPatrol" type="hidden" value="@Model.OGPatrol">
-                                        
-                                <input asp-for="CanTouch" type="hidden" value="@Model.CanTouch">
-                                        
-                                <button type="submit" class="btn badge-primary">Confirm</button>
-                            </form>
-                        }
-                        else
-                        {
-                            <td onclick="window.location.href = '?x=@Model.PosX&y=@Model.PosY&id=@Model.Game.GameId&canTouch=@Model.CanTouch&horiz=@Model.Horizontal&carriers=@Model.Carrier&battleships=@Model.Battleshipp&submarines=@Model.Submarine&cruisers=@Model.Cruiser&patrols=@Model.Patrol&ogcarriers=@Model.OGCarrier&ogbattleships=@Model.OGBattleshipp&ogsubmarines=@Model.OGSubmarine&ogcruisers=@Model.OGCruiser&ogpatrols=@Model.OGPatrol'" style="cursor: pointer">🆗️</td>
-                        }
-                        
+                        <td onclick="window.location.href = '?x=@Model.PosX&y=@Model.PosY&id=@Model.Game.GameId&canTouch=@Model.CanTouch&horiz=@Model.Horizontal&carriers=@Model.Carrier&battleships=@Model.Battleshipp&submarines=@Model.Submarine&cruisers=@Model.Cruiser&patrols=@Model.Patrol&ogcarriers=@Model.OGCarrier&ogbattleships=@Model.OGBattleshipp&ogsubmarines=@Model.OGSubmarine&ogcruisers=@Model.OGCruiser&ogpatrols=@Model.OGPatrol'" style="cursor: pointer">🆗️</td>
                     </tr>
                 </table>
+    }
+                
     </div>
 
     <div class="col-4 text-center">
 
 
         <table class="table table-bordered" name="P1board">
-            @for (int y = 0; y < Battleships.s; y++)
+            @for (int y = 0; y < Battleships.s + 1; y++)
             {
                 <tr>
-                    @for (int x = 0; x < Battleships.s; x++)
+                    @for (int x = 0; x < Battleships.s + 1; x++)
                     {
-                        <td onclick="window.location.href = '?x=@x&y=@y&id=@Model.Game.GameId'" style="cursor: pointer">@Html.Raw(GetCellContent(Model.Battleships.GetCell(x, y, false), x, y, Model.PosX, Model.PosY, GetShipSize(), Model.Horizontal))</td>
+                        if (x == 0)
+                        {
+                            <td>@GetLetter(@y)</td>
+                        }else if (y == 0)
+                        {
+                            <td>@x</td>
+                        }
+                        else
+                        {
+                            <td onclick="window.location.href = '?x=@AddOne(x)&y=@AddOne(y)&id=@Model.Game.GameId'" style="cursor: pointer">@Html.Raw(GetCellContent(Model.Battleships.GetCell(x - 1, y - 1, false), x - 1, y - 1, Model.PosX, Model.PosY, GetShipSize(), Model.Horizontal))</td>
+                        }
+                        
                     }
                 </tr>
             }
@@ -135,5 +161,7 @@
 
 
 </div>
+<a>⚓ = my already placed ships</a>
+<a>🏴‍☠ = ship that is currently being placed</a>
 
 
