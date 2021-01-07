@@ -104,6 +104,13 @@ namespace WebApp.Pages.GamePlay
                 OGCruiser = cruisers.Value;
                 OGPatrol = patrols.Value;
             }
+
+            if (OGCarrier == 0 && OGBattleshipp == 0 && OGSubmarine == 0 && OGCruiser == 0 && OGPatrol == 0)
+            {
+                OGPatrol = 1;
+                patrols = 1;
+                Patrol = 1;
+            }
             if (canTouch == "yes")
             {
                 CanTouch = "yes";

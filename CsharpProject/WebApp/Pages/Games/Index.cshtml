@@ -14,9 +14,6 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Game[0].GameOption)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Game[0].Description)
             </th>
             <th>
@@ -34,9 +31,6 @@
     <tbody>
 @foreach (var item in Model.Game) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.GameOption.Name)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>

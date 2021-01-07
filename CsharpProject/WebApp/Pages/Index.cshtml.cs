@@ -31,6 +31,8 @@ using Microsoft.Extensions.Logging;
         
         [BindProperty]
         public int BoardSize { get; set; }
+        [BindProperty]
+        public string NewGame { get; set; } = null!;
 
         [BindProperty]
         public int Id { get; set; }
@@ -46,7 +48,7 @@ using Microsoft.Extensions.Logging;
         
         public async Task<IActionResult> OnPostAsync()
         {
-            if (Id != null && PlayerA == null && PlayerB == null)
+            if (Id != null && NewGame == null)
             {
                 var loadGame = _context.Games.Find(Id);
                 
@@ -62,9 +64,31 @@ using Microsoft.Extensions.Logging;
                 return RedirectToPage("./GamePlay/Index", new { id = loadGame.GameId});
                 
             }
+            if(PlayerA == null)
+            {
+                PlayerA = "PlayerA";
+            }
+            if(PlayerB == null)
+            {
+                PlayerB = "PlayerB";
+            }
+            if(BoardSize == null)
+            {
+                BoardSize = 10;
+            }
+
+            if (BoardSize < 5)
+            {
+                BoardSize = 5;
+            }
+            if (BoardSize > 30)
+            {
+                BoardSize = 30;
+            }
             
             var playerA = new Player()
             {
+                
                 Name = PlayerA
             };
             

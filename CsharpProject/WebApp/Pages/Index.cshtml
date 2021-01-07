@@ -17,8 +17,10 @@
             <input asp-for="PlayerB" class="form-control" placeholder="Player B">
         </div>
         <div class="col">
-            <input asp-for="BoardSize" class="form-control" placeholder="10">
+            <input asp-for="BoardSize" class="form-control" placeholder="10" value="10">
+            <a>Min = 5, Max = 30</a>
         </div>
+        <input asp-for="NewGame" type="hidden" value="new">
         <div class="col">
             <button type="submit" class="btn badge-primary">New Game</button>
         </div>
