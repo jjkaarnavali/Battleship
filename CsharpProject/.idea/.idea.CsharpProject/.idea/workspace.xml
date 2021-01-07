@@ -23,10 +23,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dead7b3-3e6b-45d9-9e9a-34249314c623" name="Default Changelist" comment="webapp, playing boards show coords on the top and on the left side of the board">
+    <list default="true" id="8dead7b3-3e6b-45d9-9e9a-34249314c623" name="Default Changelist" comment="webapp, all boards show coords on the top and on the left side of the board">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CsharpProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Pages/GamePlay/P1PlaceShips.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Pages/GamePlay/P1PlaceShips.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Pages/GamePlay/P2PlaceShips.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Pages/GamePlay/P2PlaceShips.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Pages/GamePlay/index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Pages/GamePlay/index.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +81,6 @@
         <option value="$PROJECT_DIR$/Domain/Enums/EPlayerType.cs" />
         <option value="$PROJECT_DIR$/GameConsoleUI/BattleshipsConsoleUI.cs" />
         <option value="$PROJECT_DIR$/MenuSystem/Menu.cs" />
-        <option value="$PROJECT_DIR$/ConsoleApp/Program.cs" />
         <option value="$PROJECT_DIR$/WebApp/Pages/Error.cshtml.cs" />
         <option value="$PROJECT_DIR$/WebApp/Program.cs" />
         <option value="$PROJECT_DIR$/WebApp/Startup.cs" />
@@ -107,10 +106,11 @@
         <option value="$PROJECT_DIR$/WebApp/Pages/GamePlay/ShipSettings.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Pages/Index.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Pages/GamePlay/index.cshtml.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Pages/GamePlay/index.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Pages/GamePlay/P1PlaceShips.cshtml.cs" />
         <option value="$PROJECT_DIR$/WebApp/Pages/GamePlay/P1PlaceShips.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Pages/GamePlay/P2PlaceShips.cshtml" />
+        <option value="$PROJECT_DIR$/ConsoleApp/Program.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Pages/GamePlay/index.cshtml" />
       </list>
     </option>
   </component>
@@ -234,7 +234,7 @@
       <workItem from="1609848510967" duration="22844000" />
       <workItem from="1609934395445" duration="15576000" />
       <workItem from="1610019808865" duration="159000" />
-      <workItem from="1610020225093" duration="11550000" />
+      <workItem from="1610020225093" duration="11918000" />
     </task>
     <task id="LOCAL-00001" summary="asks for board size">
       <created>1606412120646</created>
@@ -418,7 +418,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610029732673</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="webapp, all boards show coords on the top and on the left side of the board">
+      <created>1610031926362</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1610031926362</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -440,7 +447,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="tegelen loadimise tööle saamisega" />
     <MESSAGE value="players cant see enemys ships" />
     <MESSAGE value="missing: boats may touch or not, boat sizes, database saves" />
     <MESSAGE value="ships can't overlap eachother" />
@@ -465,7 +471,8 @@
     <MESSAGE value="webapp, doesn't crash if player names and board size arent given, min board size made 5 and max 30" />
     <MESSAGE value="webapp, texts look better" />
     <MESSAGE value="webapp, playing boards show coords on the top and on the left side of the board" />
-    <option name="LAST_COMMIT_MESSAGE" value="webapp, playing boards show coords on the top and on the left side of the board" />
+    <MESSAGE value="webapp, all boards show coords on the top and on the left side of the board" />
+    <option name="LAST_COMMIT_MESSAGE" value="webapp, all boards show coords on the top and on the left side of the board" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609948132475">
@@ -476,29 +483,29 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2012" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609849162429" />
-    <state width="1877" height="185" key="GridCell.Tab.0.bottom" timestamp="1610031564733">
+    <state width="1877" height="185" key="GridCell.Tab.0.bottom" timestamp="1610032127420">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="421" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609694699742" />
-    <state width="1877" height="185" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1610031564733" />
+    <state width="1877" height="185" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1610032127420" />
     <state width="1453" height="270" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
-    <state width="1877" height="185" key="GridCell.Tab.0.center" timestamp="1610031564733">
+    <state width="1877" height="185" key="GridCell.Tab.0.center" timestamp="1610032127420">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="421" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609694699742" />
-    <state width="1877" height="185" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1610031564733" />
+    <state width="1877" height="185" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1610032127420" />
     <state width="1453" height="270" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
-    <state width="1877" height="185" key="GridCell.Tab.0.left" timestamp="1610031564733">
+    <state width="1877" height="185" key="GridCell.Tab.0.left" timestamp="1610032127420">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="421" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609694699742" />
-    <state width="1877" height="185" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1610031564733" />
+    <state width="1877" height="185" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1610032127420" />
     <state width="1453" height="270" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
-    <state width="1877" height="185" key="GridCell.Tab.0.right" timestamp="1610031564733">
+    <state width="1877" height="185" key="GridCell.Tab.0.right" timestamp="1610032127420">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="421" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609694699742" />
-    <state width="1877" height="185" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1610031564733" />
+    <state width="1877" height="185" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1610032127420" />
     <state width="1453" height="270" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603391278827" />
     <state width="1877" height="264" key="GridCell.Tab.1.bottom" timestamp="1610026841356">
       <screen x="1920" y="0" width="1920" height="1040" />
@@ -610,11 +617,11 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2326" y="112" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609766246946" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1610029736491">
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1610031927644">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609694321099" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1610029736491" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1610031927644" />
     <state width="756" height="445" key="XDebugger.FullValuePopup" timestamp="1602435961529">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -646,10 +653,10 @@
           <line>718</line>
           <properties documentPath="C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\ConsoleApp\Program.cs" initialLine="721">
             <startOffsets>
-              <option value="24218" />
+              <option value="24209" />
             </startOffsets>
             <endOffsets>
-              <option value="24234" />
+              <option value="24225" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="28" />
@@ -659,10 +666,10 @@
           <line>150</line>
           <properties documentPath="C:\Users\Jan\RiderProjects\icd0008-2020f\CsharpProject\ConsoleApp\Program.cs" initialLine="150">
             <startOffsets>
-              <option value="4986" />
+              <option value="4977" />
             </startOffsets>
             <endOffsets>
-              <option value="5021" />
+              <option value="5012" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="29" />

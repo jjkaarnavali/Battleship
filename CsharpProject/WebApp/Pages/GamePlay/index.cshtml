@@ -46,7 +46,9 @@
 
 @if (Model.Winner != null)
 {
-    <a>Player @Model.Winner has won!</a>
+    <div class="text-center">
+        <h1 class="display-8">@Model.Winner has won!</h1>
+    </div>
     <a href="/">Return to homepage!</a>
 }else if(Model.SwitchPlayer){
     <a>The shot missed!</a>
