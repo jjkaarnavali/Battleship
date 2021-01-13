@@ -19,6 +19,7 @@ namespace Domain
         
         public int Price { get; set; }
 
-        public ICollection<AddComponent> AddComponents { get; set; } = null!;
+        public ICollection<AddComponent>? AddComponents { get; set; }
+
     }
 }
