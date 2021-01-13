@@ -6,11 +6,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Add components to @Model.Pizza.Name</h1>
+<h1>Add topping to @Model.Pizza.Name</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+
 
 <table class="table">
     <thead>
@@ -25,25 +26,68 @@
         </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model.AddComponent) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CompName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                <form method="post">
-                    <input asp-for="AddToPizza" type="hidden" value="yes">
-                    <input asp-for="PizzaId" type="hidden" value="@Model.Pizza.PizzaId">
-                    <input asp-for="OrderId" type="hidden" value="@Model.OrderId">
-                    <input asp-for="CompId" type="hidden" value="@item.AddComponentId">
-                    <input asp-for="CompIds" type="hidden" value="@Model.CompIds">
-                    <button type="submit" class="btn badge-primary">Add to pizza</button>
-                </form>
-            </td>
-        </tr>
+    <form method="post">
+        <div class="row">
+            <div class="col">
+                <input asp-for="ToppingName" class="form-control" placeholder="Search for topping" maxlength="20">
+            </div>
+            <input asp-for="IsSearch" type="hidden" value="yes">
+            <input asp-for="PizzaId" type="hidden" value="@Model.Pizza.PizzaId">
+            <input asp-for="OrderId" type="hidden" value="@Model.OrderId">
+            <input asp-for="CompIds" type="hidden" value="@Model.CompIds">
+            <button type="submit" class="btn badge-primary">Search</button>
+            
+        </div>
+    </form>
+    @foreach (var item in Model.AddComponent)
+    {
+        @if (Model.CorrectToppingId != 0)
+        {
+            if (item.AddComponentId == Model.CorrectToppingId)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        <form method="post">
+                            <input asp-for="AddToPizza" type="hidden" value="yes">
+                            <input asp-for="PizzaId" type="hidden" value="@Model.Pizza.PizzaId">
+                            <input asp-for="OrderId" type="hidden" value="@Model.OrderId">
+                            <input asp-for="CompId" type="hidden" value="@item.AddComponentId">
+                            <input asp-for="CompIds" type="hidden" value="@Model.CompIds">
+                            <button type="submit" class="btn badge-primary">Add to pizza</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        
+        }
+        else
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    <form method="post">
+                        <input asp-for="AddToPizza" type="hidden" value="yes">
+                        <input asp-for="PizzaId" type="hidden" value="@Model.Pizza.PizzaId">
+                        <input asp-for="OrderId" type="hidden" value="@Model.OrderId">
+                        <input asp-for="CompId" type="hidden" value="@item.AddComponentId">
+                        <input asp-for="CompIds" type="hidden" value="@Model.CompIds">
+                        <button type="submit" class="btn badge-primary">Add to pizza</button>
+                    </form>
+                </td>
+            </tr>
+        }
+        
     }
     </tbody>
     <form method="post">

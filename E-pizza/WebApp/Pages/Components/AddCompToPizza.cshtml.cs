@@ -23,6 +23,14 @@ namespace WebApp.Pages.Components
         public int PizzaId { get; set; }
 
         [BindProperty]
+        public string IsSearch { get; set; } = null!;
+
+        [BindProperty] 
+        public string ToppingName { get; set; } = null!;
+        [BindProperty] 
+        public int CorrectToppingId { get; set; }
+
+        [BindProperty]
         public Pizza Pizza { get; set; } = null!;
         
         [BindProperty]
@@ -40,7 +48,7 @@ namespace WebApp.Pages.Components
         
         
 
-        public async Task OnGetAsync(int orderId, int pizzaId, string? ids)
+        public async Task OnGetAsync(int orderId, int pizzaId, string? ids, int? correctToppingId)
         {
             AddComponent = await _context.AddComponents.ToListAsync();
 
@@ -48,6 +56,16 @@ namespace WebApp.Pages.Components
             
             PizzaId = pizzaId;
             Pizza = _context.Pizzas.Find(PizzaId);
+
+            if (correctToppingId != null)
+            {
+                CorrectToppingId = correctToppingId.Value;
+            }
+            else
+            {
+                CorrectToppingId = 0;
+            }
+            
             
             
 
@@ -61,6 +79,21 @@ namespace WebApp.Pages.Components
         
         public async Task<IActionResult> OnPostAsync()
         {
+
+            if (IsSearch == "yes")
+            {
+                AddComponent = await _context.AddComponents.ToListAsync();
+
+                foreach (var component in AddComponent)
+                {
+                    if (component.CompName == ToppingName)
+                    {
+                        CorrectToppingId = component.AddComponentId;
+                    }
+                }
+                return RedirectToPage("AddCompToPizza", new { ids = CompIds, orderId = OrderId, pizzaId = PizzaId, correctToppingId = CorrectToppingId});
+            }
+            
             if (AddToPizza == "yes")
             {
                 
