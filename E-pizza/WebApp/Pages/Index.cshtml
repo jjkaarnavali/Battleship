@@ -18,14 +18,7 @@
             foreach (var pizza in Model.Order.Pizzas)
             {
                 @pizza.Name
-                if (pizza.AddComponents != null)
-                {
-                    <a>with</a>
-                    foreach (var comp in pizza.AddComponents)
-                    {
-                        @comp.CompName
-                    }
-                }
+                
                 <br>
                 
             }
@@ -54,7 +47,7 @@ else
             </select>
         </div>
         <input asp-for="IsSearch" type="hidden" value="new">
-        <input asp-for="OrderId" type="hidden" value="OrderId">
+        <input asp-for="OrderId" type="hidden" value="@Model.OrderId">
         <div class="col">
             <button type="submit" class="btn badge-primary">Search</button>
         </div>
