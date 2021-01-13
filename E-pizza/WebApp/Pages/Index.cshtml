@@ -5,6 +5,124 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">E-pizza</h1>
 </div>
+
+<form method="post">
+    <div class="row">
+        <div class="col">
+            <label>Pizza</label>
+            <input asp-for="PizzaName" class="form-control" placeholder="PizzaName" maxlength="20">
+        </div>
+        <div class="col">
+            <label>Description</label>
+            <input asp-for="Description" class="form-control" placeholder="Description" maxlength="20">
+        </div>
+        <div class="col">
+            <label>Category</label>
+            <select asp-for="Category">
+                <option value="0"></option>
+                <option value="italian">italian</option>
+                <option value="american">american</option>
+            </select>
+        </div>
+        <input asp-for="IsSearch" type="hidden" value="new">
+        <div class="col">
+            <button type="submit" class="btn badge-primary">Search</button>
+        </div>
+    </div>
+</form>
+
+@if (Model.PizzaIds.Count == 0)
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pizzas[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pizzas[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pizzas[0].Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pizzas[0].Price)
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.Pizzas) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    <form method="post">
+                        <button type="submit" asp-route-id="@item.PizzaId" class="btn badge-primary">Add to order</button>
+                    </form>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pizzas[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pizzas[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pizzas[0].Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pizzas[0].Price)
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.Pizzas) {
+            if (Model.PizzaIds!.Contains(item.PizzaId))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        <form method="post">
+                            <button type="submit" asp-route-id="@item.PizzaId" class="btn badge-primary">Add to order</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+}

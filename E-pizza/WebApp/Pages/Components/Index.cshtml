@@ -1,0 +1,42 @@
+@page
+@model WebApp.Pages_Components.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Additional components</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AddComponent[0].CompName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddComponent[0].Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.AddComponent) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.AddComponentId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.AddComponentId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.AddComponentId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

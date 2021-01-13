@@ -18,9 +18,6 @@ namespace Domain
         public string Description { get; set; } = default!;
         
         public int Price { get; set; }
-        
-        public int OrderId { get; set; }
-        public Order Order { get; set; } = null!;
 
         public ICollection<AddComponent>? AddComponents { get; set; }
 
