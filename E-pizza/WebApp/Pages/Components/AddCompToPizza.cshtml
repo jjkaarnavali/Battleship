@@ -1,0 +1,57 @@
+﻿@page
+@model WebApp.Pages.Components.AddCompToPizza
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Add components to @Model.Pizza.Name</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AddComponent[0].CompName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddComponent[0].Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.AddComponent) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <form method="post">
+                    <input asp-for="AddToPizza" type="hidden" value="yes">
+                    <input asp-for="PizzaId" type="hidden" value="@Model.Pizza.PizzaId">
+                    <input asp-for="OrderId" type="hidden" value="@Model.OrderId">
+                    <input asp-for="CompId" type="hidden" value="@item.AddComponentId">
+                    <input asp-for="CompIds" type="hidden" value="@Model.CompIds">
+                    <button type="submit" class="btn badge-primary">Add to pizza</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+    <form method="post">
+        <input asp-for="AddToOrder" type="hidden" value="yes">
+        <input asp-for="PizzaId" type="hidden" value="@Model.Pizza.PizzaId">
+        <input asp-for="OrderId" type="hidden" value="@Model.OrderId">
+        <input asp-for="CompIds" type="hidden" value="@Model.CompIds">
+        <button type="submit" class="btn badge-primary">Confirm</button>
+    </form>
+    
+</table>

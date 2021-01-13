@@ -32,11 +32,19 @@ namespace WebApp.Pages
         public string Description { get; set; } = null!;
         [BindProperty]
         public string IsSearch { get; set; } = null!;
+        [BindProperty]
+        public string AddToOrder { get; set; } = null!;
         
         [BindProperty]
         public List<int> PizzaIds { get; set; }  = new List<int>();
         
-        public async Task OnGetAsync(List<int>? ids)
+        [BindProperty]
+        public int PizzaId { get; set; }
+        
+        [BindProperty]
+        public Order Order { get; set; } = null!;
+        
+        public async Task OnGetAsync(List<int>? ids, int? orderId, int? pizzaId, string? compIds)
         {
 
             if (ids != null)
@@ -46,6 +54,35 @@ namespace WebApp.Pages
             Pizzas = await _context.Pizzas
                 .OrderBy(x => x.PizzaId)
                 .ToListAsync();
+            if (orderId != null && pizzaId != null && compIds != null)
+            {
+                Order = await _context.Orders.FirstOrDefaultAsync(m => m.OrderId == orderId);
+                Pizza pizza = _context.Pizzas.Find(pizzaId);
+                string[] extraComps = compIds.Split(",");
+                List<int> extraCompIds = new List<int>();
+                foreach (var s in extraComps)
+                {
+                    extraCompIds.Add(int.Parse(s));
+                }
+                pizza.AddComponents = new List<AddComponent>();
+
+                foreach (var i in extraCompIds)
+                {
+                    AddComponent comp = _context.AddComponents.Find(i);
+                    pizza.AddComponents.Add(comp);
+                    pizza.Price += comp.Price;
+                }
+
+                if (Order.Pizzas == null)
+                {
+                    Order.Pizzas = new List<Pizza>();
+                }
+                Order.Pizzas.Add(pizza);
+                Order.Price += pizza.Price;
+                _context.Orders.Update(Order);
+                await _context.SaveChangesAsync();
+
+            }
         }
 
         public async Task<IActionResult> OnPostAsync()
@@ -92,6 +129,18 @@ namespace WebApp.Pages
                 
                 
                 return RedirectToPage("Index", new { ids = PizzaIds});
+            }
+
+            if (AddToOrder == "yes")
+            {
+                Order order = new Order();
+                order.Price = 0;
+                order.BuyerName = "";
+                
+                _context.Orders.Add(order);
+                await _context.SaveChangesAsync();
+                int id = order.OrderId;
+                return RedirectToPage("./Components/AddCompToPizza", new { orderId = id, pizzaId = PizzaId });
             }
             return RedirectToPage("Index");
         }

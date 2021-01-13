@@ -70,6 +70,8 @@
                 </td>
                 <td>
                     <form method="post">
+                        <input asp-for="AddToOrder" type="hidden" value="yes">
+                        <input asp-for="PizzaId" type="hidden" value="@item.PizzaId">
                         <button type="submit" asp-route-id="@item.PizzaId" class="btn badge-primary">Add to order</button>
                     </form>
                 </td>
@@ -117,6 +119,8 @@ else
                     </td>
                     <td>
                         <form method="post">
+                            <input asp-for="AddToOrder" type="hidden" value="yes">
+                            <input asp-for="PizzaId" type="hidden" value="@item.PizzaId">
                             <button type="submit" asp-route-id="@item.PizzaId" class="btn badge-primary">Add to order</button>
                         </form>
                     </td>
