@@ -16,4 +16,12 @@
       <ProjectReference Include="..\DAL\DAL.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\Orders\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Orders\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Orders\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Orders\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Orders\Index.cshtml" />
+    </ItemGroup>
+
 </Project>

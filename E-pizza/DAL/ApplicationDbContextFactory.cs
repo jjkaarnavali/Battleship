@@ -13,7 +13,7 @@ namespace DAL
                     Server=barrel.itcollege.ee,1533;
                     User Id=student;
                     Password=Student.Bad.password.0;
-                    Database=jakaar_exam_new1_db;
+                    Database=jakaar_exam_new2_db;
                     MultipleActiveResultSets=true;
                     "
             );

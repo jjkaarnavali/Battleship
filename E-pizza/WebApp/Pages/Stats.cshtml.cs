@@ -22,6 +22,8 @@ namespace WebApp.Pages
 
         public IList<Order> OrderList { get;set; } = null!;
         
+        public IList<Pizza> PizzaList { get;set; } = null!;
+        
         public int PizzasSold { get;set; }
         public int Revenue { get;set; }
         
@@ -32,6 +34,7 @@ namespace WebApp.Pages
         public async Task OnGetAsync()
         {
             OrderList = await _context.Orders.ToListAsync();
+            PizzaList = await _context.Pizzas.ToListAsync();
             PizzasSold = 0;
             Revenue = 0;
             
@@ -44,6 +47,7 @@ namespace WebApp.Pages
                     PizzasSold += Order.Pizzas.Count;
                 }
             }
+            
             
             foreach (var order in OrderList)
             {
