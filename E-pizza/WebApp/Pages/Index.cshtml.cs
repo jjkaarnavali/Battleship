@@ -40,6 +40,9 @@ namespace WebApp.Pages
         
         [BindProperty]
         public int PizzaId { get; set; }
+
+        [BindProperty]
+        public int OrderId { get; set; } = 0;
         
         [BindProperty]
         public Order Order { get; set; } = null!;
@@ -51,37 +54,48 @@ namespace WebApp.Pages
             {
                 PizzaIds = ids;
             }
+            if (orderId != null)
+            {
+                OrderId = orderId.Value;
+            }
             Pizzas = await _context.Pizzas
                 .OrderBy(x => x.PizzaId)
                 .ToListAsync();
-            if (orderId != null && pizzaId != null && compIds != null)
+            if (orderId != null && pizzaId != null)
             {
                 Order = await _context.Orders.FirstOrDefaultAsync(m => m.OrderId == orderId);
                 Pizza pizza = _context.Pizzas.Find(pizzaId);
-                string[] extraComps = compIds.Split(",");
-                List<int> extraCompIds = new List<int>();
-                foreach (var s in extraComps)
+                Pizza pizzaClone = new Pizza();
+                
+                pizzaClone.Category = pizza.Category;
+                pizzaClone.Description = "Ordered pizza";
+                pizzaClone.Price = pizza.Price;
+                pizzaClone.Name = pizza.Name;
+                pizzaClone.AddComponents = new List<AddComponent>();
+                if (compIds != null)
                 {
-                    extraCompIds.Add(int.Parse(s));
-                }
-                pizza.AddComponents = new List<AddComponent>();
+                    string[] extraComps = compIds.Split(",");
+                    List<int> extraCompIds = new List<int>();
+                    foreach (var s in extraComps)
+                    {
+                        extraCompIds.Add(int.Parse(s));
+                    }
 
-                foreach (var i in extraCompIds)
-                {
-                    AddComponent comp = _context.AddComponents.Find(i);
-                    pizza.AddComponents.Add(comp);
-                    pizza.Price += comp.Price;
+                    foreach (var i in extraCompIds)
+                    {
+                        AddComponent comp = _context.AddComponents.Find(i);
+                        pizzaClone.AddComponents.Add(comp);
+                        pizzaClone.Price += comp.Price;
+                    }
                 }
-
                 if (Order.Pizzas == null)
                 {
                     Order.Pizzas = new List<Pizza>();
                 }
-                Order.Pizzas.Add(pizza);
-                Order.Price += pizza.Price;
+                Order.Pizzas.Add(pizzaClone);
+                Order.Price += pizzaClone.Price;
                 _context.Orders.Update(Order);
                 await _context.SaveChangesAsync();
-
             }
         }
 
@@ -128,10 +142,10 @@ namespace WebApp.Pages
                 }
                 
                 
-                return RedirectToPage("Index", new { ids = PizzaIds});
+                return RedirectToPage("Index", new { ids = PizzaIds, orderId = OrderId});
             }
 
-            if (AddToOrder == "yes")
+            if (AddToOrder == "yes" && OrderId == 0)
             {
                 Order order = new Order();
                 order.Price = 0;
@@ -141,6 +155,9 @@ namespace WebApp.Pages
                 await _context.SaveChangesAsync();
                 int id = order.OrderId;
                 return RedirectToPage("./Components/AddCompToPizza", new { orderId = id, pizzaId = PizzaId });
+            }else if (AddToOrder == "yes" && OrderId != 0)
+            {
+                return RedirectToPage("./Components/AddCompToPizza", new { orderId = OrderId, pizzaId = PizzaId });
             }
             return RedirectToPage("Index");
         }

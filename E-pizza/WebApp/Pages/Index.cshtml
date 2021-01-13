@@ -27,6 +27,7 @@
             </select>
         </div>
         <input asp-for="IsSearch" type="hidden" value="new">
+        <input asp-for="OrderId" type="hidden" value="OrderId">
         <div class="col">
             <button type="submit" class="btn badge-primary">Search</button>
         </div>
@@ -55,27 +56,31 @@
         </thead>
         <tbody>
         @foreach (var item in Model.Pizzas) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    <form method="post">
-                        <input asp-for="AddToOrder" type="hidden" value="yes">
-                        <input asp-for="PizzaId" type="hidden" value="@item.PizzaId">
-                        <button type="submit" asp-route-id="@item.PizzaId" class="btn badge-primary">Add to order</button>
-                    </form>
-                </td>
-            </tr>
+            if (item.Description != "Ordered pizza")
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        <form method="post">
+                            <input asp-for="AddToOrder" type="hidden" value="yes">
+                            <input asp-for="PizzaId" type="hidden" value="@item.PizzaId">
+                            <input asp-for="OrderId" type="hidden" value="@Model.OrderId">
+                            <button type="submit" asp-route-id="@item.PizzaId" class="btn badge-primary">Add to order</button>
+                        </form>
+                    </td>
+                </tr>
+            }
         }
         </tbody>
     </table>
@@ -102,7 +107,7 @@ else
         </thead>
         <tbody>
         @foreach (var item in Model.Pizzas) {
-            if (Model.PizzaIds!.Contains(item.PizzaId))
+            if (Model.PizzaIds!.Contains(item.PizzaId) && item.Description != "Ordered pizza")
             {
                 <tr>
                     <td>
@@ -121,6 +126,7 @@ else
                         <form method="post">
                             <input asp-for="AddToOrder" type="hidden" value="yes">
                             <input asp-for="PizzaId" type="hidden" value="@item.PizzaId">
+                            <input asp-for="OrderId" type="hidden" value="@Model.OrderId">
                             <button type="submit" asp-route-id="@item.PizzaId" class="btn badge-primary">Add to order</button>
                         </form>
                     </td>
