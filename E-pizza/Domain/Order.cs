@@ -12,6 +12,7 @@ namespace Domain
 
         public int Price { get; set; }
 
-        public ICollection<Pizza>? Pizzas { get; set; }
+        
+        public ICollection<Pizza> Pizzas { get; set; } = null!;
     }
 }

@@ -1,0 +1,34 @@
+﻿@page
+@model WebApp.Pages.Stats
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Stats</h1>
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Pizzas sold
+        </th>
+        <th>
+            Revenue
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td>
+                @Model.PizzasSold
+            </td>
+            <td>
+                @Model.Revenue
+            </td>
+        </tr>
+    
+    </tbody>
+</table>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using Domain;
@@ -60,6 +61,7 @@ namespace WebApp.Pages
             {
                 OrderId = orderId.Value;
                 OrderConfirmed = "yes";
+                Order = await _context.Orders.FirstOrDefaultAsync(m => m.OrderId == OrderId);
             }
             if (ids != null)
             {
@@ -82,7 +84,7 @@ namespace WebApp.Pages
                 pizzaClone.Description = "Ordered pizza";
                 pizzaClone.Price = pizza.Price;
                 pizzaClone.Name = pizza.Name;
-                pizzaClone.AddComponents = new List<AddComponent>();
+                pizzaClone.AddComponents = new Collection<AddComponent>();
                 if (compIds != null)
                 {
                     string[] extraComps = compIds.Split(",");
@@ -101,7 +103,7 @@ namespace WebApp.Pages
                 }
                 if (Order.Pizzas == null)
                 {
-                    Order.Pizzas = new List<Pizza>();
+                    Order.Pizzas = new Collection<Pizza>();
                 }
                 Order.Pizzas.Add(pizzaClone);
                 Order.Price += pizzaClone.Price;

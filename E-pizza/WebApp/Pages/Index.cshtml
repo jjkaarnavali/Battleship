@@ -1,4 +1,5 @@
 ﻿@page
+@using Domain
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -11,6 +12,24 @@
 {
     <div class="text-center">
         <h1 class="display-8">Order has been placed!</h1>
+        <a>Your order was:</a>
+        @if (Model.Order.Pizzas != null)
+        {
+            foreach (var pizza in Model.Order.Pizzas)
+            {
+                @pizza.Name
+                if (pizza.AddComponents != null)
+                {
+                    <a>with</a>
+                    foreach (var comp in pizza.AddComponents)
+                    {
+                        @comp.CompName
+                    }
+                }
+                <br>
+                
+            }
+        }
         <a href="/">Return to homepage!</a>
     </div>
 }
