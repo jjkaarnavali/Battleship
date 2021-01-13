@@ -7,8 +7,16 @@
 <div class="text-center">
     <h1 class="display-4">E-pizza</h1>
 </div>
-
-<form method="post">
+@if (Model.OrderConfirmed == "yes")
+{
+    <div class="text-center">
+        <h1 class="display-8">Order has been placed!</h1>
+        <a href="/">Return to homepage!</a>
+    </div>
+}
+else
+{
+    <form method="post">
     <div class="row">
         <div class="col">
             <label>Pizza</label>
@@ -82,6 +90,20 @@
                 </tr>
             }
         }
+        @if (Model.OrderId != 0)
+                {
+                    <tr>
+                        <td>
+                            <form method="post">
+                                <input asp-for="OrderConfirmed" type="hidden" value="yes">
+                                <input asp-for="OrderId" type="hidden" value="@Model.OrderId">
+                                <label>Your name</label>
+                                <input asp-for="BuyerName" class="form-control" maxlength="20">
+                                <button type="submit" class="btn badge-primary">Confirm order</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
         </tbody>
     </table>
 }
@@ -131,8 +153,26 @@ else
                         </form>
                     </td>
                 </tr>
+                
+                
             }
+        }
+        @if (Model.OrderId != 0)
+        {
+            <tr>
+                <td>
+                    <form method="post">
+                        <input asp-for="OrderConfirmed" type="hidden" value="yes">
+                        <input asp-for="OrderId" type="hidden" value="@Model.OrderId">
+                        <label>Your name</label>
+                        <input asp-for="BuyerName" class="form-control" maxlength="20">
+                        <button type="submit" class="btn badge-primary">Confirm order</button>
+                    </form>
+                </td>
+            </tr>
         }
         </tbody>
     </table>
 }
+}
+

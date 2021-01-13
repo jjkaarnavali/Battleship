@@ -46,10 +46,21 @@ namespace WebApp.Pages
         
         [BindProperty]
         public Order Order { get; set; } = null!;
+        [BindProperty]
+        public string OrderConfirmed { get; set; } = null!;
+        [BindProperty]
+        public string BuyerName { get; set; } = "Random";
+        [BindProperty]
+        public string OrderPlaced { get; set; } = null!;
         
-        public async Task OnGetAsync(List<int>? ids, int? orderId, int? pizzaId, string? compIds)
+        public async Task OnGetAsync(List<int>? ids, int? orderId, int? pizzaId, string? compIds, string? orderPlaced)
         {
 
+            if (orderId != null && orderPlaced == "yes")
+            {
+                OrderId = orderId.Value;
+                OrderConfirmed = "yes";
+            }
             if (ids != null)
             {
                 PizzaIds = ids;
@@ -104,6 +115,16 @@ namespace WebApp.Pages
             Pizzas = await _context.Pizzas
                 .OrderBy(x => x.PizzaId)
                 .ToListAsync();
+
+            if (OrderConfirmed == "yes")
+            {
+                Order = await _context.Orders.FirstOrDefaultAsync(m => m.OrderId == OrderId);
+                Order.BuyerName = BuyerName;
+                _context.Orders.Update(Order);
+                await _context.SaveChangesAsync();
+                OrderPlaced = "yes";
+                return RedirectToPage("Index", new {orderId = OrderId, orderPlaced = OrderPlaced});
+            }
             
             if (IsSearch == "new")
             {
