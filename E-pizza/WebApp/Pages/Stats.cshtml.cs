@@ -22,7 +22,9 @@ namespace WebApp.Pages
 
         public IList<Order> OrderList { get;set; } = null!;
         
-        public IList<Pizza> PizzaList { get;set; } = null!;
+        public ICollection<Pizza> PizzaList { get;set; } = null!;
+        
+        public IList<AddComponent> AddComponentList { get;set; } = null!;
         
         public int PizzasSold { get;set; }
         public int Revenue { get;set; }
@@ -33,8 +35,11 @@ namespace WebApp.Pages
 
         public async Task OnGetAsync()
         {
+            
+            PizzaList = _context.Pizzas.ToList();
             OrderList = await _context.Orders.ToListAsync();
-            PizzaList = await _context.Pizzas.ToListAsync();
+            AddComponentList = await _context.AddComponents.ToListAsync();
+            PizzaList = _context.Pizzas.ToList();
             PizzasSold = 0;
             Revenue = 0;
             

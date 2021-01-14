@@ -69,24 +69,28 @@
         }
         else
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CompName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    <form method="post">
-                        <input asp-for="AddToPizza" type="hidden" value="yes">
-                        <input asp-for="PizzaId" type="hidden" value="@Model.Pizza.PizzaId">
-                        <input asp-for="OrderId" type="hidden" value="@Model.OrderId">
-                        <input asp-for="CompId" type="hidden" value="@item.AddComponentId">
-                        <input asp-for="CompIds" type="hidden" value="@Model.CompIds">
-                        <button type="submit" class="btn badge-primary">Add to pizza</button>
-                    </form>
-                </td>
-            </tr>
+            if (item.CompName[0] != char.Parse(" "))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        <form method="post">
+                            <input asp-for="AddToPizza" type="hidden" value="yes">
+                            <input asp-for="PizzaId" type="hidden" value="@Model.Pizza.PizzaId">
+                            <input asp-for="OrderId" type="hidden" value="@Model.OrderId">
+                            <input asp-for="CompId" type="hidden" value="@item.AddComponentId">
+                            <input asp-for="CompIds" type="hidden" value="@Model.CompIds">
+                            <button type="submit" class="btn badge-primary">Add to pizza</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+            
         }
         
     }

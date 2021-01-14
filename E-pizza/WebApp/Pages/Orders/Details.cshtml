@@ -1,4 +1,5 @@
 @page
+@using Domain
 @model WebApp.Pages_Orders.DetailsModel
 
 @{
@@ -23,6 +24,28 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Order.Price)
         </dd>
+        <dd class="col-sm-10">
+            @if (Model.OrderPizzaList != null)
+            {
+                @foreach (Pizza pizza in Model.OrderPizzaList)
+                {
+                    @pizza.Name
+                    if (pizza.AddComponents != null)
+                    {
+                        <a> with:</a>
+                        foreach (var comp in pizza.AddComponents)
+                        {
+                            <a> </a>
+                            @comp.CompName
+                           
+                        }
+                    }
+                   
+                    <br>
+                }
+            }
+        </dd>
+        
     </dl>
 </div>
 <div>

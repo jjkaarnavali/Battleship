@@ -24,6 +24,8 @@
     </thead>
     <tbody>
 @foreach (var item in Model.AddComponent) {
+    if (item.CompName[0] != char.Parse(" "))
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.CompName)
@@ -37,6 +39,8 @@
                 <a asp-page="./Delete" asp-route-id="@item.AddComponentId">Delete</a>
             </td>
         </tr>
+    }
+    
 }
     </tbody>
 </table>

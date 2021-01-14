@@ -54,6 +54,14 @@ namespace WebApp.Pages
         [BindProperty]
         public string OrderPlaced { get; set; } = null!;
         
+        public IList<Order> OrderList { get;set; } = null!;
+        
+        public IList<Pizza> PizzaList { get;set; } = null!;
+        
+        public IList<Pizza> OrderPizzaList { get;set; } = null!;
+        
+        public IList<AddComponent> AddComponentList { get; set; } = null!;
+        
         public async Task OnGetAsync(List<int>? ids, int? orderId, int? pizzaId, string? compIds, string? orderPlaced)
         {
 
@@ -61,7 +69,30 @@ namespace WebApp.Pages
             {
                 OrderId = orderId.Value;
                 OrderConfirmed = "yes";
+                OrderList = await _context.Orders.ToListAsync();
+                PizzaList = await _context.Pizzas.ToListAsync();
+                AddComponentList = await _context.AddComponents.ToListAsync();
+            
                 Order = await _context.Orders.FirstOrDefaultAsync(m => m.OrderId == OrderId);
+            
+                if (Order.Pizzas != null)
+                {
+                    OrderPizzaList = new Collection<Pizza>();
+                
+                    foreach (var pizza in Order.Pizzas)
+                    {
+                   
+                        foreach (var corPizza in PizzaList)
+                        {
+                            if (pizza.PizzaId == corPizza.PizzaId)
+                            {
+                                OrderPizzaList.Add(corPizza);
+                            }
+                        }
+                        
+                    }
+                }
+                
             }
             if (ids != null)
             {
@@ -97,7 +128,12 @@ namespace WebApp.Pages
                     foreach (var i in extraCompIds)
                     {
                         AddComponent comp = _context.AddComponents.Find(i);
-                        pizzaClone.AddComponents.Add(comp);
+                        AddComponent compClone = new AddComponent();
+                        compClone.Price = comp.Price;
+                        compClone.CompName = " ";
+                        compClone.CompName += comp.CompName;
+                        
+                        pizzaClone.AddComponents.Add(compClone);
                         pizzaClone.Price += comp.Price;
                     }
                 }
